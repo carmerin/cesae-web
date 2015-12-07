@@ -15,8 +15,11 @@ body
 	filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#DEDEDE', gradientType='0');
 	font-family:helvetica,arial;
     /*font-family: 'Open Sans', 'PT Sans', Arial, sans-serif;*/
+	
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome
 	overflow-x:hidden;
 	overflow-y:auto;
+	*/
 }
 
 a:hover
@@ -98,14 +101,17 @@ div#contenedor
 	
 	filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#DEDEDE', gradientType='0');
     font-family:helvetica,arial, san-serif;
-	overflow-x:hidden;
-	overflow-y:auto;
 	
 	padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
+  
+  /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome
+  overflow-x:hidden;
+  overflow-y:auto;
   overflow: hidden;
+  */
 
 }
 .contenedoripad2
@@ -124,13 +130,17 @@ div#contenedor
 	text-align: center;
 	background-repeat: no-repeat;
     font-family:helvetica,arial, san-serif;
-	overflow-x:hidden;
-	overflow-y:auto;
+	
 	padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
+  
+  /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome
+  overflow-x:hidden;
+	overflow-y:auto;
   overflow: hidden;
+  */
 	
 }
 div#cabecera
@@ -251,6 +261,8 @@ div#pestanas
 	height:30px;
 	padding-bottom:2px;
 	text-align: left;
+	
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
 	
 }
@@ -373,6 +385,12 @@ div#fotos
 	padding-bottom:1px;
 	text-align:left ; 
 	background-color:#FFFFFF;
+	
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome
+	overflow-x:hidden;
+	overflow-y:auto;
+	*/
+	overflow:hidden;
 
 	 
 }
@@ -1042,7 +1060,8 @@ div#contenidonivel2
 	width:980px;
 	background-color:#FFFFFF;
 	 margin: auto;
-   overflow:hidden;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
+	overflow:hidden;
 
 }
 div#contenidonivel2-1
@@ -1157,6 +1176,7 @@ div#contenidonivel2-3
 {
 	padding-left:5px;
 	width:191px;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
 	overflow:hidden;
 	height:auto;
     background: #ffffff url(../images/bg_formulario.jpg) repeat-x top center;
@@ -2281,6 +2301,7 @@ div.agenda_home{
     width:100%;
     display:block;
     height: 125px;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     border-top:#b4b1ad 2px solid;
     border-bottom:#b4b1ad 2px solid;
@@ -2293,6 +2314,7 @@ div.agenda_box{
     height:95px;
     display:block;
     padding:15px;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     float:left;
     margin:0 2px 2px 0;
@@ -2350,6 +2372,7 @@ span.text_agenda{
 }
 
 div.masinfo-contenedor{
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     position: absolute; right: 5px; bottom: 5px;
 
@@ -2375,6 +2398,7 @@ div.categorias_home{
     width:100%;
     display:block;
     height: 123px;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     border-bottom:#b4b1ad 2px solid;
     margin-bottom:2px;
@@ -2386,6 +2410,7 @@ div.categorias_box{
     height:125px;
     display:block;
     padding:0;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     float:left;
     margin:0 2px 2px 0 !important;
@@ -2471,6 +2496,7 @@ div.universidades_home{
     width:100%;
     display:block;
     height: 130px;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
 }
 
@@ -2576,6 +2602,7 @@ div.box_universidades>p{
     margin-left:10px;
     position:relative;
     height:90px !important;
+	/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     z-index:1;
     background: transparent !important;
@@ -2633,7 +2660,7 @@ input.notext { display: block;
     right: 0;}
 
 /* 20140924 */
-#contenidonivel2-2 { padding-left:20px !important; padding-bottom:20px !important; padding-top:20px !important; max-width: 554px; width:554px !important; overflow:hidden !important }
+#contenidonivel2-2 { padding-left:20px !important; padding-bottom:20px !important; padding-top:20px !important; max-width: 554px; width:554px !important; /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */ overflow:hidden !important }
 #contenidonivel2-2 img { max-width:100%; margin-left:0 !important; margin-top:10px !important; margin-bottom:20px !important;}
 #contenidonivel2-2 img.derecha {float: right; width: 50% !important; margin: 0 0 20px 20px !important;display: block;}
 #contenidonivel2-2 img.izquierda {float: left; width: 50% !important; margin: 0 0 20px 20px !important;display: block;}
@@ -2745,6 +2772,7 @@ li.li-sangria{
         margin-left:10px;
         position:relative;
         height:90px !important;
+		/* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
         overflow:hidden;
         z-index:1;
         background: transparent !important;

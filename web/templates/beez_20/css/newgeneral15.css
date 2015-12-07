@@ -43,6 +43,7 @@ body
     display:block !important;
     position:relative;
     padding:0px 0 0 0;
+    /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
 }
 
@@ -56,6 +57,7 @@ body
 #contentarea2
 {
     position:relative;
+    /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
     overflow:hidden;
     padding:0px 20px !important;
     margin:0;
@@ -282,6 +284,7 @@ h1#logo
 .items-leading
 {
         padding:0px 5px 10px 5px;
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome*/
         overflow:hidden;
         margin-bottom:10px
 }
@@ -309,6 +312,7 @@ h1#logo
 #top
 {
         margin:0 0 20px 0;
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden
 }
 
@@ -358,6 +362,7 @@ h1#logo
 
 .items-row
 {
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden;
         margin-bottom:10px !important;
 }
@@ -389,6 +394,7 @@ h1#logo
 
 #bottom
 {
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden
 }
 
@@ -876,6 +882,7 @@ ul.menu li.active ul li.active ul li a:link,
 {
         padding:0 5px;
         display:block;
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden
 }
 
@@ -1535,6 +1542,7 @@ dl.search-results dd.result-category
 .contact-image
 {
 	margin:10px 0;
+    /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
 	overflow:hidden;
 }
 
@@ -1580,6 +1588,7 @@ margin:20px 0 10px 0;
 span.contact-image
 {
     margin-bottom:10px;
+    /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
     overflow:hidden;
     display:block
 }
@@ -1820,6 +1829,7 @@ legend.element-invisible
         margin:0 auto;
         display:block;
         max-width:1020px;
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden
 }
 
@@ -2012,6 +2022,7 @@ margin-top:10px !important}
 /* newsflash horizontal */
 .newsflash-horiz
 {
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden;
         list-style-type:none !important;
         margin:0 5px!important;
@@ -2219,6 +2230,7 @@ button.validate
 .login-description,
 .logout-description
 {
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden;
                 padding-left:5px;
                 margin:20px 0 10px 0
@@ -2240,6 +2252,7 @@ button.validate
 
 ul.tabs
 {
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
     overflow:hidden;
     padding:0 !important;
     margin:0 !important
@@ -2308,6 +2321,7 @@ ul.tabs li a:focus
 {
         display:block;
         margin-bottom:20px;
+        /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
         overflow:hidden
 }
 
@@ -2476,6 +2490,7 @@ text-decoration:none
 #main ul.pagenav {
 	list-style-type:none;
 	padding:0;
+    /* 20151126 CMM. Evitar el mal funcionamiento del scroll en Chrome */
 	overflow:hidden
 }
 ul.pagenav li
