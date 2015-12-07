@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>Dynamic XML Sitemap</name>
+	<creationDate>September 2009</creationDate>
+	<author>Diana Scherff</author>
+	<copyright>Copyright (C) 2009-2010 Diana Scherff. All rights reserved.</copyright>
+	<authorEmail>webmaster@dianascherff.com</authorEmail>
+	<authorUrl>www.dianascherff.com</authorUrl>
+	<version>1.0.0</version>
+	<description>This module creates an updated XML sitemap for Google.</description>
+	<files>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+	</files>
+	<positions>
+		<position>dynamicxmls</position>
+	</positions>
+</install>

@@ -1,0 +1,3482 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201511 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2555                
+POS_VISITOR 34131               
+POS_DAY 107590              
+POS_DOMAIN 3565                
+POS_LOGIN 3802                
+POS_ROBOT 3957                
+POS_WORMS 5270                
+POS_EMAILSENDER 5401                
+POS_EMAILRECEIVER 5544                
+POS_SESSION 107848              
+POS_SIDER 108063              
+POS_FILETYPES 5679                
+POS_OS 5971                
+POS_BROWSER 6195                
+POS_SCREENSIZE 6960                
+POS_UNKNOWNREFERER 7034                
+POS_UNKNOWNREFERERBROWSER 8976                
+POS_ORIGIN 10201               
+POS_SEREFERRALS 10355               
+POS_PAGEREFS 10545               
+POS_SEARCHWORDS 13288               
+POS_KEYWORDS 14358               
+POS_MISC 2218                
+POS_ERRORS 15194               
+POS_CLUSTER 3658                
+POS_SIDER_404 15342               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20151106235927 86276 21937681 3584082301571
+FirstTime 20151101000052
+LastTime 20151106235927
+LastUpdate 20151107040001 13730 0 13730 0 0
+TotalVisits 1789                
+TotalUnique 1288                
+MonthHostsKnown 0                   
+MonthHostsUnknown 2067                
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 11 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 484 2254 58886714 181 248 1862389
+1 495 1819 48220706 495 595 9868047
+2 454 1504 40252381 213 244 2021329
+3 437 1259 32082594 451 471 8288041
+4 454 1381 40687698 883 971 8171666
+5 678 1294 33435728 680 841 11124881
+6 424 1112 32401036 164 253 3327115
+7 469 1179 30541349 606 798 10875968
+8 474 1605 41245907 222 310 2161622
+9 593 6078 107801253 375 487 2386238
+10 782 4997 96617237 404 457 3805897
+11 667 3545 70644735 182 210 1155202
+12 796 4550 94464563 304 1391 3311103
+13 598 3377 68760525 519 698 12807201
+14 972 3458 71266374 351 544 2865375
+15 528 3104 70331754 322 400 3497100
+16 614 4846 97672661 427 491 3962205
+17 620 4143 90796212 619 785 7175161
+18 622 3895 85703258 328 475 5051109
+19 614 3694 87586398 192 275 1713219
+20 575 3556 82054941 187 232 1768233
+21 556 3918 92709962 301 368 6677865
+22 592 3278 73357248 372 779 9667846
+23 557 2859 65417269 257 355 2619446
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 14055 72705 1612938503
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 32
+bot[+:,\.\;\/\\-] 4902 72006811 20151106234018 824
+mj12bot 754 18781216 20151106231811 73
+googlebot 613 7105675 20151106235830 14
+crawl 542 6293317 20151106230211 12
+yandex 182 1974817 20151106184640 13
+slurp 159 1689483 20151106232427 10
+robot 127 1693656 20151106233816 10
+phantom 108 2174694 20151103183855 0
+baiduspider 94 2234423 20151106233814 0
+unknown 57 16604 20151106233615 57
+commons\-httpclient 25 543792 20151106010247 0
+no_user_agent 25 542023 20151106175909 1
+spider 5 17131 20151106133505 3
+seznambot 4 30635 20151102180442 1
+sift 4 217700 20151102171652 0
+surveybot 2 8639 20151102192138 1
+cfnetwork 2 27064 20151106233138 0
+msnbot\-media 6 277429 20151105155104 3
+core 2 108961 20151104170416 0
+exabot 3 23347 20151106022331 1
+mediapartners\-google 7 61617 20151106092513 0
+ia_archiver 1 648 20151106090030 1
+mojeekbot 4 21329 20151106235604 2
+feedfetcher\-google 7 54605 20151106102722 0
+spiderman 44 463859 20151103170757 4
+python 1 7976 20151102210110 0
+heritrix 2 75880 20151104054432 0
+feedburner 25 199575 20151106082734 0
+java 5 37823 20151103134412 0
+archive\.org_bot 1 648 20151105172240 1
+webfilter 1 257 20151102003519 1
+sogou 2 8624 20151104131057 1
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 12
+eot 1 20318 0 0
+css 2785 18786380 0 0
+png 9145 10781992 0 0
+htm 1 922 0 0
+otf 1 30967 0 0
+php 223 1778067 0 0
+html 10659 342476758 0 0
+xml 2 1180 0 0
+js 1780 9013798 0 0
+jpg 36760 1088268148 0 0
+Unknown 3168 50092703 0 0
+gif 8180 91687270 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 16
+winlong 444
+winxp 5028
+win2000 13
+winvista 8031
+win95 9
+winunknown 284
+win2003 44
+unix 45
+winnt 3279
+linuxubuntu 55
+win98 2
+linux 7954
+macosx 11392
+winme 6
+Unknown 11426
+win2008 24693
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 51
+firefox28.0 48
+msie6.0 50
+firefox1.0.1 1
+firefox20.0 121
+chrome 31137
+firefox26.0 179
+firefox34.0 6
+firefox3.5.3 4
+firefox24.0 41
+firefox31.0 116
+msie8.0 190
+firefox6.0.2 303
+msie7.0 6236
+firefox40.1 46
+firefox16.0 3
+msie2.0 6
+firefox41.0 4529
+msie9.0 683
+firefox27.0 7
+Unknown 2215
+firefox11.0 995
+firefox32.0 1
+firefox17.0 3
+firefox40.0 64
+firefox42.0 735
+libwww 1
+opera 13
+firefox21.0 66
+firefox29.0 18
+firefox10.0.1 4
+firefox38.0 267
+msie5.5 9
+firefox12.0 23
+netscape0.6 2
+nokia 47
+firefox33.0 60
+firefox1.0 1
+firefox39.0 200
+mozilla 15563
+firefox37.0 60
+netscape5.0 7
+firefox14.0.1 3
+firefox5.0.1 1
+firefox3.6.28 1
+msie10.0 308
+msie 1
+firefox36.0 3
+firefox35.0 116
+firefox3.6.8 2
+firefox15.0.1 25
+safari 8185
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 32
+\ 20151102023236
+visionutils/0.2 20151104185830
+Svven-Summarizer 20151102015327
+Mozilla/5.0_(compatible;_coccoc/1.0;__http://help.coccoc.com/) 20151101152148
+TelegramBot_(like_TwitterBot) 20151102233429
+Mozilla/5.0_(Windows_Phone_8.1;_ARM;_Trident/7.0;_Touch;_rv:11.0;_IEMobile/11.0;_NOKIA;_Lumia_635)_like_Gecko 20151104165034
+Site24x7 20151106235927
+Xenu_Link_Sleuth/1.3.8 20151104131701
+HTTP_Request2/2.2.1_(http://pear.php.net/package/http_request2)_PHP/5.3.29 20151104175852
+Google_favicon 20151106224950
+Mozilla/5.0_() 20151103124508
+Mozilla/0.6_Beta_(Windows) 20151101155107
+SpamBayes/1.1a3__(Image) 20151103092813
+Mechanize/2.7.2_Ruby/2.0.0p481_(http://github.com/sparklemotion/mechanize/) 20151103100943
+Mozilla/5.0_(Android_5.0;_Mobile;_rv:41.0)_Gecko/41.0_Firefox/41.0 20151103074416
+Mozilla/5.0_eCairn-Grabber/1.0_(_http://ecairn.com/grabber) 20151105011824
+ltx71_-_(http://ltx71.com/) 20151106165252
+Mozilla/5.0_(compatible;_Embedly/0.2;__http://support.embed.ly/) 20151104212931
+Scrapy/1.0.3.post6_g2d688cd_(_http://scrapy.org) 20151104005257
+Typhoeus_-_https://github.com/typhoeus/typhoeus 20151102100121
+Mozilla/5.0_(Android;_Mobile;_rv:39.0)_Gecko/39.0_Firefox/39.0 20151102233835
+LWP::Simple/5.827_libwww-perl/5.833 20151105123030
+Mozilla/5.0_(compatible;_Embedly/0.2;_snap;__http://support.embed.ly/) 20151104212932
+Mozilla/5.0_(compatible;_Optimizer) 20151102142945
+facebookexternalhit/1.1_(_http://www.facebook.com/externalhit_uatext.php) 20151106174911
+ShortLinkTranslate 20151104123959
+Mozilla/5.0_(compatible;_Exploratodo/1.0;__http://www.exploratodo.com 20151104191730
+Mozilla/5.0_(compatible;_Chirp/1.0;__http://www.binarycanary.com/chirp.cfm) 20151106235924
+SendGrid_Event_API 20151106115645
+Scrapy/0.24.4_(_http://scrapy.org) 20151101222727
+Mozilla/4.0_(compatible;) 20151102163518
+MetaURI_API/2.0__metauri.com 20151103124424
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 22
+\ 20151102023236
+visionutils/0.2 20151104185830
+Microsoft_Office/16.0_(Microsoft_Outlook_Mail_16.0.6310;_Pro) 20151106194716
+Svven-Summarizer 20151102015327
+TelegramBot_(like_TwitterBot) 20151102233429
+Site24x7 20151106235927
+Xenu_Link_Sleuth/1.3.8 20151104131701
+HTTP_Request2/2.2.1_(http://pear.php.net/package/http_request2)_PHP/5.3.29 20151104175852
+Google_favicon 20151106224950
+Mechanize/2.7.2_Ruby/2.0.0p481_(http://github.com/sparklemotion/mechanize/) 20151103100943
+SpamBayes/1.1a3__(Image) 20151103092813
+ltx71_-_(http://ltx71.com/) 20151106165252
+Scrapy/1.0.3.post6_g2d688cd_(_http://scrapy.org) 20151104005257
+Typhoeus_-_https://github.com/typhoeus/typhoeus 20151102100121
+Microsoft_Office_Protocol_Discovery 20151105191153
+Dalvik/2.1.0_(Linux;_U;_Android_5.0.2;_SM-G850F_Build/LRX22G) 20151105182147
+facebookexternalhit/1.1_(_http://www.facebook.com/externalhit_uatext.php) 20151106174911
+ShortLinkTranslate 20151104123959
+SendGrid_Event_API 20151106115645
+Scrapy/0.24.4_(_http://scrapy.org) 20151101222727
+Dalvik/2.1.0_(Linux;_U;_Android_5.0.1;_SGH-I337M_Build/LRX22C) 20151103212630
+MetaURI_API/2.0__metauri.com 20151103124424
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 10998 22789
+From1 1 1
+From2 833 1364
+From3 181 228
+From4 2042 48323
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 4
+google 797 1328
+baidu 4 4
+ask 5 5
+yahoo 27 27
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 65
+https://t.co/mJavCw7QpO 16 16
+https://www.facebook.com 9 9
+http://erevenuemasters.com 8 8
+http://disqus.com/embed/comments/ 7 7
+http://www.bing.com/search 6 6
+http://googleads.g.doubleclick.net/dcrp/decrypt.html 5 5
+https://t.co/P72IlBYMsz 5 5
+http://tpc.googlesyndication.com/safeframe/1-0-2/html/container.html 5 5
+http://t.co/9PSE7QpC0a 5 5
+http://www.derivalya.es/Seccion1.asp 4 4
+http://designdevise.com 3 3
+http://www.yasni.es/natalia+lorenzo+galan/buscar+persona 0 1
+http://www.yugo-star.ru 3 3
+http://nataliagalan.com/blog/el-nuevo-gerente-spa-o-spa-manager-formacion-constante-clave-del-exito/ 1 1
+http://berlininsl.com 2 2
+http://www.escapadarural.com/blog 1 1
+http://www.valkiria-tk.ru 2 2
+http://komputers-best.ru 3 3
+http://dp.g.doubleclick.net/apps/domainpark/domainpark.cgi 1 1
+https://es-mg42.mail.yahoo.com/neo/launch 1 1
+http://blog.cesae.es/index.php/2012/03/ 0 1
+http://dobleconvistas.com/sobre-dobleconvistas/enlaces/ 1 1
+http://www.expreso.info/noticias/espana/48550_el_golf_un_deporte_estrategico_para_el_sector_del_turismo_en_espana 1 1
+http://brendbutik.ru 2 2
+https://www.linkedin.com 1 1
+http://es.reuters.com 1 1
+http://blockworld.ru 3 3
+http://doeco.ru 3 3
+http://vkontaktemusic.ru 3 3
+https://www.bing.com 0 1
+http://correo.terra.com/app/ 2 18
+http://www.shoppingmiracles.co.uk 3 3
+http://pim.register.it/appsuite/ 0 16
+http://carswithmuscles.com 2 2
+http://luckyshop.net.ua 3 3
+http://vozbujdenie.com 3 3
+http://bimatoprost-careprost.com 3 3
+http://www.derivalya.es/Seccion2.asp 3 3
+http://searches3.globososo.com/search/web 1 1
+http://android4fun.org 2 2
+http://android-vsem.org 3 3
+http://finstroy.net 3 3
+http://lost-alpha.ru 3 3
+http://neuvoo.ca/SEO/linkly/ui/edit-lead.php 2 2
+http://www.elconfidencialdigital.com/la_buena_vida/negocio/razones-rentable-emprender-turismo-rural_0_2450754912.html 2 2
+http://lnkd.in 3 3
+http://bodybuilding-shop.biz 3 3
+http://pizza-imperia.com 1 1
+http://dobleconvistas.com/revenue-management/ 3 3
+http://www.blogtrabajos.com 2 2
+http://rankings-analytics.com/try.php 2 2
+http://t.co/Qe36ynwOEL 3 3
+http://postgrado.ufv.es/oferta-academica/titulos-propios-con-instituciones-colaboradoras/ 3 3
+http://www.alpha-import.ru 3 3
+http://downloadsphotoshop.com 2 2
+http://blog.cesae.es/blog/por-que-incrementan-las-tarifas-en-lineas-aereas-y-bajan-en-hoteles 1 1
+http://xjrul.com 3 3
+http://sexytrend.ru 1 1
+http://m.facebook.com 4 4
+http://simplepooltips.com 2 2
+http://stariy-baku.com 3 3
+http://www.bing.com/images/search 0 12
+http://www.googleadservices.com/pagead/aclk 2 2
+http://derivalya.com 1 1
+http://burgerinmac.com.ua 2 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 24
+cursos+de+cocina+diferida 2
+preguntas+reven 2
+cesae 2
+escueladeturismo+direcci%a8%aenygesti%a8%aenhotelera-cesae 2
+blogdeturismo+gesti%a8%aenydirecci%a8%aenhotelera 2
+estrategia+competitiva+especializacion 1
+cursos+recepcionista+hotel+en+gandia 1
+ejemplos+liderazgo+en+hosteleria 1
+funciones+del+jefe+de+alojamiento+de+un+hotel 1
+organizacion+del+departamento+de+recepcion 1
+que+es+revenue 1
+liderazgo+de+diferenciaci%c3%b3n+en+una+empresa+gastronomica 1
+funciones+del+jefe+de+alojamiento 1
+como+debe+ser+el+area+de+recepcion 1
+que+es+la+restauracion+diferida 1
+cesae.es 1
+master+gestion+campos+de+golf+madrid 1
+http+//www.cesae.es/curso-de-posicionamiento-seo-y-sem-para-hoteles 1
+estrategias+competitivas+de+un+hotel 1
+http+//www.cesae.es/ 1
+organizacion+del+deparatamento+de+recepcion 1
+funcion+del+departamento+de+recepcion 1
+inportancia+de+una+empresa+hotelera 1
+cuanto+vale+un+curso+de+recepsionista+de+hotel 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 62
+de 15
+del 5
+hotel 4
+recepcion 4
+en 3
+un 3
+diferida 3
+cursos 3
+jefe 2
+es 2
+vale 1
+hotelera 1
+competitivas 1
+especializacion 1
+empresa 2
+departamento 2
+ejemplos 1
+http 2
+estrategia 1
+una 2
+gastronomica 1
+organizacion 2
+cesae.es 1
+madrid 1
+preguntas 2
+cuanto 1
+alojamiento 2
+escueladeturismo 2
+revenue 1
+gesti%a8%aenydirecci%a8%aenhotelera 2
+gandia 1
+estrategias 1
+que 2
+gestion 1
+area 1
+deparatamento 1
+como 1
+direcci%a8%aenygesti%a8%aenhotelera-cesae 2
+la 1
+funcion 1
+campos 1
+competitiva 1
+//www.cesae.es/ 1
+recepcionista 1
+cocina 2
+//www.cesae.es/curso-de-posicionamiento-seo-y-sem-para-hoteles 1
+ser 1
+hosteleria 1
+funciones 2
+golf 1
+master 1
+debe 1
+liderazgo 2
+blogdeturismo 2
+reven 2
+diferenciaci%c3%b3n 1
+inportancia 1
+cesae 2
+recepsionista 1
+el 1
+curso 1
+restauracion 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+206 538 2953047
+303 89 1780
+500 9 9147
+301 1613 3438598
+404 2713 3061428
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 321
+/index.php/tag/distribucion/ 1 -
+/wp-content/uploads/17.jpg 7 http://www.cesae.es/blog/la-importancia-de-la-flotacion-en-el-agua
+/wordpress/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-featured.png 94 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/images/mail/cesae-logo-neg.png 6 -
+/cursos-restauracion-y-hosteleria/ 2 -
+/store/administrator/ 5 -
+/index.php/tag/restaurante-de-hotel 2 -
+/wp-content/uploads/Sin-t%C3%ADtulo.png 1 -
+/index.php/tag/master-en-hosteleria/ 1 -
+/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-ifeed 1 -
+/executiveeducation/ 2 -
+/practica-operativa-del-revenue-management/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-archive.png 109 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/wp-content/uploads/11.jpg 1 -
+/master-revenue-management-comunicacion-turistica/ 1 -
+/programadireccionygestionrestauracion/ 3 -
+/masters-turismo-hosteleria/ 1 -
+/components/com_facileforms/libraries/jquery/uploadify.php/ 1 -
+/xmlrpc.php 1 -
+/modules/mod_ariimageslidersa/mod_ariimageslidersa.php/ 2 -
+/58-master-en-direccion-y-gestion-de-empresas-hoteleras-mdgh-full-time/247-mastergestionhotelera/ 1 -
+/index.php/admin 1 -
+/administrator/templates/bluestork/images/header/icon-48-menu-add.png 1 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/modules/mod_araticlhess/mod_araticlhess.php/ 2 -
+/76-executive-education/taller-de-upselling-y-crosselling-para-mandos-intermedios/629-curso-upselling-crosselling-hoteleria-mandosintermedios-programa/ 1 -
+/index.php/tag/formacion-gratuita/feed/ 1 -
+/blog/y-por-supuesto-ni-suene-que-vuelva-a-su-hotelcomment-page-1 2 -
+/language/includes.php/ 1 http://www.cesae.es/language/includes.php
+/index.php/tag/derivalya/ 1 -
+/wp-content/uploads/Recepcion.jpg 164 http://www.cesae.es/blog/la-recepcion-como-corazon-del-hotel
+/blog/hoy-vamos-a-los-toroscomment-page-1/ 1 -
+/instalaciones/ 2 -
+/marketinghotelerosocialmedia-programa 1 -
+/index.php/tag/economia-hotelera/ 1 -
+/news/wp-login.php/ 5 -
+/wp-login.php 3 http://cesae.es/wp-login.php
+/cursos-direccionygestion/ 2 -
+/FCKeditor/editor/filemanager/connectors/test.html/ 1 -
+/images/mail/20151030-banner-gestion-interna.jpg 6 -
+/images/articulos/dianaledo.jpg 42 http://www.cesae.es/master-en-direccion-y-gestion-hotelera-profesorado
+/programas-expertos/ 1 -
+/index.php/tag/demanda-hotelera/ 1 -
+/blog/lasegmentacion 1 -
+/modules/mod_media_style/mod_media_style.php/ 1 http://blog.cesae.es/modules/mod_media_style/mod_media_style.php
+/>/ 8 -
+/administrator/templates/bluestork/images/toolbar/icon-32-save-new.png 37 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/index.php/tag/revenue-restaurante/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-config.png 111 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/language/en-GB/en-GB.xml 1 -
+/shop/index.php/administrator/ 5 -
+/master-en-direccion-y-gestion-hotelera-profesorado/ 1 -
+/master-direccion-gestion-hotelera-programa/ 1 -
+/index.php/feed/atom/ 1 -
+/masterrevenuemanagementmarketingycomunicacionturistica-entidades-colaboradoras 1 -
+/m/curso-upselling-tecnicas-avanzadas-hoteleria/ 3 -
+/store/index.php/administrator/ 5 -
+/administrator/templates/bluestork/images/header/icon-48-category.png 21 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/blog/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turisticocomment-page-1 1 -
+/curso-de-gestion-comecial-y-revenue-management-en-restauracion 41 -
+/index.php/tag/cursos-gestion-empresarial/ 1 -
+/adminsitrator 1 -
+/images/articulos/antonioalcantara.jpg 44 http://www.cesae.es/master-en-direccion-y-gestion-hotelera-profesorado
+/experto-en-social-media-y-community-manager-en-turismo-objetivos 2 -
+/wp-content/uploads/Foto1-683x1024.jpg 6 http://www.cesae.es/blog/descubre-el-masaje-con-palos-de-bambu-para-un-cuerpo-10
+/administrator/templates/bluestork/images/toolbar/icon-32-trash.png 111 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/index.php/tag/benchmarking/ 1 -
+/modules/mod_twit/mod_twit.php/ 1 http://blog.cesae.es/modules/mod_twit/mod_twit.php
+/blog/guia-de-una-buena-estructura-contablecomment-page-1/ 1 -
+/index.php/feed/ 5 -
+/contacto/ 2 -
+/programa-superior-en-direccion-y-gestion-wellness-a-spa-antiguos-alumnos/ 1 -
+/cursos-revenuemanagement/ 5 -
+/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresa 1 -
+/modules/mod_ariimageslider/mod_ariimageslider.php/ 1 -
+/Editor/editor/filemanager/connectors/test.html/ 1 -
+/wp-content/uploads/Hoteles.jpg 1 -
+/master-direccion-y-gestion-empresas-hoteleras-titulacion 1 -
+/blog/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymescomment-page-1 2 -
+/images/articulos/ignaciolazaroestrada.jpg 3 -
+/administrator/templates/bluestork/images/toolbar/icon-32-new.png 112 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/index.php/tag/gestion-de-la-reputacion-online/ 1 -
+/blog/erase-una-vez-un-hotelcomment-page-1 1 -
+/index.php/2010/07/un-channel-manager-en-tu-movil 1 -
+/images/articulos/javiercarreira.jpg 21 -
+/images/mail/20151030-banner-pdgr.jpg 6 -
+/cursos-sumilleria/ 5 -
+/blog/pautas-para-rentabilizar-un-spa-de-la-base-a-la-gestion-comercialcomment-page-1 2 -
+/wp-content/uploads/21.jpg 4 http://www.cesae.es/blog/la-importancia-de-la-flotacion-en-el-agua
+/index.php/tag/fbml/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-save-copy.png 37 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/47-executive-education/practica-operativa-del-revenue-management/442-practica-operativa-del-revenue-management-programa/ 1 -
+/curso-gestion-clientes-20-hoteleria-programa 1 -
+/administrator/templates/bluestork/images/header/icon-48-config.png 1 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/wp-content/uploads/19.jpg 27 http://www.cesae.es/blog/las-claves-de-menu-engineering
+/48-executive-education/marketing-hotelero-optimizando-social-media/499-marketinghotelerosocialmedia-programa/ 1 -
+/wp-content/uploads/12.jpg 1 -
+/marketinghotelerosocialmedia 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-save.png 38 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/practicasenempresa/ 2 -
+/profesorado/ 2 -
+/images/mail/20151030-boton-verde.jpg 6 -
+/images/articulos/saraaliseda.jpg 17 http://www.cesae.es/master-en-direccion-y-gestion-hotelera-profesorado
+/47-executive-education/practica-operativa-del-revenue-management/442-practica-operativa-del-revenue-management/ 1 -
+/blog/descubre-el-mejor-softwarte-hotelero-de-distribucion-de-inventario-y-tarifasfeed/ 1 -
+/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-v/ 1 -
+/index.php/tag/consultoria-de-formacion 2 -
+/apple-touch-icon-76x76.png 1 -
+/blog/nuevas-formas-para-entender-e-influenciar-al-consumidorcomment-page-1/ 1 -
+/components/com_creativecontactform/assets/js/creative-mousewheel.js 1 -
+/programadireccionygestionwellnessyspa/ 1 -
+/master-direccion-gestion-hotelera-objetivos/ 1 -
+/administrator/components/com_tagmeta/images/tagmeta.png 123 http://www.cesae.es/administrator/index.php
+/images/articulos/esperanzadominguez.jpg 5 -
+/www.cesae.es/ 2 -
+/index.php/tag/formacion-gestion-empresarial/feed/ 1 -
+/master-pasteleria-profesional/ 3 -
+/blog/el-analisis-de-toprural-y-rural-guest-de-chema-herrerocomment-page-1 1 -
+/blog/que-es-revenue-management-indicadores-beneficios-y-como-aplicarlo, 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-edit.png 112 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/administrator/templates/bluestork/images/header/icon-48-menumgr.png 3 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/components/com_search/views/search/tmpl/tmpl.php/ 1 -
+/href 1 -
+/index.php/tag/precios-y-ocupacion-hoteles-2010/ 1 -
+/index.php/tag/sistema-de-gestion-de-satisfaccion-del-cliente/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-refresh.png 18 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/curso-gestion-clientes-20-hoteleria-metodologia 1 -
+/cursosturismo/ 2 -
+/revenuemanagement-antiguos-alumnos/ 1 -
+/apple-touch-icon.png 23 -
+/blog/deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantescomment-page-1 1 -
+/images/articulos/alvarojosecotainasanchez.jpg 5 -
+/administrator/templates/bluestork/images/toolbar/icon-32-apply.png 38 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/blog/la-recepcion-como-corazon-del 2 -
+/imagenes_bd/Logo%20Marca.JPG 2 -
+/shop/admin/ 5 -
+/components/com_simplephotogallery/js/main.js 1 -
+/blog/descubre-las-novedades-del-revenue-manager-y-ecommerce-en-linkedingfeed 1 -
+/master-en-turismo/ 2 -
+/wp-content/uploads/13.jpg 1 http://www.cesae.es/blog/el-teletrabajo-una-herramienta-en-auge
+/index.php/tag/empresa-hotelera/ 1 -
+/mobile/tendenciasyevolucionfuturamercadowellnessyspa-programa/ 2 -
+/curso-upselling-crosselling-hoteleria 3 -
+/blog/ 2 http://blog.cesae.es/blog/
+/index.php/tag/invattur/ 1 -
+/index.php/tag/enoturismo 2 -
+/site_admin 1 -
+/wp/ 1 -
+/index.php/2010/06/erase-una-vez 2 -
+/8-executive-education/17-cursocomunicacion30enhoteles/ 1 -
+/46-executive-education/tecnicas-para-maximizar-la-comunicacion-30-en-hoteles/502-tecnicas-para-maximizar-la-comunicacion-30-en-hoteles/ 1 -
+/index.php/tag/tutores/ 1 -
+/Admin/fCKeditor/editor/filemanager/connectors/test.html/ 1 -
+/index.php/2010/07/marketing-gastronomico 2 -
+/apple-touch-icon-precomposed.png 19 -
+/relacionesinstitucionales/ 2 -
+/index.php/tag/acabados-y-suelo-iluminacion/ 1 -
+/programadireccionygestionrestauracion-antiguos-alumnos 2 -
+/administrator/templates/bluestork/images/toolbar/icon-32-cancel.png 38 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/curso-de-posicionamiento-seo-y-sem-para-hoteles/ 3 -
+/admin 1 -
+/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresacomment-page-1 2 -
+/curso-de-revenue-managementbit.ly/JhTZYa/ 1 -
+/wp-content/uploads/15.jpg 1 -
+/images/articulos/nataliagalancomin.jpg 6 -
+/master 1 -
+/shop_admin 1 -
+/antiguosalumnos/ 1 -
+/master-direccion-gestion-hotelera/ 2 -
+/index.php/tag/matarromera 2 -
+/blog/guia-de-una-buena-estructura-contablecomment-page-1 1 -
+/blog/informate-de-las-ultimas-novedades-sobre-nuestros-cursoscomment-page-1 1 -
+/ 1 -
+/blog/5-puntos-clave-para-descubrir-un-hotel-con-depresioncomment-page-1 1 -
+/images/articulos/antoniosantos.jpg 6 -
+/images/articulos/saraleongarcia.jpg 3 -
+/modules/mod_articless/mod_articless.php/ 2 -
+/blog/ultimas-novedades-en-ruralkeacomment-page-1/ 1 -
+/blog/descubre-el-foro-hosteltur-del-que-al-comocomment-page-1 1 -
+/practica-operativa-del-revenue-management 28 -
+/index.php/2010/07/rentabilizar-un-spa-de-la-base-a-la-gestion-comercial 4 -
+/master-direccion-gestion-hotelera-admision/ 1 -
+/blog/informate-de-las-ultimas-novedades-sobre-nuestros-cursosfeed/ 1 -
+/cursos 1 -
+/modules/mod_msn/mod_msn.php/ 1 http://blog.cesae.es/modules/mod_msn/mod_msn.php
+/shop/index.php/admin/ 5 -
+/wp-content/uploads/f.jpg 2 -
+/wp-content/uploads/Corazon2.png 65 http://www.cesae.es/blog/la-recepcion-como-corazon-del-hotel
+/shop/administrator/ 5 -
+/cursoswellnesyspa/ 2 -
+/administrator/templates/bluestork/images/toolbar/icon-32-delete.png 1 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/practica-operativa-del-revenue-management-programa 1 -
+/curso-experto-en-maitre/ 3 http://blog.cesae.es/curso-experto-en-maitre
+/index.php/tag/cesae/feed/ 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-publish.png 111 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/experto-en-social-media-y-community-manager-en-turismo-metodologia 1 -
+/apple-touch-icon-76x76-precomposed.png 1 -
+/cursosdehoteleria/ 3 -
+/curso-upselling-tecnicas-avanzadas-hoteleria/ 2 -
+/index.php/tag/formacion-online/ 1 -
+/images/mail/20151030-banner-gestion-comercial.jpg 6 -
+/components/com_sexycontactform/assets/js/sexy-mousewheel.js 1 -
+/Fckeditor/editor/filemanager/browser/default/connectors/test.html/ 1 -
+/index.php/administrator 1 -
+/48-executive-education/marketing-hotelero-optimizando-social-media/621-marketinghotelerosocialmedia-profesorado/ 1 -
+/modules/mod_araticlws/mod_araticlws.php/ 2 -
+/blog/que-es-checklist-revenue-management-en-espacios-funcionales-i 5 http://www.cesae.campuslearning.es/EscritorioPrincipal.asp
+/administrator/templates/bluestork/images/toolbar/icon-32-default.png 2 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/wp-content/uploads/Foto-21.jpg 4 -
+/wp/wp-login.php/ 5 -
+/index.php/tag/escuela-de-negocios 2 -
+/support/wp-login.php/ 5 -
+/htz4l56y15nvsi6v 1 -
+/Admin/fckeditor/editor/filemanager/browser/default/connectors/test.html/ 1 -
+/ma 1 -
+/administrator/templates/bluestork/images/toolbar/icon-32-help.png 151 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/get.php/media/dhl/.htaccess 1 -
+/Editor/editor/filemanager/browser/default/connectors/test.html/ 1 -
+/master-maitre-sumiller-profesional/ 3 -
+/programa-superior-en-revenue-management-y-comunicacion-online-20/ 1 -
+/get.php/media/dhl/info.php/ 1 -
+/index.php/tag/fundacion-tripartita/feed/ 1 -
+/index.php/2010/09/derivalya-empresa-del-mes-en-la-anei 2 -
+/index.php/2010/09/puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion 1 -
+/images/mail/20151030-miniboton.jpg 6 -
+/node_modules/vtt.js/dist/vtt.js 6 -
+/modules/mod_xsystemx/mod_xsystemx.php/ 1 http://blog.cesae.es/modules/mod_xsystemx/mod_xsystemx.php
+/entidadescolaboradoras/ 1 -
+/modules/mod_ariimagesws/mod_ariimagesws.php/ 2 -
+/blog/ventajas-del-bufe-en-la-restauracionfeed/ 1 -
+/tecnicas-para-maximizar-la-comunicacion-30-en-hoteles-metodologia 1 -
+/index.php/category/spa/feed/ 1 -
+/index.php/tag/marketing-turismo-rural 2 -
+/store/admin/ 5 -
+/index.php/tag/cesae-2-0/ 1 -
+/m/tendenciasyevolucionfuturamercadowellnessyspa-programa/ 2 -
+/tecnicas-para-maximizar-la-comunicacion-30-en-hoteles 16 -
+/master-direccion-gestion-hotelera-practicas-en-empresas/ 2 -
+/programadireccionygestionhotelera/ 1 -
+/index.php/tag/formacion-desarrollo-directivo 2 -
+/tecnicas-para-maximizar-la-comunicacion-30-en-hoteles-objetivos 1 -
+/images/mail/20151030-Boton-Verde..jpg 1 -
+/la-optimizacion-comercial-centro-wellness-spa-antiguos-alumnos 1 -
+/curso-gestion-clientes-20-hoteleria 2 -
+/administrator/components/com_spidercalendar/spidercalendar.xml 1 -
+/images/mail/cabecera__20150302_p_1.jpg 1 -
+/masterdireccionygestionempresasturisticas-entidades-colaboradoras 1 -
+/wp-content/uploads/1.jpg 3 -
+/index.php/tag/fidelizacion 2 -
+/businesstourismschool/ 2 -
+/cesaeenfiturbyturijobsfeed 1 -
+/programacontroldegestionempresarial-programa/blog.cesae.es 1 -
+/yporsupuestonisueeconquevuelvaasuhotel 1 -
+/blog/elteletrabajounaherramientaenauge 1 -
+/blog/descubre-la-problematica-del-todo-incluidocomment-page-1 1 -
+/browserconfig.xml 4 -
+/store/index.php/admin/ 5 -
+/programadireccionygestionhotelera-antiguosalumnos/ 1 -
+/modules/mod_mapsapi/mod_mapsapi.php/ 1 http://blog.cesae.es/modules/mod_mapsapi/mod_mapsapi.php
+/index.php/category/gestion-empresarial/feed/ 1 -
+/store_admin 1 -
+/index.php/tag/gestion-operativa 2 -
+/administrator/templates/bluestork/images/toolbar/icon-32-checkin.png 111 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/images/mail/20151030-banner-organizacion.jpg 6 -
+/.well-known/autoconfig/mail/config-v1.1.xml 1 -
+/modules/mod_joomlasec/mod_joomlasec.php/ 1 http://blog.cesae.es/modules/mod_joomlasec/mod_joomlasec.php
+/wp-content/uploads/Foto-11.jpg 5 -
+/images/mail/miniboton-verde.jpg 6 -
+/apple-touch-icon-120x120.png 4 -
+/administrator/templates/bluestork/images/toolbar/icon-32-unpublish.png 111 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/wordpress/wp-login.php/ 5 -
+/expertouniversitarioenrecepciondehoteles-entidadescolaboradoras 1 -
+/images/.jindex.php/ 2 -
+/mdgh-master-en-direccion-y-gestion-de-empresas-hoteleras-executive/ 1 -
+/images/mail/20151030-banner-restauracion.jpg 6 -
+/blog/definiciones-de-turismo-hacer-turismo-implica-viajarcomment-page-1 2 -
+/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresafeed/ 1 -
+/blog/wp-login.php 1 -
+/index.php/tag/marketing 2 -
+/apple-touch-icon-120x120-precomposed.png 4 -
+/cursos-cocina/ 3 -
+/.config.php 1 -
+/www.cesae.es 1 -
+/templates/system/css/template.css 1 -
+/institucion/ 3 -
+/index.php/tag/foro-hosteltur/ 2 http://blog.cesae.es/index.php/tag/foro-hosteltur/
+/curso-de-experto-en-revenue-management-hotelero/ 2 -
+/cursos-pasteleria/ 5 -
+/modules/mod_rssemailer/mod_rssemailer.php/ 1 http://blog.cesae.es/modules/mod_rssemailer/mod_rssemailer.php
+/images/post.php/ 1 -
+/administrator/templates/bluestork/images/header/icon-48-article.png 94 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/images/banners/cache.php/ 1 -
+/bolsatrabajo/ 2 -
+/index.php/tag/perspectivas-2011/ 1 -
+/programasgestionempresarial/ 2 -
+/index.php/tag/hoteles/feed/ 1 -
+/administrator/templates/bluestork/images/header/icon-48-article-add.png 30 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/cursos-hosteleria/ 2 -
+/wp-content/uploads/Foto-3.jpg 3 -
+/administrator/templates/bluestork/images/header/icon-48-extension.png 1 http://www.cesae.es/administrator/templates/bluestork/css/template.css
+/curso-de-revenue-managementcomment-page-1 1 -
+/components/com_gglms/js/utils.js 1 -
+/faqs-new/wp-login.php/ 5 -
+/index.php/category/hoteleria/feed/ 1 -
+/blog/todo-incluido-la-gran-amenaza-o-la-oportunidad-perfecta 1 -
+/blog/robots.txt 1 -
+/.cpanel_config.php 1 -
+/index.php/sobre-nosotros/feed/ 1 -
+/antiguosalumnos-masterdirecciongestionempresashoteleras 1 -
+/blog/cesae-alumnos-y-clientescomment-page-1/ 1 -
+/wp-content/uploads/1-1024x1017.jpg 9 http://www.cesae.es/blog/como-debe-ser-el-departamento-de-recepcion-frente-al-cliente
+/.git/config/ 1 -
+/wp-content/uploads/Foto.jpg 9 http://www.cesae.es/blog/se-un-experto-en-cocina-diferida-el-uso-del-a-tecnologia-para-facilitar-el-trabajo
+/images/articulos/ruthlorenzo.jpg 10 -
+/index.php/2012/09/recepcion-es-mucho-mas-que-recibir%E2%80%A6/ 1 -
+/components/com_sobipro/usr/templates/usbydesign/js/alpha.js 1 -
+/master-cocina-profesional/ 2 -
+/images/mail/20151030-banner-excelencia.jpg 6 -
+/index.php 8 -
+/components/com_guru/js/buy.js 1 -
+/images/mail/20151030-banner-tendencias.jpg 6 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 2067
+146.185.16.14 8561 8561 324804340 20151106235924 20151106000024 /
+72.5.230.111 562 562 0 20151106235927 20151106000702 /
+136.243.92.7 363 466 8259473 20151102142945
+80.224.2.184 333 904 6154420 20151106144738
+192.151.154.130 222 222 2270845 20151104055910
+89.167.129.51 107 615 4629990 20151106140241
+62.15.51.32 98 1867 18188161 20151106151621
+83.41.251.192 66 292 7341869 20151106190255
+88.0.112.247 57 280 1551410 20151106224704
+80.31.29.250 55 140 3260512 20151106164540
+201.252.45.89 0 1 983315 
+85.51.162.236 1 28 332736 20151102085942
+52.29.65.199 1 3 48188 20151102015326
+66.220.156.106 0 2 130471 
+163.117.51.120 2 37 352635 20151102100012
+83.57.61.112 0 2 37124 
+79.144.237.3 0 1 111184 
+131.253.26.245 0 1 499 
+220.181.108.116 1 1 47707 20151104194127
+123.125.71.41 2 2 75880 20151103134637
+88.6.127.201 6 65 1699850 20151101135944
+65.55.218.63 0 1 8153 
+90.77.66.36 4 87 2056212 20151104225941
+91.117.211.139 2 59 1332185 20151102193543
+217.27.250.160 2 46 1030430 20151102110034
+31.13.102.126 0 1 89981 
+5.9.94.207 3 3 162403 20151105165913
+181.64.182.160 0 1 87446 
+148.0.109.132 1 36 272521 20151105011941
+90.71.161.96 2 2 15952 20151102091904
+190.238.223.207 6 56 1348503 20151104130528
+186.7.154.121 0 2 165700 
+186.151.37.46 0 1 226676 
+81.184.137.228 0 1 71040 
+37.10.157.170 1 28 334203 20151104200122
+83.43.216.107 2 55 1261053 20151106112445
+66.249.83.237 1 18 1169909 20151101222706
+81.45.26.181 4 184 4090416 20151106183124
+62.37.21.7 1 45 1022454 20151104124226
+123.125.71.107 4 4 73875 20151106053617
+173.252.112.118 0 1 37772 
+189.168.88.43 2 55 1261316 20151103041354
+47.60.35.233 1 36 319276 20151103011659
+123.125.71.82 1 1 37940 20151106073522
+62.23.46.20 0 52 486500 
+83.32.94.158 2 55 1261177 20151103180150
+148.255.80.137 1 36 342587 20151102024220
+123.125.71.109 1 1 7991 20151106073521
+195.55.196.1 1 36 319275 20151103091717
+156.35.225.78 2 55 1260634 20151104133240
+83.44.114.254 1 36 284752 20151102181056
+81.47.170.109 0 52 852338 
+31.13.97.115 0 1 79610 
+173.252.90.245 0 6 534383 
+80.35.76.87 0 16 400318 
+31.13.102.117 0 1 85026 
+186.176.128.55 0 16 414251 
+66.220.156.99 0 1 38035 
+187.160.80.15 0 1 983315 
+62.204.214.47 10 63 1376318 20151105162720
+201.221.123.46 4 60 1343807 20151103193742
+46.222.162.50 2 64 507837 20151101025243
+89.130.133.73 0 1 86371 
+190.181.25.222 2 58 1277455 20151104165109
+167.89.125.226 1 1 4 20151104093331
+199.30.24.234 0 28 696822 
+5.224.174.46 2 56 1275731 20151103152651
+220.181.108.187 2 2 15982 20151104104652
+83.57.200.34 2 58 1418383 20151101192023
+87.217.182.160 0 26 486500 
+79.153.24.100 2 37 332488 20151105195821
+173.252.90.234 0 6 476780 
+66.249.83.241 0 15 350756 
+85.49.173.84 0 1 111184 
+91.126.92.242 1 36 284751 20151101095629
+186.180.179.14 0 1 40490 
+167.89.126.65 1 1 4 20151103093513
+186.71.166.218 0 1 4105 
+80.103.238.50 1 45 1022454 20151104004216
+168.98.55.15 4 52 1185314 20151103202926
+83.49.99.76 4 76 759784 20151105001024
+190.42.17.55 0 1 14130 
+31.3.112.3 0 1 9982 
+123.125.71.32 1 1 37940 20151104003605
+88.10.5.47 2 56 1261771 20151106223741
+144.76.153.198 6 6 291434 20151106021219
+83.46.96.2 6 231 5121011 20151103195919
+173.252.90.103 0 1 87321 
+85.84.128.158 2 56 1275731 20151104200654
+83.44.35.42 3 3 162678 20151103204433
+47.60.39.57 2 38 450479 20151101155140
+190.0.27.194 2 59 1332185 20151104031058
+31.4.220.9 0 16 420635 
+46.151.52.35 1 1 37940 20151101064219
+186.86.220.114 4 58 1304159 20151103150937
+186.167.242.8 2 55 1260887 20151106000109
+195.55.14.126 0 16 397784 
+88.25.243.17 3 93 2053199 20151103124820
+173.252.73.109 0 2 119715 
+31.13.113.84 0 2 164636 
+186.37.202.162 2 56 1213588 20151103233404
+179.39.80.150 0 1 26961 
+83.50.117.58 1 9 139824 20151103203643
+195.235.49.186 2 56 1275735 20151102173127
+37.29.191.38 0 31 970237 
+79.151.69.24 1 45 1022454 20151105011558
+189.214.2.220 2 56 1291577 20151104042601
+80.33.70.72 0 16 397784 
+87.111.241.137 0 16 414251 
+47.63.170.101 2 55 1260172 20151103235920
+66.220.146.29 0 10 815878 
+90.164.18.43 1 46 1022604 20151102113124
+66.249.83.233 1 20 512109 20151104164237
+37.35.217.214 1 78 959006 20151101144838
+46.222.156.167 3 62 1378001 20151102191112
+89.108.107.118 1 1 37823 20151101164217
+83.39.211.213 2 58 1332037 20151106151706
+31.13.97.102 0 1 40490 
+104.236.120.134 21 21 243517 20151101110742
+190.201.239.114 4 104 2516164 20151104010219
+201.220.235.15 0 26 764220 
+93.43.222.4 1 45 1022454 20151106200901
+61.135.190.103 2 2 18150 20151105184002
+123.125.71.36 5 5 72099 20151106204429
+88.0.13.255 0 16 414251 
+213.37.27.150 0 1 0 
+167.89.125.230 1 1 4 20151103100816
+90.163.8.154 1 45 1022454 20151104233635
+190.64.142.115 2 59 1332185 20151105120516
+176.83.190.4 0 16 414251 
+167.160.44.86 1 1 37823 20151105024202
+176.83.56.178 1 36 339659 20151101181939
+94.229.197.92 1 35 358270 20151103152221
+54.175.209.193 8 8 407173 20151106165252
+173.252.105.118 0 1 86371 
+173.252.122.119 0 5 170019 
+167.89.125.252 2 2 8 20151103215953
+195.53.121.106 4 78 960540 20151106112440
+79.145.183.110 7 61 1505426 20151104200204
+213.27.141.198 1 39 399565 20151105153159
+52.0.89.236 1 1 37940 20151102100959
+193.33.2.112 4 57 1271782 20151102121617
+24.114.58.151 1 1 71 20151103231607
+187.188.148.238 1 36 284751 20151106182116
+80.28.196.73 0 134 2643359 
+220.181.108.140 4 4 91862 20151106194834
+85.91.92.173 0 1 38550 
+103.233.81.188 1 36 355673 20151105040711
+181.211.230.121 2 55 1260384 20151101151859
+178.137.91.140 10 10 379512 20151106043200
+83.43.144.77 2 58 1332037 20151103111448
+216.223.27.53 0 1 6850 
+82.130.178.88 0 16 414251 
+200.125.245.124 0 1 983315 
+220.181.108.108 1 1 37940 20151105134237
+213.229.189.187 5 44 655340 20151103172705
+201.226.118.87 2 55 1261293 20151103211353
+212.97.160.87 1 1 0 20151104131701
+80.25.89.252 15 105 1686127 20151105125702
+90.174.131.1 9 65 1305524 20151105062400
+2.139.14.71 0 16 414251 
+201.205.143.182 0 12 301010 
+159.237.12.82 1 37 339806 20151102171658
+62.151.159.74 0 1 73403 
+173.252.88.86 0 2 173692 
+37.132.7.93 0 16 414251 
+212.40.252.65 1 45 1022454 20151102135559
+83.56.31.206 0 16 407168 
+181.64.192.216 4 60 1344850 20151101033837
+195.93.211.65 1 42 355577 20151102173600
+188.78.149.242 1 36 284753 20151105222852
+119.147.146.189 2 3 20761 20151102221924
+213.231.64.86 4 53 1281035 20151105162355
+167.89.125.241 1 1 4 20151105021314
+173.252.105.119 0 1 79610 
+173.252.79.118 0 1 36850 
+95.121.13.4 2 37 355637 20151103131426
+190.198.254.103 2 55 1260887 20151103190218
+173.252.74.110 0 1 38035 
+123.125.71.75 2 2 85647 20151105114950
+90.69.81.146 8 50 803035 20151101201902
+84.120.18.212 5 56 1414463 20151106121441
+193.144.12.130 1 39 399564 20151103181206
+173.252.79.116 0 2 39141 
+81.33.206.106 1 35 321091 20151104070045
+80.39.50.225 0 16 414251 
+83.45.171.143 4 54 1238740 20151105185432
+161.22.141.3 1 35 269550 20151102220504
+123.125.71.114 1 1 37940 20151106053618
+63.245.46.132 2 56 1344551 20151103000032
+190.208.190.249 2 56 1275731 20151104022215
+92.58.184.155 2 37 302252 20151104120449
+77.236.206.11 1 1 7991 20151106175909
+173.252.115.89 0 7 315374 
+220.181.108.161 3 3 26168 20151105004209
+77.231.229.168 0 1 117868 
+83.223.122.23 1 1 54939 20151103092919
+188.76.89.196 0 2 76935 
+88.2.238.106 0 37 655825 
+95.20.211.193 0 19 464709 
+173.252.89.57 0 15 803086 
+200.25.132.118 0 3 21009 
+131.107.0.118 1 1 37960 20151104102815
+37.14.135.213 1 36 290664 20151103214109
+81.7.15.115 1 1 4575 20151101020111
+84.77.23.157 1 1 7991 20151105121506
+173.252.112.108 0 1 38035 
+195.76.183.249 0 16 414251 
+123.125.71.18 1 1 37940 20151103223439
+173.252.73.123 0 1 125247 
+88.2.170.65 0 47 454851 
+31.13.97.118 0 1 87321 
+213.143.50.111 1 36 284752 20151103154027
+181.115.128.8 2 57 1275878 20151105035025
+52.21.137.163 1 1 13394 20151102144623
+187.189.147.147 0 1 4105 
+220.181.108.178 2 2 45931 20151105014730
+123.125.71.21 2 2 18177 20151103124135
+85.49.63.112 1 35 358274 20151104224924
+83.138.193.6 0 3 1109109 
+88.2.213.113 2 56 1291577 20151105132545
+193.152.91.48 0 16 414251 
+31.4.179.187 0 16 414251 
+88.1.10.82 1 36 339660 20151102174150
+220.181.108.104 2 2 55698 20151104094658
+188.85.207.134 2 72 709618 20151105185608
+70.39.157.192 11 11 529987 20151106122125
+84.127.237.188 0 1 4105 
+91.146.101.11 0 5 4806 
+87.219.183.75 0 42 900751 
+176.83.110.76 7 56 1293894 20151102012421
+176.83.58.203 0 16 414251 
+62.82.81.80 2 37 302303 20151101130729
+81.39.217.150 0 1 102633 
+181.141.23.154 2 55 1261316 20151106203757
+173.252.89.56 0 20 867267 
+85.53.149.5 0 1 111184 
+195.77.128.143 1 41 344180 20151105144629
+85.49.206.122 2 50 1090757 20151105184232
+188.77.10.158 6 54 1136808 20151101161502
+80.31.111.89 0 26 486500 
+220.181.108.157 3 3 113820 20151106204859
+189.219.121.160 1 35 257667 20151102032045
+220.181.108.154 3 3 23973 20151106174521
+173.252.88.247 0 6 483221 
+173.252.122.122 0 6 255400 
+173.252.88.248 0 5 112021 
+83.40.127.248 1 35 269550 20151102213741
+173.252.113.118 0 12 628715 
+86.16.49.120 2 57 1275882 20151104153620
+66.220.146.27 0 6 487391 
+190.202.17.26 2 55 1260887 20151106003323
+193.144.12.226 6 112 2532835 20151105153413
+95.60.254.118 0 52 486500 
+173.252.90.230 0 4 310109 
+83.60.157.101 1 1 37960 20151101134436
+66.249.93.159 3 66 2515048 20151106080606
+217.217.130.203 2 37 298313 20151103184810
+85.59.82.104 14 68 1543552 20151101222446
+31.13.113.66 0 3 251957 
+66.220.145.151 0 3 224343 
+217.164.130.100 1 1 7976 20151104130507
+188.40.112.210 6 6 283350 20151106171549
+85.59.135.250 1 45 1022454 20151103112941
+167.89.125.236 1 1 4 20151105233632
+190.218.190.66 4 61 1390161 20151101130014
+187.206.185.127 0 1 4105 
+190.85.159.36 2 55 1261316 20151106210205
+173.252.73.113 0 1 89981 
+37.187.129.166 1 1 4575 20151101011259
+195.57.22.33 15 121 2932233 20151106160450
+189.168.230.96 0 1 33002 
+213.143.48.86 2 49 1068419 20151103175531
+108.178.117.34 2 56 1460145 20151104012604
+200.141.246.130 0 1 40490 
+95.144.37.59 2 2 15967 20151106190402
+31.13.102.105 0 1 86371 
+62.24.252.133 6 8 330179 20151104235447
+189.250.252.174 0 1 14130 
+69.171.230.103 0 1 37772 
+199.30.25.190 0 28 792096 
+176.83.73.14 0 16 414251 
+173.252.88.95 0 2 127753 
+62.42.3.70 0 26 429963 
+181.64.225.56 0 1 19289 
+190.200.47.228 2 55 1260887 20151104192331
+83.60.185.65 0 1 17835 
+173.252.88.87 0 1 37772 
+217.160.127.242 1 1 13574 20151103153220
+74.112.131.242 1 1 13407 20151103124506
+2.138.205.95 9 66 3557410 20151102102904
+66.220.146.30 0 6 548863 
+188.79.63.172 3 39 381382 20151103130026
+81.34.23.137 4 39 320708 20151103210635
+220.181.108.115 2 2 45931 20151102214644
+173.252.90.241 0 7 609740 
+187.144.175.77 0 1 14130 
+91.200.12.143 4 4 190477 20151102183943
+178.137.82.133 3 3 114225 20151105212204
+157.56.198.206 0 70 1825610 
+195.77.92.234 0 16 414251 
+190.211.137.143 0 1 14130 
+173.252.80.113 0 4 3499 
+82.158.47.142 2 55 1259505 20151101224323
+194.224.116.202 2 55 1259870 20151104103926
+187.188.191.98 2 41 464194 20151105032349
+200.55.183.74 0 1 20157 
+89.141.74.144 1 36 284753 20151104211125
+52.91.158.199 0 1 14254 
+131.253.25.143 0 11 157360 
+181.66.240.171 0 8 6924 
+2.139.236.24 0 26 486500 
+185.38.249.55 1 1 37940 20151102095824
+65.55.210.30 0 17 644772 
+195.76.149.65 9 126 2218865 20151104120152
+217.125.201.209 1 37 339808 20151102220307
+131.253.25.151 0 1 8047 
+213.236.30.146 1 52 409093 20151105134115
+149.154.167.161 1 1 13757 20151102233429
+86.172.171.196 1 52 733528 20151104214537
+93.186.202.253 1 1 56441 20151103082329
+193.145.230.8 4 58 1272907 20151105190801
+181.114.111.111 1 36 340358 20151103005024
+67.224.253.6 0 1 4130 
+66.220.146.31 0 8 725090 
+200.14.70.34 2 55 1259870 20151104215458
+2.138.100.89 0 16 414251 
+200.37.4.90 0 1 17835 
+220.181.108.96 2 2 48126 20151105114526
+213.98.79.121 0 16 414251 
+176.83.110.83 0 16 414251 
+37.10.158.79 4 54 1165505 20151104233608
+190.209.234.36 1 47 1340891 20151101232122
+84.124.19.154 1 44 1017645 20151101013115
+193.146.209.154 2 55 1262004 20151103141302
+90.162.208.174 2 55 1260448 20151104184249
+79.148.82.122 1 37 284899 20151105051337
+31.13.113.89 0 1 86371 
+88.9.165.123 1 37 339809 20151102104119
+89.129.203.134 6 64 1446146 20151103235343
+45.55.134.12 1 2 12785 20151102074618
+66.220.146.22 0 10 795072 
+206.71.232.189 2 46 1030430 20151105151400
+80.29.60.252 0 16 414251 
+88.2.190.243 0 16 400318 
+176.86.163.95 0 16 414251 
+62.43.123.89 2 57 1277305 20151101182500
+31.4.243.232 10 76 1552144 20151102124617
+37.132.4.144 2 46 1030430 20151104163341
+220.181.108.75 1 1 37940 20151102204729
+90.165.98.59 1 46 1022604 20151106183042
+173.252.115.90 0 4 89161 
+66.249.81.159 1 16 223649 20151101145746
+83.56.133.120 2 55 1262004 20151103215016
+62.81.164.194 1 50 1549589 20151104103752
+81.84.250.1 0 8 500375 
+83.40.57.28 2 73 301663 20151102213253
+90.69.18.178 1 35 269595 20151102185510
+81.37.103.139 0 91 1314436 
+95.20.41.166 1 45 1022454 20151103173038
+188.165.233.34 1 1 47707 20151106103936
+83.57.145.32 1 1 54225 20151101122934
+84.76.62.229 0 1 983315 
+66.220.156.118 0 4 322017 
+177.249.131.126 2 55 1261177 20151104191836
+81.43.160.6 0 16 414251 
+159.16.80.70 2 55 1260541 20151105214002
+85.62.20.171 10 64 1633395 20151106193947
+198.252.44.11 6 6 226938 20151106090604
+83.61.3.230 0 74 486500 
+31.13.99.108 0 1 79610 
+69.171.228.121 0 41 2087877 
+85.53.61.233 0 1 983315 
+83.223.122.14 9 9 444442 20151102105314
+2.139.147.39 1 45 1022454 20151102115656
+66.102.9.38 3 285 8623684 20151104193723
+186.106.107.92 1 36 290824 20151103024116
+220.181.108.177 2 2 45931 20151104224843
+83.53.48.52 0 32 828502 
+173.252.73.105 0 2 173692 
+187.147.239.48 0 17 410191 
+37.163.141.112 3 45 459547 20151102233835
+77.27.125.245 2 56 1275731 20151101103535
+213.143.58.55 0 8 376259 
+83.44.77.94 1 45 1022454 20151104135927
+88.12.23.173 10 62 1461554 20151105125410
+185.65.186.114 0 16 414251 
+66.220.156.123 0 1 97162 
+173.252.115.85 0 3 175225 
+190.148.52.12 0 1 17835 
+85.61.205.200 3 38 397161 20151102214903
+80.31.125.145 5 107 2428938 20151103203240
+2.142.91.164 1 2 128250 20151106230016 20151106230016 /
+220.181.108.81 3 3 56117 20151105215145
+173.252.122.116 0 2 13938 
+173.252.90.233 0 4 230769 
+201.209.64.139 0 1 121450 
+77.229.189.145 3 53 1186518 20151102003935
+91.90.191.135 2 2 75646 20151104173235
+216.223.27.31 0 1 2534 
+190.38.237.176 1 37 290889 20151104075300
+187.171.182.0 2 55 1260440 20151102043639
+220.181.108.153 3 3 113820 20151106154036
+68.64.166.114 1 1 7991 20151105143401
+201.220.235.14 2 30 569094 20151102141330
+80.37.23.29 1 35 302574 20151102102847
+188.81.23.41 13 78 1779808 20151103095434
+157.55.43.25 0 48 1261905 
+186.80.75.34 0 1 17835 
+62.83.230.20 0 52 833231 
+54.189.188.219 2 2 15952 20151103100943
+77.225.9.36 6 57 1182595 20151105192834
+31.202.247.253 4 4 171294 20151104200653
+190.42.17.106 4 60 1312836 20151105170450
+80.26.228.164 2 46 1030430 20151105145327
+173.252.88.244 0 3 23158 
+85.192.92.205 4 58 1275073 20151104105509
+123.125.71.23 2 2 15982 20151106133915
+167.89.125.239 4 4 16 20151106103340
+80.36.52.211 0 7 288715 
+83.59.218.191 0 16 414251 
+64.235.154.105 4 4 156188 20151103093014
+65.55.210.44 0 1 36850 
+14.13.78.32 1 1 7976 20151102183035
+193.153.205.72 5 45 783999 20151103230327
+220.181.108.123 1 1 10186 20151105234356
+148.246.175.231 4 65 1365315 20151102174531
+173.252.90.104 0 2 174767 
+82.34.76.85 2 50 1087292 20151102151839
+84.78.21.239 1 35 358273 20151105234504
+79.157.232.176 1 37 339809 20151103094134
+77.224.117.133 0 17 483448 
+79.159.213.36 22 63 1015464 20151101183122
+123.125.71.88 1 1 10186 20151105203603
+157.55.46.249 0 19 525608 
+123.125.71.57 2 2 45931 20151104013440
+200.4.213.203 1 46 1253892 20151103143626
+186.47.68.231 2 55 1259870 20151104233845
+74.53.201.226 5 55 1246702 20151105103556
+69.174.87.60 0 1 4105 
+213.22.20.68 0 1 14254 
+2.137.103.87 0 16 414251 
+52.22.88.178 2 2 26812 20151102145218
+200.30.212.6 1 45 1022454 20151102173848
+195.76.98.7 0 16 414251 
+123.125.71.13 2 2 75880 20151106164402
+148.102.19.219 4 61 1525504 20151104225944
+187.216.232.84 0 16 414251 
+87.111.29.222 2 90 2044908 20151101223004
+173.252.90.111 0 1 85026 
+37.133.42.137 2 41 487395 20151103171000
+217.217.200.136 2 55 1261905 20151104143703
+90.174.174.188 0 16 414251 
+101.226.66.177 1 1 54333 20151105040717
+200.87.169.58 4 60 1362115 20151105142420
+186.96.95.172 0 1 17835 
+173.252.113.113 0 15 843475 
+31.13.113.85 0 1 64778 
+190.42.16.71 1 36 339242 20151104232024
+83.34.58.53 1 29 352844 20151101151416
+212.142.206.241 1 31 355211 20151103074636
+177.245.250.11 2 55 1260440 20151106234940 20151106234931 /component/jcomments/
+173.252.120.106 0 1 95916 
+194.179.38.202 6 55 1213269 20151104123938
+90.170.19.60 3 137 3070863 20151104085113
+83.52.192.122 4 60 1305701 20151102002726
+83.50.162.91 0 1 4120 
+190.232.78.248 0 1 82850 
+201.243.184.28 2 55 1260440 20151105192429
+190.104.177.0 0 1 19289 
+88.97.77.230 2 55 1260440 20151104222417
+188.171.67.135 0 16 397784 
+85.55.5.147 2 36 280378 20151103081343
+190.152.177.222 0 1 983315 
+95.19.137.252 1 45 1022454 20151104173019
+173.252.89.53 0 18 861963 
+173.252.90.239 0 4 303348 
+95.126.140.6 2 50 1161360 20151103120315
+84.127.185.211 2 55 1262004 20151103211058
+179.52.135.131 2 56 1260589 20151104134009
+65.55.212.79 0 1 4809 
+66.220.145.148 0 7 317192 
+66.220.145.154 0 4 94090 
+190.216.236.230 6 76 3157589 20151106095500
+69.171.228.119 0 38 1532808 
+80.31.218.165 1 48 14662 20151105133330
+86.52.78.122 0 1 124332 
+5.224.188.171 1 45 1022454 20151103175910
+200.14.137.67 1 45 1022454 20151105160517
+80.35.250.117 0 16 397784 
+99.115.1.75 0 1 124332 
+216.223.27.22 0 1 550 
+80.26.47.67 1 1 54731 20151103083750
+95.23.31.179 0 29 679237 
+88.6.141.155 8 58 1294779 20151106095948
+193.152.132.78 1 36 284751 20151105123711
+80.28.211.48 2 51 2092614 20151103105500
+176.9.10.39 2 2 23172 20151106104330
+220.181.108.180 5 5 69904 20151106224636
+89.129.241.80 2 41 464190 20151101013616
+173.252.105.113 0 2 14751 
+181.143.77.131 0 1 0 
+69.30.200.46 1 1 7991 20151102163353
+216.163.188.233 1 1 47707 20151106121811
+92.58.236.180 2 58 1332037 20151105221839
+176.83.94.235 0 17 451584 
+5.9.132.67 4 4 151760 20151105121628
+167.89.125.254 1 1 4 20151103095535
+176.84.28.195 1 36 339661 20151104164603
+199.30.16.188 0 2 40435 
+88.10.146.243 0 52 973000 
+81.32.166.213 1 36 284754 20151105103401
+195.235.207.154 0 16 414251 
+190.239.173.179 0 2 50837 
+83.58.94.17 1 1 54228 20151104113929
+79.150.22.4 4 61 1362685 20151104085707
+184.73.184.70 1 1 0 20151105011824
+79.159.80.81 1 36 284754 20151104092055
+88.13.243.129 1 36 290883 20151104213253
+79.156.95.62 0 1 71141 
+198.37.145.116 1 1 4 20151106115645
+31.13.99.105 0 1 64778 
+176.84.138.150 0 1 4105 
+186.15.35.67 0 2 8210 
+220.181.108.88 2 2 75880 20151106115020
+83.60.101.240 0 15 434766 
+173.252.90.83 0 1 38035 
+95.90.234.112 1 38 399413 20151101235054
+131.178.214.253 2 56 1260783 20151103210501
+80.103.191.33 8 117 2125086 20151103121542
+31.13.99.111 0 1 87321 
+83.38.115.1 0 89 535954 
+81.32.0.138 1 35 397575 20151102114632
+89.140.96.161 1 45 1022454 20151106041610
+79.99.129.75 0 5 4806 
+62.57.56.32 1 29 332884 20151101212458
+31.13.99.97 0 3 259918 
+167.89.125.242 1 1 4 20151102215438
+83.37.62.40 0 108 1223427 
+31.13.97.121 0 1 85026 
+178.137.94.166 7 7 265676 20151102150930
+194.179.40.105 4 46 568875 20151103164801
+80.28.139.4 1 35 269549 20151106211609
+80.58.207.131 3 99 2606532 20151104015804
+80.82.65.82 4 4 175598 20151106125028
+66.220.146.23 0 12 1069461 
+144.76.185.173 3 3 155575 20151105233933
+88.18.148.153 2 58 668824 20151104115833
+186.115.181.98 0 2 38578 
+186.9.118.58 2 58 1332037 20151105063719
+84.76.230.189 0 2 53611 
+92.58.217.110 1 45 1022454 20151106101605
+190.82.99.90 2 58 1332037 20151102223816
+93.186.202.239 2 2 104491 20151104104824
+88.9.253.114 2 55 1261053 20151105203110
+2.155.58.4 1 1 7976 20151103123146
+195.53.233.213 0 3 82676 
+83.36.191.182 6 48 551226 20151101015836
+216.163.188.224 1 1 37940 20151103091847
+31.13.99.101 0 1 86371 
+190.189.221.156 2 55 1261905 20151105132914
+188.76.246.86 50 482 4985746 20151106140414
+189.217.16.2 0 1 983315 
+187.137.106.94 2 56 1275731 20151105055202
+66.220.156.117 0 2 177302 
+31.13.113.80 0 1 87446 
+88.12.23.136 0 1 17835 
+186.113.155.195 2 58 1332037 20151105002920
+52.22.67.103 1 1 13406 20151101131405
+81.184.186.230 3 54 1238948 20151104212630
+107.161.81.33 1 1 11149 20151105024555
+190.235.211.231 4 118 2664370 20151103215231
+201.246.37.120 1 37 940443 20151102063028
+62.43.53.227 2 58 1332037 20151103205059
+173.252.88.246 0 5 179052 
+88.12.28.14 0 16 240286 
+70.39.157.197 11 11 529987 20151102105247
+190.101.51.82 1 30 320873 20151102182600
+95.62.121.70 0 16 414251 
+84.78.17.191 1 3 29333 20151105193720
+213.27.197.151 6 99 2175364 20151103181021
+83.39.226.173 5 54 1294474 20151103121355
+62.117.199.115 1 45 1022454 20151102182239
+81.37.228.255 0 16 414251 
+181.54.215.253 0 27 938761 
+85.54.118.55 2 54 783713 20151103095603
+198.37.145.158 1 1 4 20151102081244
+85.152.208.192 1 38 399418 20151104223433
+181.199.89.170 1 45 1022471 20151104213457
+81.32.248.25 2 56 1260963 20151101142837
+83.57.5.129 3 60 1313138 20151106133745
+167.89.125.249 2 2 8 20151103110531
+37.72.9.140 3 62 1378001 20151103022520
+173.252.73.117 0 1 85026 
+84.120.84.54 9 9 488026 20151104123959
+190.164.159.40 2 37 298620 20151103174027
+23.96.208.137 1 1 13394 20151102144659
+181.65.250.142 2 58 1332037 20151104225744
+217.172.66.236 1 45 1022454 20151102123519
+123.125.71.40 1 1 7991 20151103034340
+201.147.89.211 0 26 437433 
+181.111.20.202 0 1 13638 
+190.47.69.248 1 36 284752 20151101024731
+186.22.120.244 1 36 270611 20151104025621
+190.42.210.174 2 56 1275735 20151102150025
+212.145.149.238 1 36 355671 20151103183347
+190.9.200.194 1 46 1022604 20151106050025
+84.78.67.201 2 55 1260887 20151106195448
+88.11.45.231 4 110 2519740 20151103213134
+195.235.240.209 6 116 2695775 20151104171216
+46.24.26.214 0 16 414251 
+220.181.108.91 1 1 7991 20151105134236
+123.125.71.49 2 2 45931 20151102223826
+212.170.48.224 0 31 709294 
+77.234.43.182 1 45 1022454 20151101230250
+68.71.57.171 1 46 1022604 20151103164829
+83.41.56.109 2 56 1275731 20151101125839
+66.220.156.105 0 7 568567 
+78.46.156.169 2 3 94206 20151102061433
+213.99.235.151 6 63 1438485 20151103082106
+62.43.69.131 1 37 284902 20151104081614
+80.30.29.129 0 1 128131 
+123.125.71.46 3 3 83871 20151106144515
+173.252.122.117 0 4 215730 
+213.143.48.118 2 58 1418383 20151103134504
+157.55.230.158 0 38 998655 
+89.141.113.236 1 37 290754 20151103104346
+95.121.176.51 10 69 1690976 20151102170331
+189.141.211.56 2 56 1262129 20151104023037
+220.181.108.181 1 1 37940 20151106134637
+123.125.71.108 2 2 55698 20151106083609
+176.83.75.120 2 51 1189063 20151104201206
+178.139.111.81 1 38 547041 20151106184732
+123.125.71.85 4 4 91862 20151106113431
+62.174.64.10 7 62 1289760 20151103114535
+31.13.113.93 0 2 149804 
+88.11.232.139 1 45 1022454 20151105074203
+220.181.108.117 4 4 73875 20151105234357
+88.14.242.186 2 56 1275731 20151102175429
+148.255.73.204 0 1 24298 
+173.252.90.235 0 6 434669 
+90.164.234.202 0 1 983315 
+181.140.12.26 2 55 1259598 20151104042800
+181.113.88.224 0 1 983315 
+81.43.118.69 0 1 71040 
+201.103.97.134 2 55 1260440 20151102032839
+83.46.163.220 0 35 1047456 
+54.161.12.93 1 1 37960 20151105063223
+80.35.76.231 5 57 1310809 20151103152323
+88.2.225.35 0 26 486500 
+220.181.108.143 2 2 55698 20151104174854
+177.227.41.203 2 56 1261153 20151104041837
+181.199.74.82 2 2 59324 20151106055508
+123.125.71.27 2 2 45931 20151106194411
+212.31.49.234 6 6 0 20151102125201
+173.252.73.110 0 2 124406 
+85.152.180.112 1 45 1022454 20151102125336
+5.9.17.118 3 3 152255 20151105223137
+81.47.192.244 1 45 383592 20151105161548
+83.56.42.81 0 53 486500 
+83.36.153.229 2 58 1332037 20151106165253
+66.220.156.112 0 3 302674 
+220.181.108.179 5 5 99853 20151106204548
+66.220.158.116 0 1 37772 
+46.151.52.63 1 1 37940 20151101101612
+201.242.218.179 0 1 983315 
+190.23.15.96 1 35 269687 20151105134113
+173.252.120.99 0 1 37772 
+199.30.24.225 0 1 38035 
+79.151.222.188 0 1 983315 
+195.81.33.253 6 519 6053195 20151105162110
+173.252.80.112 0 12 401754 
+88.6.199.169 1 45 1022454 20151101010348
+31.13.102.124 0 1 40490 
+213.96.98.210 1 46 1001460 20151103130011
+89.77.250.171 2 2 39777 20151102191337
+62.210.115.134 2 2 1180 20151105204027
+190.234.120.142 0 1 14130 
+220.181.108.105 3 3 53922 20151105144400
+181.64.31.241 0 1 4105 
+188.87.92.70 11 163 3618430 20151103171554
+199.30.16.183 0 1 8153 
+80.33.108.104 2 55 1260384 20151103095511
+66.220.145.150 0 6 387035 
+90.174.2.134 1 29 277976 20151106204704
+151.35.14.182 0 16 414251 
+173.252.89.55 0 11 599058 
+81.35.208.170 4 104 2185472 20151106012909
+69.171.230.100 0 1 37772 
+87.220.176.7 2 39 474721 20151102093305
+31.13.113.67 0 1 79610 
+220.181.108.156 4 4 161527 20151106164858
+80.224.158.202 1 36 284751 20151102132131
+91.200.12.137 4 4 190477 20151102184106
+81.39.53.210 1 38 399415 20151102233700
+189.190.244.193 0 1 841994 
+192.95.38.124 0 5 4806 
+173.252.113.117 0 12 532272 
+190.111.83.12 3 59 1275088 20151105223649
+46.222.214.236 2 50 1076330 20151103165319
+79.146.245.249 8 64 1303884 20151104165452
+85.152.36.5 0 73 486500 
+131.253.25.212 0 2 37693 
+2.155.127.67 1 36 290682 20151101201331
+186.3.169.226 1 45 1022454 20151104202619
+154.73.58.162 3 52 1154740 20151102112715
+84.78.21.43 0 16 414251 
+186.84.35.220 0 16 414251 
+187.190.184.127 2 55 1260440 20151105020856
+66.220.145.153 0 4 138724 
+82.159.57.109 1 45 691462 20151103200114
+148.251.75.46 5 5 246393 20151105212131
+89.33.40.196 5 5 145823 20151102100945
+200.31.17.186 0 1 983315 
+213.179.127.28 1 36 284751 20151106200239
+173.252.79.117 0 4 261610 
+220.181.108.184 3 3 53922 20151104044156
+187.153.182.103 2 55 1260440 20151101072307
+190.104.21.135 1 45 934574 20151104212915
+173.252.90.120 0 1 38035 
+213.143.48.25 2 58 1332037 20151103065324
+83.40.192.131 1 46 1022604 20151103104840
+79.155.198.102 2 37 841229 20151103095331
+203.133.170.106 1 1 8007 20151103220254
+80.31.52.53 1 38 399414 20151101201405
+123.30.175.217 1 1 11016 20151101152148
+190.237.13.137 0 18 469828 
+88.3.56.255 1 45 1022471 20151105123056
+187.192.22.43 0 2 248664 
+201.230.208.19 1 36 284750 20151101164650
+92.58.98.34 2 56 1275731 20151102130440
+128.79.218.108 4 53 1132107 20151102190110
+191.113.183.207 2 55 1260440 20151101182233
+189.211.53.171 0 1 17835 
+95.250.51.39 14 58 111664 20151106154016
+157.253.253.19 1 36 284753 20151104173027
+46.26.112.42 8 62 1492032 20151101191245
+83.97.184.94 0 52 916696 
+80.58.250.84 1 46 1160435 20151104155840
+46.118.155.216 2 2 83878 20151102181720
+91.116.158.166 0 1 983315 
+81.184.3.151 3 91 1038406 20151104111450
+173.252.88.89 0 1 87446 
+186.150.4.71 3 78 2158478 20151104215530
+190.166.154.173 1 28 546007 20151102202357
+81.203.180.37 0 1 983315 
+47.60.33.180 1 1 7976 20151103131419
+31.13.97.106 0 1 125247 
+181.37.220.194 1 10 86605 20151101212725
+83.34.46.127 2 55 1262004 20151104184324
+217.126.193.48 0 16 414251 
+185.57.204.130 0 26 437046 
+186.91.254.73 2 39 471453 20151101235554
+200.77.68.54 4 61 1390750 20151105191204
+167.89.125.225 1 1 4 20151103143222
+167.89.125.238 1 1 4 20151103091224
+220.181.108.162 2 2 18177 20151103154611
+186.128.96.212 1 35 269120 20151102230914
+173.252.90.246 0 7 660337 
+186.77.132.210 0 1 983315 
+181.196.222.44 0 1 13638 
+186.7.15.111 1 1 11271 20151104030457
+37.157.34.162 0 16 414251 
+190.216.116.243 0 1 40490 
+123.125.71.52 3 3 53922 20151103154619
+181.114.122.158 0 1 983315 
+148.0.161.206 2 55 1260631 20151101221618
+173.252.79.119 0 3 90403 
+123.125.71.50 4 4 94057 20151106224104
+190.181.19.60 0 2 250494 
+5.196.90.56 1 1 0 20151102204503
+31.4.180.198 0 16 414251 
+213.60.3.168 0 1 983315 
+195.77.16.4 2 2 24394 20151102142731
+47.61.28.12 1 36 284753 20151105234323
+2.137.209.250 0 32 828502 
+181.104.14.174 0 1 82850 
+31.4.202.173 1 1 7976 20151101110941
+176.85.61.0 2 38 464225 20151101071143
+104.197.191.4 1 18 129786 20151101120102
+88.11.60.216 1 36 284754 20151104223521
+41.226.11.54 34 103 3021558 20151103102348
+212.89.8.124 0 16 414251 
+190.80.139.180 1 36 341126 20151102142337
+213.99.252.245 3 4 61700 20151104160548
+77.231.224.18 2 46 1030430 20151104193206
+190.156.109.213 0 16 414251 
+220.181.108.86 1 1 47707 20151105204406
+131.253.24.148 1 2 16146 20151102132547
+84.126.49.133 1 45 1022454 20151104201220
+193.144.127.14 2 38 296499 20151102142144
+173.252.75.114 0 7 250606 
+181.49.188.4 2 56 1381048 20151105164239
+195.76.155.194 2 55 1260384 20151103015226
+85.118.242.83 1 39 399564 20151105035341
+173.252.80.118 0 8 412495 
+190.166.144.133 0 1 64834 
+79.156.245.250 4 57 1271112 20151103191821
+186.185.39.27 0 1 983315 
+85.53.142.232 0 1 19289 
+5.9.145.132 2 2 117012 20151106033623
+123.125.71.56 1 1 7991 20151105013528
+173.252.112.110 0 2 75807 
+77.225.231.253 15 95 2382827 20151103174052
+2.121.211.239 1 38 343139 20151104175728
+83.33.241.34 0 1 14254 
+83.38.63.228 19 108 3625709 20151103075710
+83.35.145.226 2 38 322429 20151102142007
+190.149.22.9 2 55 1261293 20151105220156
+189.152.12.93 2 58 1332037 20151103203045
+83.45.101.93 1 45 1022454 20151103132519
+199.30.25.54 0 1 8047 
+213.97.128.188 0 16 414251 
+193.153.188.213 5 154 3205124 20151105075222
+181.37.78.91 1 45 1174026 20151101211701
+201.141.232.119 1 36 284751 20151106063507
+201.131.221.165 0 1 124332 
+200.0.118.173 2 58 1332037 20151106034008
+83.49.145.143 1 45 1022454 20151103094401
+190.42.138.90 8 237 5361742 20151103215653
+158.109.29.90 1 39 13771 20151101194153
+69.171.230.97 0 1 37772 
+85.54.22.72 2 7 77133 20151106184928
+31.13.99.107 0 1 79610 
+195.235.69.170 2 40 432139 20151105150306
+80.26.179.190 17 66 1101120 20151103125546
+69.171.228.122 0 32 1749294 
+78.100.53.228 0 7 163601 
+157.56.195.158 0 16 420635 
+81.44.245.238 1 36 284750 20151106111727
+88.9.169.63 2 56 1190974 20151105114155
+62.43.223.30 1 18 129786 20151101175929
+173.252.90.231 0 4 347749 
+190.80.137.170 5 8 286377 20151105212752
+80.30.116.105 1 37 339809 20151102171651
+181.64.192.60 2 57 1275878 20151102173858
+95.60.113.202 1 36 339659 20151103163010
+173.252.90.96 0 1 37772 
+83.39.242.126 11 64 170354 20151106093230
+209.133.77.171 9 9 444432 20151102143922
+46.222.245.148 2 55 1261905 20151103151752
+66.220.158.120 0 1 64834 
+87.219.136.64 2 55 1260815 20151102172109
+91.200.12.141 2 2 95180 20151102182050
+123.125.71.45 1 1 37940 20151104223418
+114.121.159.167 0 1 983315 
+148.251.124.42 3 3 157130 20151105095648
+176.83.115.28 1 29 402884 20151106140337
+84.125.81.168 1 36 290605 20151103151416
+5.9.106.81 5 6 267667 20151106000812
+80.28.120.58 2 62 1188886 20151102002352
+54.242.8.118 1 1 11654 20151102095620
+173.252.90.119 0 1 87446 
+201.157.4.6 4 110 2522008 20151105193335
+85.136.88.213 1 36 342925 20151102110307
+81.37.207.153 0 16 414251 
+46.222.136.44 1 35 289284 20151106095940
+84.122.54.213 22 104 1672754 20151105143936
+173.252.88.90 0 2 94454 
+92.56.160.205 0 1 19289 
+66.220.146.20 0 7 574057 
+74.112.131.243 1 1 13407 20151102144837
+83.165.127.85 0 52 859926 
+66.220.156.113 0 2 164636 
+80.32.54.180 0 22 957390 
+77.224.119.170 1 37 303697 20151105075653
+181.64.174.99 0 1 62897 
+37.14.64.50 0 1 14130 
+88.7.113.235 1 46 1022604 20151103161742
+193.152.140.28 3 57 829058 20151101151942
+66.220.156.103 0 1 125247 
+66.220.156.122 0 2 148709 
+85.51.149.103 4 38 363965 20151102163411
+190.237.89.249 0 1 14130 
+65.55.218.47 0 1 8047 
+190.78.89.246 2 55 1260440 20151104231207
+66.102.7.235 8 32 591146 20151106194044
+85.61.253.96 1 36 339661 20151105160937
+195.76.206.165 1 45 1022454 20151103033955
+173.252.105.115 0 5 262771 
+83.40.98.165 1 45 1022454 20151102173354
+2.136.126.9 0 52 973000 
+173.252.80.116 0 6 313600 
+123.125.71.89 2 2 45931 20151106103521
+173.252.90.100 0 2 138567 
+148.246.227.87 2 55 1237696 20151105013621
+189.130.224.113 0 16 414251 
+84.13.37.95 0 1 33002 
+31.13.113.88 0 1 64778 
+173.252.90.249 0 4 345214 
+195.53.254.249 0 26 486500 
+198.37.145.47 1 1 4 20151102080456
+66.220.156.109 0 1 178141 
+82.159.11.252 3 47 1038406 20151105003625
+201.234.127.2 2 57 1289861 20151105135155
+66.249.88.60 0 23 883289 
+77.227.20.246 1 45 1022454 20151105114832
+83.53.195.209 2 2 15952 20151102093428
+220.181.108.112 1 1 7991 20151106044547
+80.24.200.218 0 16 414251 
+213.143.46.84 0 27 648693 
+87.222.157.217 6 66 1489397 20151105013941
+80.58.142.44 0 28 686087 
+148.0.120.59 1 35 269186 20151103232010
+105.154.252.24 1 1 37960 20151104155929
+195.229.221.245 0 56 1053042 
+220.181.108.97 1 1 7991 20151102104655
+148.246.175.117 0 1 14130 
+66.220.156.96 0 1 89981 
+83.57.166.154 9 56 1151905 20151106095825
+195.76.196.122 1 13 96031 20151104175939
+173.252.73.120 0 1 87321 
+95.17.158.158 0 1 86371 
+83.55.196.110 2 56 1275731 20151103194058
+123.125.71.33 1 1 7991 20151106194053
+31.13.113.77 0 1 87446 
+173.252.74.123 0 1 38035 
+123.125.71.80 2 2 20372 20151106024435
+220.181.108.78 5 5 74294 20151106114654
+85.61.111.164 2 56 1275731 20151102123856
+66.220.156.97 0 2 179047 
+81.33.86.89 2 91 2045058 20151102203234
+188.77.160.16 1 36 330336 20151102210714
+62.82.186.21 0 17 421101 
+186.89.154.39 1 16 531370 20151104230633
+200.106.89.65 2 56 1275731 20151104032605
+66.102.8.221 0 59 1612134 
+213.143.48.3 0 1 983315 
+89.7.236.111 0 16 414251 
+91.240.58.22 2 55 1260426 20151106115003
+84.106.216.100 1 1 37960 20151101213853
+69.30.200.45 1 1 7991 20151101053919
+181.110.105.161 0 1 40490 
+167.89.125.229 2 2 8 20151103151447
+91.142.208.134 0 5 4806 
+213.96.143.140 0 2 129029 
+83.41.167.29 0 52 859926 
+89.29.229.217 1 37 290754 20151103234238
+85.251.245.187 1 1 7976 20151101171100
+81.202.158.114 0 16 414251 
+176.83.16.85 0 1 111184 
+80.29.52.206 5 12 117261 20151104200832
+31.4.188.188 0 16 414251 
+45.33.137.75 1 45 1022454 20151103175634
+188.84.70.65 2 55 1260440 20151105122037
+181.232.93.166 0 1 40490 
+82.165.232.3 0 36 271327 
+90.71.156.130 1 38 428357 20151106085223
+190.29.71.64 1 38 347044 20151102185328
+83.49.190.202 1 6 36954 20151104163510
+46.119.123.33 16 16 607298 20151105061045
+37.133.38.47 1 38 399414 20151106191045
+69.171.228.116 0 42 2232767 
+85.192.74.198 2 56 1260589 20151104095815
+83.165.108.227 2 55 1262004 20151103174854
+213.4.89.142 2 2 15967 20151101145748
+173.252.73.108 0 1 79610 
+31.4.208.65 0 16 414251 
+79.109.242.99 2 42 464326 20151106231719 20151106231639 /master-revenue-management-comunicacion-turistica
+95.142.163.99 48 48 601356 20151106111925
+220.181.108.101 1 1 10186 20151102144545
+123.125.71.14 1 1 37940 20151102173813
+65.55.210.113 0 1 102633 
+80.28.169.250 0 16 414251 
+31.4.176.75 1 1 7976 20151105195719
+66.102.8.216 2 63 1009377 20151103134710
+189.238.90.253 2 57 1275878 20151104072316
+188.77.193.137 2 59 1332185 20151104122319
+46.136.6.106 1 17 128943 20151106181641
+176.119.75.117 1 1 47707 20151106124921
+92.59.241.186 2 56 1275731 20151102164732
+173.252.90.123 0 1 48586 
+84.78.21.210 0 16 414251 
+216.223.27.23 0 1 19107 
+200.55.139.210 1 7 46537 20151102132648
+84.126.35.249 0 2 76228 
+79.152.1.7 1 41 13571 20151101150346
+190.44.86.153 2 58 1332037 20151106035601
+187.151.150.168 0 1 983315 
+188.85.192.103 1 36 354808 20151106182159
+188.77.11.223 8 155 3926509 20151106210941
+95.122.134.59 1 46 1022604 20151105194421
+131.253.26.233 0 1 4809 
+173.252.115.86 0 7 217230 
+186.167.243.159 2 13 262292 20151106193734
+144.76.235.114 0 5 4806 
+82.158.116.37 6 50 47856 20151104204305
+190.16.30.168 5 47 776819 20151103005722
+80.34.162.233 0 12 299881 
+5.154.47.120 1 45 1022454 20151102100505
+195.76.98.9 0 368 1553508 
+177.252.132.203 2 55 1259598 20151106194734
+70.39.157.193 11 11 529993 20151105100039
+105.155.30.246 2 2 91848 20151105195427
+195.235.117.171 0 4 251808 
+202.137.247.191 1 44 384927 20151101225225
+45.78.200.217 1 1 71 20151104002017
+83.58.185.105 34 96 1979391 20151104123753
+37.134.166.213 2 45 431782 20151102133320
+201.152.143.74 1 36 340358 20151102224424
+220.181.108.122 1 1 37940 20151102174616
+201.230.3.243 2 58 1332037 20151106002720
+123.125.71.111 2 2 18177 20151105144306
+88.2.141.73 1 35 358273 20151104174031
+190.253.177.241 0 1 4105 
+188.79.46.189 1 2 20453 20151105124546
+80.36.73.72 0 6 74370 
+131.253.25.194 0 1 38035 
+173.252.113.114 0 12 457011 
+201.249.186.170 1 46 1169135 20151101140822
+90.174.10.156 6 59 1282956 20151106165544
+186.104.251.48 0 1 24298 
+2.138.246.196 9 64 1538817 20151102095906
+186.65.66.238 2 55 1260116 20151104143001
+201.191.255.100 0 1 19289 
+88.21.185.210 2 55 1260634 20151103223821
+186.177.182.211 1 37 284902 20151106165237
+212.170.59.49 0 9 231208 
+190.167.197.2 0 1 850090 
+66.102.6.178 3 42 472662 20151103141900
+91.146.103.11 0 5 4806 
+173.252.79.113 0 3 101122 
+123.125.71.15 1 1 7991 20151101134125
+84.123.168.78 2 46 1030430 20151106123509
+31.4.185.149 0 6 457107 
+90.161.19.162 1 19 129936 20151104200406
+37.132.6.49 2 10 100533 20151105140513
+195.77.154.241 4 55 1319832 20151105140541
+79.144.232.255 1 1 37960 20151101173042
+2.139.169.29 2 47 1252581 20151102155154
+138.36.0.18 2 55 1259598 20151101064439
+77.208.167.107 2 55 1262004 20151103231731
+190.152.144.73 0 1 14130 
+190.182.242.254 3 56 1260511 20151102181146
+62.14.229.73 19 77 1850438 20151105115508
+217.126.37.147 0 26 479417 
+200.92.55.217 1 48 1244591 20151105203448
+173.252.105.112 0 2 87426 
+31.13.113.79 0 1 89981 
+200.72.247.94 2 55 1261293 20151105130807
+176.83.122.67 0 16 414251 
+173.246.105.211 2 2 75880 20151104040154
+186.30.145.225 0 1 983315 
+173.252.90.117 0 1 64834 
+37.115.184.26 15 15 569745 20151104222502
+173.252.113.115 0 10 462294 
+31.4.211.82 1 1 7976 20151106111852
+2.137.32.235 0 16 414251 
+83.57.45.126 0 16 414251 
+210.75.99.11 1 1 37823 20151105123030
+190.214.3.215 2 56 1260409 20151101011512
+190.214.30.132 7 63 1357734 20151106170908
+190.11.161.175 2 56 1275731 20151105135749
+190.107.35.255 15 73 1695221 20151104190214
+173.252.75.116 0 7 392189 
+194.150.168.95 2 2 12551 20151101072533
+83.50.159.82 2 56 1261058 20151104202427
+136.243.10.105 1 1 7976 20151104005257
+80.59.144.41 0 20 397784 
+187.175.149.133 2 55 1261053 20151103054827
+195.76.98.5 7 386 7565104 20151105130822
+46.165.230.5 2 2 9150 20151101022358
+173.252.90.121 0 1 40490 
+212.231.185.215 2 39 453405 20151101165836
+66.249.81.167 2 19 453803 20151104133832
+83.58.2.101 1 35 351127 20151104194929
+123.125.71.16 1 1 37940 20151102184350
+213.143.48.57 2 50 1160421 20151101110442
+87.220.49.76 2 56 1275731 20151105141516
+187.140.87.81 0 1 87446 
+157.55.0.156 0 16 420635 
+31.4.47.90 11 68 1182459 20151104004953
+66.220.156.111 0 4 387575 
+90.174.2.157 0 16 0 
+83.44.27.26 2 58 1277455 20151103141610
+173.252.88.92 0 3 116297 
+201.230.246.33 2 56 1275731 20151106221413
+66.249.88.38 0 26 868235 
+173.208.207.178 1 1 0 20151104191730
+157.55.12.71 0 1 120274 
+2.155.167.72 2 48 1054726 20151101203857
+66.220.146.25 0 7 504418 
+81.84.232.170 0 3 89578 
+123.125.71.55 3 3 56117 20151106174137
+220.181.108.106 3 3 83871 20151104035418
+77.224.35.10 1 36 355673 20151103172027
+212.4.127.133 0 26 429963 
+188.78.168.181 3 69 1600160 20151103164833
+89.140.30.22 5 19 851748 20151105102204
+54.160.66.50 1 1 7991 20151105072353
+213.143.58.202 1 45 740751 20151104163624
+31.13.113.64 0 1 89981 
+190.166.123.138 0 1 10988 
+157.55.104.78 0 2 150362 
+173.252.89.52 0 15 575295 
+179.50.9.252 1 17 746214 20151105154321
+80.28.237.151 2 23 491656 20151105112920
+37.29.228.25 2 20 960070 20151101221103
+190.245.240.130 1 35 269194 20151105012504
+186.82.187.215 0 1 14130 
+200.55.189.173 0 12 258791 
+47.60.32.172 0 16 420635 
+193.146.227.190 0 8 93533 
+109.111.104.239 4 117 2614571 20151103174241
+31.13.113.70 0 1 87321 
+66.102.7.242 11 42 744799 20151106205037
+186.107.108.171 2 55 1022100 20151106221019
+83.54.223.41 1 1 54228 20151104122647
+80.67.104.237 0 16 414251 
+186.121.79.254 2 56 1275731 20151106212434
+173.252.88.245 0 3 224958 
+176.84.19.207 4 57 1260526 20151103203043
+220.181.108.149 2 2 45931 20151105004211
+87.218.54.60 1 37 284897 20151101170315
+90.71.162.193 5 50 1054568 20151106205054
+176.83.186.36 0 16 414251 
+178.137.82.178 8 8 303680 20151106154549
+37.10.163.102 2 52 1317525 20151103174704
+123.125.71.73 2 2 45931 20151105144645
+91.117.83.58 2 36 259572 20151105185520
+185.35.95.4 1 17 118276 20151103123021
+123.125.71.116 1 1 37940 20151106103522
+86.211.157.113 5 54 1149663 20151102184724
+80.29.46.64 1 35 358271 20151101130925
+220.181.108.152 3 3 86066 20151106235038 20151106235038 /
+173.252.73.114 0 2 123061 
+195.53.233.214 0 4 57097 
+189.162.88.57 2 56 1264162 20151104025331
+150.214.94.248 1 49 1244738 20151104142752
+66.220.156.121 0 1 86371 
+81.37.103.71 1 36 284752 20151105175552
+66.249.84.123 0 11 87657 
+88.26.227.57 0 32 824860 
+95.19.24.83 2 56 1261544 20151104133540
+5.40.43.22 0 1 71040 
+81.43.116.228 0 29 638086 
+81.60.128.6 1 18 129786 20151106090114
+220.181.108.142 2 2 45931 20151106134347
+216.223.27.59 0 2 31225 
+190.236.99.39 3 57 1280562 20151104212601
+95.63.52.44 4 38 306302 20151103142210
+220.181.108.82 2 2 85647 20151106074833
+81.61.5.45 2 55 1261396 20151102182257
+79.145.33.94 2 58 1332037 20151106224847
+62.43.78.128 11 141 2025408 20151105212701
+84.232.27.6 3 38 298265 20151105104845
+199.30.25.163 0 1 89981 
+81.32.213.84 0 97 1861091 
+201.160.129.209 2 55 1260440 20151102013810
+190.233.11.101 0 1 4105 
+123.125.71.58 3 3 63689 20151106204121
+158.227.168.6 1 36 271897 20151104102614
+90.170.84.56 2 51 1125202 20151105111251
+123.125.71.43 4 4 131578 20151104223417
+213.143.58.52 1 11 146103 20151103205458
+37.115.154.109 9 9 341640 20151105235007
+190.60.241.234 2 58 1332037 20151106213034
+186.71.32.247 9 69 1527444 20151105161448
+80.33.52.118 0 16 397784 
+65.49.14.145 3 56 1260511 20151102124039
+186.155.193.154 0 1 87446 
+81.61.51.108 1 35 271576 20151102072457
+212.81.220.41 1 45 1022454 20151105175852
+173.252.122.118 0 3 223883 
+198.27.85.233 23 23 1158917 20151106133305
+193.145.230.6 2 56 1260265 20151104163740
+31.13.113.91 0 1 48586 
+81.35.63.250 0 32 828502 
+23.238.33.28 1 1 7976 20151102012927
+92.234.42.21 3 135 3067362 20151104061538
+220.181.108.120 2 2 20372 20151102134608
+95.126.252.235 8 48 658423 20151103143127
+90.174.5.215 1 36 339658 20151106092200
+188.79.213.139 2 56 1275731 20151104103934
+148.0.1.196 0 1 250986 
+88.14.226.36 5 74 2023313 20151105200608
+92.58.238.45 0 16 414251 
+190.104.20.162 0 1 124332 
+187.188.86.213 0 1 24298 
+83.43.172.79 1 35 335627 20151104183727
+66.220.156.104 0 1 72874 
+176.83.41.130 0 1 102633 
+83.56.172.75 0 18 460535 
+46.151.52.64 1 1 47590 20151101232457
+189.254.225.210 0 1 4105 
+190.16.97.4 0 1 86371 
+193.28.154.126 0 1 87321 
+46.151.52.32 1 1 37823 20151101193040
+90.174.3.10 4 88 1290096 20151104153118
+123.125.71.34 2 2 85647 20151103064912
+88.8.220.49 2 55 1259598 20151106165526
+173.252.90.242 0 13 993289 
+93.188.136.2 0 2 47763 
+187.188.66.106 1 29 1134330 20151102214609
+80.32.174.60 0 16 414251 
+173.252.73.111 0 1 86371 
+194.224.226.202 1 1 7976 20151101222727
+31.4.210.49 1 1 11094 20151105202832
+31.13.113.83 0 2 144128 
+173.252.75.113 0 12 498676 
+66.102.8.211 2 61 1130386 20151103091126
+83.33.234.59 1 37 284900 20151102202446
+79.108.253.117 1 36 370895 20151102175519
+88.25.79.248 6 50 47856 20151105142548
+31.13.113.92 0 1 86371 
+184.73.184.104 1 1 10186 20151104132159
+64.233.172.142 0 2 142023 
+198.46.246.102 1 1 7976 20151105201221
+62.97.120.188 1 37 339808 20151103114030
+198.37.145.176 1 1 4 20151103091713
+84.78.47.70 1 36 339660 20151102144550
+217.126.131.248 0 27 110054 
+181.171.118.104 1 1 48820 20151105094454
+47.60.40.11 1 1 7976 20151102094250
+146.83.195.38 2 58 1332037 20151103195404
+189.228.247.115 0 50 944005 
+154.58.201.13 8 8 0 20151104061246
+47.60.35.101 1 1 7976 20151104201920
+46.222.108.161 1 36 339659 20151106185649
+187.145.179.152 0 1 983315 
+188.77.4.120 1 45 1022454 20151106215506
+193.153.2.140 2 58 1332037 20151101183248
+181.112.205.43 0 1 983315 
+74.112.131.245 1 1 13406 20151103124508
+167.0.29.233 0 1 89981 
+83.60.209.155 1 45 1022454 20151104225106
+54.212.175.97 1 1 7976 20151103162225
+31.13.99.98 0 1 89981 
+173.252.90.105 0 1 79610 
+173.252.90.236 0 6 396380 
+200.125.217.81 0 1 121450 
+216.163.188.227 2 2 75880 20151103125556
+95.122.131.0 0 16 414251 
+189.168.150.194 2 55 1261316 20151101210910
+79.164.210.71 1 1 46433 20151106150149
+31.4.190.78 4 57 1273694 20151102204637
+157.55.46.250 0 38 1051216 
+179.28.3.97 4 47 1213874 20151104165034
+66.220.156.115 0 1 79610 
+123.125.71.38 1 1 7991 20151103114130
+2.136.209.23 2 55 1260708 20151102000220
+195.235.52.66 1 45 1022454 20151102110803
+188.77.102.175 1 45 1022454 20151102112514
+66.102.6.174 0 30 583702 
+123.125.71.78 1 1 7991 20151104044004
+201.230.159.167 2 55 1260631 20151101183006
+220.181.108.185 2 2 45931 20151103144410
+66.249.84.125 2 13 88523 20151103072948
+150.214.75.183 1 36 342587 20151103185509
+131.253.26.250 0 1 8047 
+82.213.164.135 1 1 54226 20151103141234
+47.60.39.51 0 16 414251 
+220.181.108.114 1 1 47707 20151105215423
+190.167.227.97 1 36 339660 20151105021314
+189.221.38.59 0 1 82850 
+189.212.48.73 0 1 13638 
+217.130.47.84 4 62 1507339 20151101195227
+216.163.188.229 1 1 47707 20151102105211
+46.222.35.57 0 16 407401 
+83.38.96.201 1 25 544774 20151103202350
+190.79.48.240 1 35 270459 20151101204514
+87.220.156.213 1 35 327284 20151103191501
+212.170.32.163 1 48 1032551 20151103062554
+37.10.136.145 1 36 339659 20151101175125
+95.17.227.25 2 58 1332037 20151104160639
+61.135.190.222 1 1 10174 20151105184004
+90.165.199.142 5 88 1558519 20151106113554
+191.148.146.195 2 40 432137 20151104171957
+83.59.170.210 2 46 1030430 20151103214148
+163.117.92.37 5 55 2128015 20151106141706
+181.67.159.123 2 55 1261316 20151105211104
+37.134.65.68 0 2 235516 
+24.114.59.242 2 57 1260712 20151103212348
+80.24.131.71 0 52 429963 
+62.175.141.66 1 36 291394 20151101172547
+123.125.71.48 2 2 15982 20151103223438
+92.56.147.49 2 46 1030430 20151102120058
+54.176.195.13 1 1 0 20151101144602
+192.73.242.23 1 1 0 20151105175815
+69.171.228.123 0 34 1555750 
+161.67.209.39 4 57 1273488 20151102202505
+47.61.98.221 0 16 397784 
+83.41.24.131 1 36 339662 20151104202623
+66.102.7.249 7 44 671325 20151106194126
+89.145.108.203 11 11 529992 20151106121752
+47.61.48.168 1 37 1270910 20151102124727
+66.220.146.28 0 11 1019554 
+220.181.108.159 2 2 48126 20151103225146
+47.60.200.95 1 35 269607 20151106184836
+79.157.29.194 1 35 270159 20151103141049
+190.207.42.9 2 55 1260887 20151102211331
+91.117.129.47 1 45 1022454 20151106093645
+131.253.26.232 1 1 11254 20151102194258
+200.114.226.34 5 50 1278574 20151101043519
+123.125.71.19 3 3 23973 20151104023726
+66.102.9.49 1 274 7425596 20151102213727
+62.15.53.19 3 78 1588351 20151104134025
+62.43.92.70 3 108 1023375 20151106113018
+81.61.128.137 2 56 1275731 20151103115710
+207.126.48.53 1 1 0 20151105175825
+88.20.167.13 1 35 358272 20151102120512
+220.181.108.121 2 2 85647 20151106104918
+173.252.105.116 0 4 222777 
+201.212.227.108 2 57 1397548 20151103102612
+46.246.82.183 6 6 314661 20151104041322
+31.4.210.84 1 18 129786 20151104074614
+190.161.16.89 0 1 14130 
+84.78.20.203 0 7 346725 
+79.109.62.5 2 47 1030595 20151105213027
+173.252.90.124 0 1 40490 
+144.76.71.83 6 6 290360 20151106213644
+186.7.245.159 2 55 1259598 20151103053512
+85.137.162.131 4 40 495960 20151101190540
+181.211.120.80 0 1 14130 
+216.223.27.26 0 2 63057 
+200.55.183.75 0 1 11070 
+66.249.88.49 3 31 511142 20151105160653
+62.37.159.90 0 238 4816553 
+23.29.122.222 6 6 164191 20151103124424
+87.219.190.128 1 18 129786 20151103202329
+88.7.30.69 0 1 38550 
+190.148.78.155 1 36 339240 20151106024120
+80.79.119.252 1 2 0 20151102101633
+167.89.126.147 1 1 4 20151103093649
+213.254.83.165 0 1 38035 
+199.30.25.32 0 9 645758 
+189.232.114.76 0 1 983315 
+85.115.60.180 6 118 2835045 20151104104630
+123.125.71.86 2 2 45931 20151106113430
+54.176.137.163 1 1 0 20151104004724
+186.113.46.136 0 1 64778 
+173.252.122.120 0 6 313028 
+200.106.73.195 0 2 955348 
+88.7.67.35 2 56 1275731 20151103211050
+201.249.186.169 2 55 1260887 20151102170801
+91.116.187.54 1 45 1022454 20151104215908
+83.34.86.74 0 1 4105 
+62.37.157.207 2 37 332483 20151103110529
+66.102.9.5 0 1 127755 
+54.204.20.249 1 7 344766 20151104212930
+186.150.114.83 2 55 1175683 20151105211942
+69.30.200.44 2 2 15982 20151101040423
+88.2.201.80 2 56 1261036 20151102141940
+173.252.79.114 0 2 215228 
+81.36.171.93 1 45 1022454 20151103121732
+212.170.239.110 4 74 593873 20151105130212
+220.181.108.139 3 3 83871 20151106225004
+80.59.224.39 0 16 414251 
+65.55.210.71 0 9 312045 
+185.35.95.20 0 2 11660 
+217.116.5.9 0 16 414251 
+195.235.113.114 0 17 310209 
+90.162.118.168 2 46 1030430 20151103195131
+181.64.94.126 0 1 983315 
+150.214.94.218 1 45 1022454 20151105151820
+213.143.46.85 6 30 609763 20151103074416
+216.163.188.223 1 1 37940 20151105141058
+123.125.71.81 2 2 75880 20151104133548
+167.89.125.251 3 3 12 20151103121544
+66.102.6.170 0 45 497601 
+31.4.199.219 6 41 412284 20151106143500
+79.155.228.132 2 61 1295535 20151103125058
+217.217.199.195 1 37 371046 20151103143220
+173.252.90.237 0 8 580507 
+90.174.136.193 2 46 1030430 20151103010320
+88.0.175.132 2 39 412858 20151104002450
+216.230.140.252 0 1 26961 
+190.42.88.35 2 57 1275878 20151106231831 20151106231823 /component/jcomments/
+190.165.51.19 4 57 1270098 20151102212213
+200.112.150.187 2 55 1261053 20151106235906 20151106235851 /component/jcomments/
+190.27.164.26 0 1 947242 
+31.4.181.7 1 45 1022454 20151104071509
+176.83.47.250 0 11 407168 
+220.181.108.182 5 5 99853 20151106164556
+181.36.95.145 1 35 269284 20151106142415
+220.181.108.147 2 2 45931 20151104025111
+199.30.24.231 0 2 46876 
+148.101.126.84 1 16 667519 20151103042548
+179.26.189.1 3 75 730356 20151103200658
+69.171.228.117 0 42 2191814 
+187.242.178.150 3 38 1274736 20151106023002
+83.34.172.94 0 8 6924 
+88.3.60.156 0 55 1165737 
+173.252.122.123 0 4 388141 
+31.13.99.113 0 1 40490 
+95.17.236.83 0 16 414251 
+62.43.184.25 0 1 983315 
+179.7.160.84 2 58 1332037 20151106165748
+173.252.73.101 0 2 174892 
+83.49.12.107 1 1 7976 20151103010812
+79.152.181.253 2 41 464192 20151102182104
+186.107.120.145 1 1 11544 20151104160721
+199.30.16.169 0 4 58921 
+199.30.24.16 0 26 722575 
+171.24.233.21 1 37 276025 20151102162137
+91.116.73.174 0 16 414251 
+66.220.145.152 0 2 173692 
+81.61.208.113 0 1 102633 
+186.46.204.152 2 2 11803 20151104205717
+83.51.179.50 0 16 414251 
+220.181.108.163 2 2 55698 20151105194203
+173.252.113.116 0 14 846206 
+212.170.216.34 0 16 414251 
+190.6.89.97 2 58 1332037 20151105195206
+216.223.27.54 0 1 23207 
+187.171.215.83 2 55 1260440 20151103052313
+66.249.81.163 0 13 363488 
+31.4.211.55 1 45 7976 20151102080414
+123.125.71.25 2 2 15982 20151103003909
+83.53.164.186 2 37 368828 20151103140524
+89.140.178.202 2 59 1332185 20151106124456
+173.252.90.243 0 7 516671 
+5.154.21.41 2 55 1260768 20151101000337
+123.125.71.44 3 3 86066 20151106174502
+150.214.94.211 4 57 1276836 20151106173302
+64.74.215.113 1 1 0 20151101185103
+47.60.38.137 0 5 258658 
+104.197.206.194 1 32 683656 20151101072636
+81.39.38.40 2 46 1030430 20151105163726
+220.181.108.77 2 2 55698 20151106024404
+190.77.70.171 0 1 38035 
+123.125.71.90 1 1 47707 20151106014609
+173.252.90.228 0 7 497674 
+189.217.64.10 1 36 349252 20151102010221
+220.181.108.118 1 1 7991 20151102204728
+190.101.66.139 2 56 1275731 20151106062151
+190.207.251.16 2 55 1197702 20151106225059
+201.220.244.162 2 58 1332037 20151106122655
+85.54.16.37 3 47 1038406 20151102164524
+176.83.40.201 0 15 409530 
+83.51.252.55 2 55 1260384 20151105182153
+185.96.192.118 1 1 7993 20151102061240
+37.14.0.36 2 59 1332185 20151101122407
+79.159.117.240 0 1 111184 
+173.252.75.117 0 13 355331 
+78.11.149.91 5 44 648812 20151104195804
+128.127.164.70 0 1 124332 
+213.4.29.254 0 181 1648104 
+94.242.228.43 1 1 4575 20151101013744
+5.166.201.239 3 3 137463 20151101052636
+83.38.24.250 7 57 1248333 20151103102902
+199.47.81.11 2 2 23099 20151106055935
+161.116.51.104 2 57 1275878 20151103092100
+177.224.14.148 5 81 1516581 20151106004059
+107.21.253.49 0 5 232686 
+95.16.106.144 0 27 500075 
+147.156.148.2 0 1 983315 
+191.114.253.185 2 57 1275878 20151106053629
+123.125.71.60 3 3 53922 20151106234500 20151106234500 /
+62.99.96.14 2 65 1383394 20151103143540
+95.61.83.204 10 69 1507537 20151103183710
+173.252.80.115 0 5 381539 
+79.151.137.45 0 16 397784 
+90.168.67.196 1 36 271286 20151105233308
+157.55.235.56 0 32 841270 
+199.30.25.85 0 1 38035 
+173.252.90.247 0 6 422918 
+220.181.108.92 3 3 95833 20151105204405
+220.181.108.94 4 4 91862 20151106074456
+83.57.195.106 4 60 629991 20151102225844
+90.174.3.6 0 16 414251 
+61.135.190.104 0 1 4809 
+173.252.73.115 0 2 159220 
+66.220.146.24 0 8 729295 
+186.14.88.94 1 37 355819 20151106153931
+77.229.153.224 2 58 1332037 20151105155224
+80.28.125.11 14 50 466547 20151104182359
+83.58.206.195 1 1 7976 20151104122229
+190.84.14.9 1 36 342925 20151103231618
+187.146.171.115 0 15 0 
+83.36.96.107 1 35 358273 20151103111543
+217.10.95.100 4 118 2664370 20151105123247
+66.249.93.155 3 57 1584318 20151106224950
+173.252.115.87 0 3 90199 
+79.147.95.183 0 16 414251 
+85.94.180.184 1 36 371529 20151105213550
+212.170.111.244 1 38 399415 20151106144908
+161.22.161.200 4 112 1288234 20151102164551
+70.39.157.195 11 11 529987 20151106134408
+189.221.36.45 2 55 1260440 20151101003526
+85.87.181.10 2 39 423099 20151101232535
+173.252.80.117 0 5 364094 
+80.76.218.60 1 1 0 20151103110704
+213.37.0.93 1 854 1235738 20151106115643
+31.13.113.76 0 1 64778 
+31.4.214.89 0 16 414251 
+190.84.8.236 0 1 124332 
+85.48.104.29 0 10 23850 
+62.254.187.244 3 3 23928 20151102140115
+79.156.116.71 0 1 27011 
+85.59.185.124 1 45 1022454 20151105005433
+216.223.27.29 0 1 31998 
+104.197.125.56 1 6 69157 20151102165810
+213.37.77.175 10 135 3143660 20151105214359
+79.151.152.227 1 17 761018 20151103211357
+88.3.132.14 0 26 486500 
+89.167.129.94 8 170 4445189 20151104130416
+201.183.1.248 0 1 124332 
+88.18.220.188 1 45 1022454 20151104205835
+2.139.197.17 0 16 414251 
+201.247.43.67 2 56 1261036 20151102221710
+123.125.71.112 3 3 53922 20151104173745
+148.251.54.44 26 26 1244798 20151106050932
+201.244.139.87 0 1 983315 
+95.62.183.130 1 36 342925 20151101194235
+80.29.64.16 1 36 339665 20151104215157
+41.250.245.97 1 36 284752 20151102134318
+88.0.155.178 1 51 684560 20151102215436
+83.58.46.243 1 36 284751 20151102100959
+62.151.216.220 7 47 690082 20151106204654
+88.21.248.196 1 34 800987 20151101081738
+91.117.99.191 0 81 1367814 
+91.126.138.79 2 56 1262153 20151106112813
+173.252.75.115 0 5 280465 
+82.217.33.49 4 48 1046382 20151106154949
+190.199.86.245 2 55 1260887 20151104160516
+31.13.99.110 0 1 64778 
+213.231.101.53 0 1 17835 
+105.235.232.6 0 19 464709 
+31.4.203.14 3 40 648864 20151103145516
+173.252.89.59 0 15 1105596 
+83.58.96.143 1 45 1022454 20151104232636
+173.252.90.232 0 5 379228 
+198.84.74.60 1 1 7976 20151101013106
+62.57.103.56 0 1 983315 
+190.234.105.117 4 113 2649801 20151103161051
+209.95.39.140 7 7 265580 20151105013851
+216.244.171.114 2 56 1261442 20151106222928
+66.220.156.116 0 1 79610 
+2.139.180.151 0 16 414251 
+88.10.144.223 4 41 498106 20151105231658
+83.52.17.193 1 38 399414 20151103160030
+85.152.20.11 0 16 414251 
+131.253.25.181 0 2 46082 
+167.89.125.246 2 2 8 20151105194629
+123.125.71.30 3 3 93638 20151105013529
+92.58.135.120 2 56 1259746 20151106120010
+46.151.52.33 1 1 45401 20151101121545
+66.220.156.98 0 6 550896 
+31.13.113.95 0 1 89981 
+200.63.252.93 0 1 16214 
+173.252.88.93 0 1 85026 
+31.13.97.100 0 1 89981 
+195.57.230.142 1 36 290881 20151106122625
+199.30.24.184 0 2 38798 
+186.28.211.118 2 47 1254129 20151102001717
+2.139.210.246 0 52 429963 
+79.155.112.91 1 36 339658 20151106025610
+186.66.63.114 4 58 1355546 20151102003438
+81.32.103.245 6 56 1062514 20151104205428
+167.89.125.234 1 1 4 20151103110509
+173.252.73.107 0 2 113364 
+186.86.239.20 2 55 1259598 20151102021036
+80.219.53.180 9 63 1524851 20151103190108
+173.252.88.250 0 10 435669 
+173.252.90.240 0 5 381363 
+123.125.71.70 2 2 95414 20151106024854
+69.171.228.118 0 44 2232349 
+173.252.115.88 0 7 492331 
+66.220.156.114 0 4 334581 
+189.179.145.121 2 56 1344551 20151104200720
+173.252.73.97 0 3 208781 
+173.252.89.58 0 12 629595 
+31.13.102.98 0 1 40490 
+187.176.200.13 2 38 487969 20151104070159
+85.52.85.165 0 40 686088 
+104.197.111.22 1 45 1022454 20151104032224
+90.161.63.219 4 54 1276602 20151102212513
+173.252.90.248 0 3 264988 
+83.44.198.158 1 35 270252 20151103005911
+173.252.122.121 0 4 108349 
+66.220.156.120 0 2 167056 
+189.139.23.177 1 36 290609 20151105221030
+187.189.191.141 0 1 983315 
+220.181.108.110 1 1 47707 20151102154719
+24.50.216.82 4 58 1288234 20151104043218
+190.43.42.122 2 56 1275731 20151106223725
+200.55.189.172 0 27 645462 
+81.38.201.2 2 60 1292390 20151105121302
+37.135.246.2 7 51 805453 20151106141610
+92.57.189.125 1 36 284753 20151104141142
+123.125.71.106 1 1 37940 20151104173746
+88.27.245.58 1 46 1252603 20151105085622
+193.145.136.230 6 50 540301 20151106121957
+88.12.232.188 14 57 971466 20151105170117
+123.125.71.20 5 5 129802 20151105023655
+66.220.158.118 0 1 38035 
+176.83.233.249 2 38 421804 20151101142624
+190.202.23.4 1 15 337920 20151104193538
+217.217.67.202 6 112 2536914 20151103182421
+66.220.146.26 0 9 656357 
+176.119.76.200 1 1 47590 20151103235432
+89.128.90.158 1 36 339657 20151101195415
+187.151.164.196 2 57 1277305 20151105032521
+80.33.167.146 0 29 735774 
+220.181.108.155 1 1 37940 20151105025234
+220.181.108.83 2 2 45931 20151106104541
+37.201.193.190 2 2 15967 20151102111129
+216.163.188.238 1 1 47707 20151104164449
+177.234.11.62 1 18 129786 20151105142804
+123.125.71.74 1 1 7991 20151102084023
+79.152.210.168 0 16 414251 
+84.123.44.40 2 56 1260533 20151104153636
+47.60.133.184 0 16 414251 
+87.222.101.251 0 1 44211 
+200.55.189.171 2 20 427932 20151102132148
+66.220.145.149 0 3 80750 
+220.181.108.145 2 2 45931 20151103144409
+200.52.74.126 4 59 1289547 20151104203649
+93.125.99.2 1 1 37823 20151101145105
+216.223.27.58 0 1 197988 
+85.49.13.28 2 52 1083067 20151101230636
+220.181.108.107 2 2 18177 20151106084642
+109.111.123.34 3 76 762365 20151106005410
+213.143.58.253 0 16 414251 
+31.4.187.155 1 18 47930 20151101191430
+195.76.49.170 1 37 290763 20151106132832
+81.38.47.103 0 32 652042 
+123.125.71.117 3 3 113820 20151104163552
+200.24.212.154 0 1 983315 
+89.128.39.212 4 72 1797729 20151102212336
+190.200.37.110 2 19 781952 20151104165124
+84.124.18.51 3 42 611444 20151102110616
+177.3.95.47 1 4 28985 20151101172545
+186.41.185.117 2 58 1332037 20151104141918
+88.8.216.208 2 58 1332037 20151105194223
+123.125.71.91 1 1 10186 20151104204645
+185.2.151.171 2 2 0 20151105075418
+79.147.167.128 4 93 898565 20151105161712
+84.122.10.87 13 91 1279710 20151106190301
+167.89.125.223 4 4 16 20151104214538
+161.168.251.108 0 2 45670 
+200.82.121.64 0 1 14130 
+84.78.16.139 1 1 13393 20151106203709
+173.252.113.119 0 14 585604 
+46.136.179.237 3 57 1199194 20151103124738
+213.143.58.121 1 10 419728 20151101033747
+159.147.107.216 1 44 1017645 20151104144820
+131.253.24.152 0 1 499 
+83.59.140.116 1 35 270305 20151106111018
+123.125.71.22 2 2 85647 20151103075150
+88.25.138.206 4 52 1218860 20151101045723
+81.45.26.180 3 47 1038406 20151105101659
+62.14.178.153 0 16 578902 
+187.171.55.179 2 55 1260440 20151101001655
+79.151.145.148 2 56 1275731 20151102185017
+217.116.5.88 4 142 1981457 20151106094932
+173.252.80.119 0 7 383496 
+104.232.35.44 1 1 37823 20151102204218
+107.178.39.113 2 46 1030430 20151106224806
+95.17.171.96 3 60 1364265 20151105183428
+62.252.200.213 2 58 1774849 20151103195944
+62.82.236.28 4 41 494148 20151103141227
+88.12.49.172 0 17 422542 
+123.125.71.110 1 1 10186 20151105233654
+200.29.139.66 0 1 14130 
+190.71.141.89 0 1 4105 
+79.145.22.47 1 45 1022454 20151105180539
+195.53.83.164 7 131 1314591 20151105144810
+79.109.183.224 0 1 38550 
+173.252.75.112 0 6 121512 
+31.13.97.105 0 1 86371 
+88.12.50.231 0 52 916696 
+213.143.58.51 3 53 1237725 20151104132306
+173.252.90.118 0 1 79610 
+81.37.115.4 1 35 321087 20151103143614
+74.112.131.241 1 1 13409 20151102144725
+90.163.208.157 4 51 1093964 20151102125422
+188.241.96.32 4 42 554226 20151104223405
+31.4.222.31 0 1 124332 
+92.4.41.13 15 65 1429847 20151104235533
+173.252.90.122 0 1 86371 
+85.53.132.202 1 51 684590 20151105194627
+157.56.122.218 0 48 1261905 
+88.17.15.109 0 16 400318 
+37.29.157.189 1 1 7976 20151103211240
+190.104.22.181 0 1 11860 
+123.30.175.215 2 2 21762 20151101143856
+173.252.88.91 0 2 117382 
+189.202.30.137 1 36 342588 20151105035027
+5.9.112.6 6 6 313608 20151106111136
+193.252.184.112 2 58 1332037 20151104163343
+151.182.3.97 0 1 124332 
+136.243.17.161 5 5 260713 20151105223152
+167.89.126.146 4 4 16 20151103125949
+85.53.60.243 2 55 1260440 20151103205821
+220.181.108.160 3 3 26168 20151106144517
+2.139.178.207 2 39 436309 20151104100956
+52.21.170.167 1 1 13406 20151103124407
+157.55.0.155 0 22 545828 
+47.60.39.168 49 148 2915712 20151101170735
+181.64.192.3 1 36 340358 20151102012638
+176.83.114.172 0 16 414251 
+216.223.27.28 0 4 37017 
+194.224.106.171 1 46 1022604 20151103165233
+217.216.153.58 2 46 1030430 20151103170759
+87.216.96.69 5 54 1205555 20151102102354
+187.250.229.121 0 1 17835 
+89.167.129.91 0 47 740623 
+37.133.213.179 5 76 707001 20151102203721
+123.125.71.17 2 2 57893 20151102133851
+85.86.87.137 1 46 1022604 20151105181627
+83.49.47.144 1 56 1508721 20151102173406
+173.252.80.114 0 4 272255 
+65.55.210.162 0 1 894 
+61.135.190.221 0 1 4809 
+89.140.185.74 0 20 641274 
+163.117.155.164 1 1 7991 20151104034705
+200.48.121.206 2 55 1261814 20151106204736
+88.9.122.112 1 46 7991 20151102195647
+220.181.108.186 3 3 83871 20151105015115
+90.69.19.240 6 43 459954 20151103074640
+37.10.163.161 0 17 451584 
+37.134.67.177 1 51 684411 20151103170532
+173.252.73.121 0 1 72874 
+80.36.178.69 1 35 269618 20151106134141
+80.27.237.25 1 34 910123 20151102152449
+69.30.200.42 1 1 7991 20151102163352
+220.181.108.102 2 2 85647 20151105114527
+186.46.202.35 4 61 1312999 20151103192934
+66.249.93.151 4 69 1986053 20151106161752
+86.170.165.228 26 86 1935304 20151106020207
+79.154.21.76 1 37 319426 20151103171659
+62.151.126.51 0 1 983315 
+173.252.88.249 0 8 274798 
+31.4.218.123 0 4 162760 
+88.20.123.26 0 26 486500 
+62.42.164.43 2 56 1275731 20151105040454
+209.126.105.204 1 1 37940 20151105003838
+31.221.143.97 2 39 413179 20151104131519
+61.135.190.102 1 3 17594 20151105124747
+31.4.201.192 11 78 2290698 20151106080825
+198.37.145.180 1 1 4 20151103170535
+90.163.85.103 2 2 15952 20151102090225
+84.124.26.186 7 59 1337090 20151105170732
+201.234.246.10 2 63 1351842 20151106152854
+87.220.149.50 1 36 284752 20151103212232
+90.71.200.252 0 1 111184 
+187.177.57.138 0 1 19289 
+85.63.78.193 0 16 414251 
+167.89.126.62 1 1 4 20151104004437
+181.136.247.245 0 1 983315 
+51.175.131.246 1 1 37960 20151105131252
+193.144.37.54 0 26 486500 
+220.181.108.150 1 1 37940 20151103164743
+95.210.108.28 13 104 1295720 20151103152045
+95.22.67.166 2 37 350938 20151105213156
+88.3.33.214 8 55 1159687 20151101222110
+95.16.122.227 2 55 1260384 20151102192250
+90.161.125.68 8 43 439757 20151106112055
+83.47.18.44 3 53 706882 20151104093403
+80.103.99.87 1 46 1022604 20151103120454
+82.158.120.174 1 1 7976 20151104172128
+89.131.197.101 6 54 1183350 20151105185134
+158.109.29.216 1 36 284751 20151102122016
+123.125.71.42 2 2 48126 20151104023727
+213.97.72.70 0 6 281865 
+131.253.25.155 0 3 21009 
+37.132.10.143 1 45 691462 20151102160249
+176.83.14.166 0 16 414251 
+84.78.17.83 1 35 269615 20151102171107
+220.181.108.84 1 1 7991 20151102114649
+190.237.183.17 0 1 82850 
+37.29.181.23 0 16 414251 
+88.3.213.32 0 78 486500 
+173.252.105.117 0 2 90538 
+190.148.39.27 0 1 380522 
+31.13.113.90 0 1 86371 
+88.11.139.131 0 1 14130 
+148.246.175.20 0 1 14130 
+31.13.99.116 0 2 172347 
+91.212.124.173 1 1 47590 20151102181929
+123.125.71.87 1 1 10186 20151105104415
+81.39.90.47 0 16 414251 
+201.141.19.253 0 1 983315 
+181.210.65.72 0 1 372426 
+79.148.241.9 0 52 973000 
+84.78.26.121 2 50 1087293 20151103093623
+83.46.149.241 0 16 414251 
+185.88.25.23 1 17 118050 20151103184259
+2.136.142.145 7 50 555606 20151106180051
+187.248.15.3 2 38 368975 20151103224715
+189.228.185.212 2 55 1260440 20151103052040
+80.174.106.172 6 45 419592 20151103171409
+181.64.192.211 2 55 1261053 20151102200011
+194.158.67.19 1 36 355672 20151102105016
+190.233.175.61 2 55 1259962 20151105000841
+123.125.71.39 4 4 91862 20151106144155
+213.96.88.139 0 26 486500 
+23.238.22.38 2 2 15986 20151106013125
+186.46.206.211 2 56 1260916 20151104150006
+187.176.15.59 2 56 1291577 20151104005921
+185.93.187.46 1 1 1934 20151102110500
+46.26.204.185 0 16 414251 
+187.187.237.52 2 55 1261004 20151104225038
+80.31.70.217 2 2 22951 20151103175727
+79.159.80.254 0 24 280599 
+83.52.253.95 0 16 414251 
+167.89.125.222 2 2 8 20151104105334
+195.76.206.160 0 85 477116 
+188.78.188.213 2 55 1264015 20151103085259
+199.30.25.111 0 7 507958 
+195.53.165.2 2 2 75920 20151102023236
+47.60.32.43 0 16 414251 
+37.11.88.69 1 45 1022454 20151101175333
+220.181.108.141 1 1 37940 20151101145314
+2.139.80.53 2 38 303603 20151105215212
+186.4.41.130 2 55 1260440 20151104022829
+220.181.108.146 1 1 7991 20151106194542
+87.222.155.53 1 45 1022454 20151106124138
+123.125.71.31 2 2 95414 20151101235125
+81.33.73.152 1 45 1022454 20151106235830 20151106235830 /
+212.4.110.102 1 45 1022454 20151106130238
+83.35.2.15 0 17 451584 
+173.252.73.106 0 2 130471 
+212.129.31.47 2 2 37823 20151101084136
+158.69.27.74 1 1 37823 20151102131957
+81.203.201.127 5 44 403367 20151105233742
+66.249.84.124 1 13 236868 20151103094648
+213.98.123.11 2 50 1162830 20151104200638
+201.220.244.192 0 1 26961 
+84.127.237.86 1 37 319425 20151104093913
+84.127.243.190 0 26 429963 
+52.22.108.134 1 1 13574 20151103220058
+173.252.89.54 0 13 526248 
+87.218.183.3 1 1 11372 20151101223313
+173.252.75.119 0 3 91299 
+173.252.90.238 0 4 279165 
+83.165.136.139 2 46 1030430 20151105094013
+213.0.43.177 3 69 1157910 20151104120700
+173.252.115.84 0 3 308968 
+46.24.16.66 13 152 2888340 20151105174515
+80.94.4.199 0 1 226676 
+77.229.94.174 0 1 73403 
+201.160.243.170 3 37 280064 20151106232537 20151106232456 /master-pasteleria-profesional
+181.109.6.197 1 44 1239392 20151104135836
+73.20.2.16 0 1 983315 
+47.62.31.129 1 36 284752 20151105131514
+79.148.151.222 1 36 284724 20151106234504 20151106234504 /curso-de-revenue-management
+80.30.134.249 0 24 280599 
+189.230.74.192 0 1 983315 
+80.35.88.187 0 26 429963 
+186.167.251.166 2 48 1091988 20151106132658
+200.111.120.114 4 63 58851 20151104212826
+47.62.72.215 2 55 1260384 20151106155114
+201.240.189.101 2 58 1332037 20151103191910
+31.13.99.106 0 1 64778 
+90.161.120.180 1 37 359772 20151103203532
+88.7.120.243 2 56 1260533 20151104214209
+83.60.102.213 0 16 414251 
+161.22.130.130 4 112 2551462 20151102214508
+181.37.133.47 2 55 1260631 20151101143204
+213.4.199.66 1 37 284901 20151105115030
+37.11.177.125 3 136 2736520 20151106135558
+167.89.126.82 2 2 8 20151104091735
+37.35.200.87 2 52 697000 20151104215929
+173.252.73.100 0 2 127753 
+77.228.14.120 9 59 1362764 20151103184730
+220.181.108.151 2 2 15982 20151103044547
+83.51.250.182 0 16 414251 
+198.46.145.108 1 1 7976 20151106201804
+31.13.97.97 0 1 87446 
+213.254.83.247 0 1 124332 
+130.206.138.233 6 168 3827193 20151104195008
+66.220.145.155 0 4 263036 
+31.13.102.111 0 1 87321 
+201.220.242.45 3 59 1344779 20151105164150
+190.236.148.54 0 1 14130 
+31.13.99.112 0 1 86371 
+220.181.108.148 3 3 93638 20151104134746
+84.78.150.174 0 16 414251 
+173.252.90.244 0 4 258667 
+77.226.246.90 1 36 270297 20151104122558
+47.60.45.231 7 61 1325530 20151105182148
+88.6.155.126 0 1 124332 
+62.151.63.200 7 160 3351090 20151104101816
+82.144.108.4 3 51 1154185 20151105180809
+194.224.71.13 0 52 788718 
+190.9.255.141 0 1 429098 
+66.102.9.60 3 306 7737966 20151106163151
+173.252.79.115 0 3 138475 
+192.188.53.215 2 53 1253834 20151105220244
+83.61.255.82 0 1 124332 
+37.134.108.212 2 55 1262004 20151104184519
+123.125.71.26 2 2 45931 20151105023656
+173.252.88.251 0 6 123728 
+199.30.25.26 0 2 10952 
+173.252.75.118 0 8 656310 
+189.156.250.231 2 56 1275731 20151104062952
+81.47.170.60 1 39 399563 20151106085553
+144.76.201.69 3 3 149513 20151104134925
+173.173.31.197 0 1 445290 
+79.158.133.158 11 51 833234 20151106232325 20151106230902 /programadireccionygestionhotelera-admision
+176.9.78.25 1 1 7991 20151101185328
+31.13.102.123 0 1 87446 
+54.225.104.196 0 6 461533 
+190.232.39.64 2 57 1289861 20151103002409
+212.170.203.21 1 45 1022454 20151103094114
+157.55.43.24 0 32 841270 
+165.225.76.80 1 35 269124 20151104162338
+123.125.71.92 3 3 93638 20151106083610
+213.96.79.221 1 36 339662 20151106192352
+173.252.73.122 0 2 171397 
+189.207.130.3 1 45 1022454 20151104192246
+186.94.52.27 5 64 1726738 20151104224613
+46.136.9.2 8 44 560535 20151106010749
+199.30.25.73 0 13 537848 
+54.221.198.105 2 7 235614 20151104212931
+69.30.200.43 1 1 7991 20151101053918
+199.30.25.218 0 7 507958 
+123.125.71.69 1 1 7991 20151104143722
+190.146.52.95 4 57 1270098 20151103021242
+190.86.100.9 0 1 4105 
+81.39.83.62 0 15 346436 
+216.223.27.25 0 1 718 
+186.77.198.230 0 1 14130 
+208.87.233.201 1 45 7976 20151104183958
+190.167.44.169 2 24 1898045 20151105210838
+81.184.64.222 0 1 66171 
+220.181.108.103 1 1 37940 20151102224615
+173.252.113.112 0 12 700261 
+69.171.230.120 0 1 37772 
+123.125.71.113 2 2 55698 20151104204933
+52.91.197.114 1 1 37823 20151102100121
+83.55.47.236 2 90 2044942 20151104041415
+190.216.141.187 1 35 258142 20151106174823
+187.199.172.63 2 55 1260440 20151105001747
+62.174.87.108 2 55 1262004 20151105174504
+66.220.146.21 0 7 572607 
+173.252.73.119 0 2 212693 
+190.9.192.241 0 1 983315 
+146.158.180.27 1 40 1237667 20151103100028
+193.153.55.226 0 7 288715 
+88.3.53.92 2 52 1125367 20151104113257
+83.42.125.144 2 55 1261396 20151103164312
+167.89.125.224 1 1 4 20151102081410
+181.61.197.153 0 1 14130 
+190.165.65.76 0 1 14130 
+189.222.22.48 2 56 1275731 20151101182550
+216.126.226.135 1 1 11701 20151105024540
+212.183.206.183 0 26 486500 
+141.105.102.123 4 42 498776 20151104204233
+181.67.227.174 6 118 2676887 20151102204834
+119.137.66.24 13 13 606594 20151106125534
+47.62.190.180 0 1 983315 
+190.13.14.194 0 1 24298 
+88.1.6.200 1 45 1022454 20151102204041
+123.125.71.54 4 4 121811 20151106234155 20151106224415 /
+83.40.107.213 0 16 414251 
+213.97.80.119 7 62 1268702 20151105054051
+213.60.139.43 2 55 1262004 20151104083859
+79.154.105.201 1 37 339810 20151106224422
+62.43.9.159 5 45 623347 20151105204316
+190.42.174.38 0 2 163282 
+148.211.91.232 2 57 1277305 20151104012605
+181.141.210.79 2 55 1261316 20151106221210
+213.60.228.246 0 8 479853 
+190.198.86.45 2 57 1262161 20151102174747
+190.193.14.216 0 1 4105 
+31.13.99.99 0 1 89981 
+190.63.148.19 2 55 1260440 20151104040239
+54.204.20.250 0 5 370478 
+198.84.74.61 2 2 15986 20151105013053
+2.139.178.204 1 35 269793 20151104122810
+84.78.28.211 1 45 1022454 20151102124046
+66.220.156.119 0 1 72874 
+69.171.228.120 0 31 1611442 
+200.110.89.74 2 56 1275731 20151105010503
+5.158.237.55 1 1 47590 20151106104823
+177.252.139.68 2 52 1260151 20151101155057
+85.52.90.236 1 36 319277 20151104105332
+79.148.94.37 0 1 983315 
+200.104.7.86 2 55 1259870 20151101231114
+81.36.134.157 1 45 1022454 20151103103649
+189.131.120.34 1 28 333435 20151105051604
+83.35.1.104 2 46 1030430 20151102234304
+157.56.122.219 0 32 841270 
+190.128.222.166 4 114 2489617 20151104230404
+220.181.108.176 1 1 37940 20151104145144
+81.61.66.3 2 55 1260887 20151105223247
+129.123.7.6 2 2 9150 20151101024634
+79.98.107.90 2 2 9150 20151101005021
+88.1.81.46 0 10 59341 
+47.60.38.173 0 16 420635 
+186.176.227.194 4 58 1288234 20151106022943
+190.47.103.30 0 1 40490 
+80.30.230.26 0 16 397784 
+5.9.36.66 2 2 9150 20151101002357
+88.17.56.123 2 54 469445 20151104200200
+179.7.132.4 2 55 1261316 20151103090235
+80.33.48.236 0 26 486500 
+80.34.87.209 0 12 345832 
+31.13.102.108 0 1 79610 
+83.51.153.162 6 99 2008455 20151105104923
+88.22.50.234 2 56 1275731 20151104224446
+108.208.118.48 1 36 271858 20151106190428
+200.82.203.216 2 21 879837 20151105041023
+173.252.73.112 0 2 117382 
+54.221.199.147 1 6 538847 20151104212930
+220.181.108.158 1 1 47707 20151101225730
+52.23.156.32 16 17 189158 20151105200547
+46.18.73.255 0 16 414251 
+66.220.158.115 0 1 38035 
+84.78.25.8 0 16 414251 
+84.236.178.36 0 1 983315 
+213.98.34.179 2 60 1130524 20151104223555
+50.153.102.240 0 1 983315 
+89.141.56.115 0 1 124332 
+220.181.108.80 1 1 10186 20151105104128
+83.50.222.124 1 1 7976 20151103211551
+81.38.228.6 1 45 1022454 20151105221655
+200.55.38.123 1 36 290881 20151102213633
+167.89.125.253 1 1 4 20151103100754
+173.252.90.229 0 5 379893 
+123.125.71.47 5 5 111815 20151104233635
+199.30.24.125 0 1 89981 
+46.26.136.148 1 36 290664 20151102224104
+189.149.47.173 0 1 71040 
+190.239.206.7 4 57 1271782 20151102044715
+80.72.9.5 1 1 12742 20151105193047
+47.60.47.199 1 1 12020 20151102230022
+79.153.84.86 2 37 434818 20151104003736
+81.34.169.141 12 102 2219351 20151102191052
+190.166.159.234 16 64 1094361 20151105023514
+83.46.101.149 2 92 2045208 20151101174529
+212.170.50.98 1 38 359918 20151106093631
+167.56.88.223 2 55 1260871 20151104231712
+83.59.178.63 4 55 1395583 20151102131526
+95.120.231.18 1 32 708986 20151103121243
+176.86.9.74 2 81 1362113 20151106220717
+201.228.40.74 0 1 4105 
+187.208.24.34 1 36 284754 20151101001731
+188.86.12.56 2 55 1260105 20151103000041
+195.53.233.212 0 4 208270 
+187.188.78.126 5 60 1289618 20151104030205
+85.49.169.212 1 45 1022454 20151106112353
+85.48.144.20 0 16 414251 
+81.44.82.254 0 17 302632 
+123.125.71.29 2 2 48126 20151102193836
+173.252.90.102 0 2 175007 
+31.13.113.86 0 1 87321 
+66.220.156.110 0 2 173692 
+181.141.23.57 0 1 11860 
+188.171.57.164 1 45 1022454 20151105111028
+186.150.162.65 1 1 7976 20151102141723
+85.55.16.38 0 1 983315 
+2.139.221.68 0 55 735774 
+190.12.84.28 0 1 113354 
+79.145.31.39 0 16 414251 
+62.43.141.163 1 37 284901 20151103212438
+107.72.164.18 0 1 983315 
+220.181.108.183 4 4 101629 20151106234701 20151106234701 /
+190.156.170.213 2 37 382171 20151104035527
+148.241.128.35 2 56 1275731 20151102142748
+81.184.90.136 0 1 288339 
+220.181.108.95 3 3 65884 20151106024403
+78.193.103.77 2 2 9150 20151101030858
+176.83.20.127 1 36 371528 20151102091336
+173.252.90.97 0 1 86371 
+201.128.220.40 1 6 75006 20151105010432
+84.122.107.244 1 36 342926 20151104171410
+90.171.192.86 1 46 1022604 20151104190800
+83.60.157.85 1 37 1270911 20151102220352
+173.252.73.96 0 2 175007 
+65.55.65.174 0 16 420635 
+91.116.166.96 1 37 284898 20151102194319
+195.53.233.211 3 97 2251258 20151106151647
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 6
+20151101 1997 6771 162461289 213
+20151102 2457 10829 245445761 315
+20151103 2340 21479 434999074 369
+20151104 2506 13156 305476752 350
+20151105 2165 9927 233453557 281
+20151106 2590 10543 231102070 261
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 24
+5mn-15mn 88
+30s-2mn 122
+2mn-5mn 65
+0s-30s 1401
+15mn-30mn 38
+30mn-1h 36
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 544
+/ 10201 341168346 748 654
+/component/jcomments/ 387 27461 3 306
+/administrator/index.php 176 1775929 10 14
+/curso-de-revenue-management 137 2535669 88 71
+/master-direccion-gestion-hotelera 125 2050170 66 54
+/blog-portada 112 3464884 101 92
+/master-revenue-management-comunicacion-turistica 102 1446941 31 36
+/cursos-profesionales 83 1345364 3 15
+/cursos-revenuemanagement 79 951233 3 4
+/blog/que-es-revenue-management-indicadores-beneficios-y-como-aplicarlo 78 1020274 59 3
+/curso-i-d-i-nuevas-tendencias-restauracion-antiguos-alumnos 1 10935 0 0
+/curso-experto-personal-vino-para-bodega-programa 2 20879 0 0
+/blog/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico 2 56886 1 1
+/programamarketingyoptimizacioncomercial-antiguos-alumnos 1 10987 0 0
+/programadesarrollodireccionyliderazgo 1 11728 0 0
+/curso-i-d-i-nuevas-tendencias-restauracion-objetivos 3 33770 0 1
+/curso-upselling-tecnicas-avanzadas-hoteleria 7 111077 1 2
+/curso-de-gestion-comercial-y-revenue-management-metodo 2 25385 0 0
+/programa-marketing-y-optimizacion-comercial-bolsadetrabajo 1 10976 0 0
+/blog/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web 11 109158 6 1
+/cursos-direccionygestion 27 336570 0 3
+/curso-experto-universitario-recepcion-hoteles-practicasenempresas 2 22063 0 0
+/programadesarrollodireccionyliderazgo-antiguos-alumnos 1 10919 0 0
+/programa-desarrollo-directivo-practicasenempresas 3 32761 1 2
+/revenueavanzadoupsellingycrossselling-programa 4 50076 0 0
+/cursos-restauracion-y-hosteleria 26 330207 0 0
+/direccionestrategicarecursoshumanos 1 13001 0 0
+/blog/blog-hoteleria 3 79386 0 0
+/programagestiondenegociosonline-objetivos 1 11277 0 0
+/programacontroldegestionempresarial-antiguos-alumnos 1 10872 0 0
+/master-direccion-gestion-hotelera-objetivos 12 134153 5 5
+/httpwwwcesaeesprograma-gestion-de-negocios-online-antiguos-alumnos 1 10974 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion-practicas-en-empresasrestaura 1 10915 0 0
+/curso-marketing-y-gestion-comercial-campos-de-golf-practicas-en-empresas 2 21855 0 0
+/programadireccionygestionhotelera-antiguosalumnos 19 799955 11 12
+/curso-organizacion-gestion-interna-establecimiento-wellness-y-spa-practicas-en-empresas 1 10942 0 0
+/administrator/ 11 24299 2 0
+/blog/definiciones-de-turismo-hacer-turismo-implica-viajar 1 0 0 0
+/curso-optimizacion-comercial-centro-wellness-y-spa-factores-de-exito-bolsa-de-trabajo 1 10998 0 0
+/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-de-empresas-hoteleras-pdgh 1 0 0 0
+/blog/la-guia-repsol-se-renueva 1 0 0 0
+/curso-gestion-operativa-interna-establecimiento-restauracion 17 247811 3 5
+/programadireccionygestionhotelera-bolsa-de-trabajo 4 106935 0 0
+/curso-experto-en-social-media-y-community-manager-en-turismo-metodologia 3 37436 0 1
+/curso-experto-revenue-management-comunicacion-hotelera-programa 7 82004 0 0
+/blog/la-importancia-de-la-flotacion-en-el-agua 4 48032 3 0
+/blog/blog-juanluisgarciacarmona 3 39428 0 0
+/el-analisis-de-toprural-y-rural-guest-de-chema-herrero 1 46428 1 1
+/programa-superior-en-revenue-management-y-comunicacion-online-20-profesorado 1 11878 0 0
+/curso-especialistauniversitarioendirecciondehoteles-bolsadetrabajo 1 11048 0 0
+/master-revenue-management-comunicacion-turistica-objetivos 6 68388 1 1
+/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener 2 92197 1 2
+/optimizacioncomercialcentrowellnessyspafactoresdeexito-metodologia 1 12797 0 0
+/programadireccionygestionwellnessyspa-practicas-en-empresas 2 22133 0 0
+/master-direccion-gestion-hotelera-practicas-en-empresas 6 92501 0 1
+/blog/porque-elegir-temazcal-el-bano-de-vapor-sanador 1 12467 1 0
+/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener/ 1 46163 1 0
+/curso-agencia-de-viajes-bolsa-de-trabajo 1 10871 0 0
+/programa-desarrollo-directivo-metodologia 2 25448 1 1
+/guia-de-los-recursos-20-hoteleros-i-blogs 1 48715 0 1
+/blog/colaboracion-de-zenit-hoteles-y-cesae-businessatourism-school 2 49651 1 1
+/agenciadeviajes-objetivos 2 22565 1 1
+/cursosturismo 14 160227 0 4
+/curso-de-community-manager-en-turismo-objetivos 1 11174 0 0
+/programagestiondenegociosonline-programa 1 13435 0 0
+/programa-direccion-y-desarrollo-recursos-humanos-profesorad 1 11118 0 0
+/blog/cesae-os-desea-felices-vacaciones 1 0 0 0
+/blog/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos 1 11105 1 0
+/programadireccionydesarrollorecursoshumanos 1 11753 0 0
+/blog/blog-ramonadillon 3 49440 0 0
+/blog/novedades-de-los-recursos-20-hoteleros-ii-comunidades 1 0 0 0
+/curso-especialistauniversitarioendirecciondehoteles-programa 2 24988 0 0
+/blog/blog-turismorural 1 0 0 0
+/master-en-turismo-bolsa-de-trabajo 4 69985 0 1
+/comunicaciononlineygestion20hotelera-metodologia 1 12741 0 0
+/curso-i-d-i-nuevas-tendencias-restauracion 13 198874 5 4
+/curso-experto-universitario-recepcion-hoteles-programa 3 35937 0 1
+/curso-i-d-i-nuevas-tendencias-restauracion-bolsa-de-trabajo 1 10927 0 0
+/blog/las-claves-de-menu-engineering 21 261236 17 3
+/curso-experto-universitario-recepcion-hoteles-admision 3 33800 0 1
+/blog/extremadura-2011-un-evento-de-hosteltur-que-ha-marcado-la-diferencia 1 0 0 0
+/curso-gestion-analisis-y-control-financiero-bolsa-de-trabajo 2 21907 0 0
+/blog/que-son-las-bodas-de-destino 8 164877 6 2
+/curso-tendencias-y-evolucion-futura-mercado-wellness-y-spa-practicas-en-empresas 1 10941 0 0
+/hoteleria-e-internet-una-historia-de-amor-odio 1 50316 1 1
+/master-maitre-sumiller-profesional 3 35320 0 0
+/curso-experto-revenue-management-comunicacion-hotelera 19 269134 8 4
+/blog/descubre-nuestro-curso-de-comunicacion-online-y-gestion-hotelera-20 1 0 0 0
+/programadireccionygestionrestauracion-a-quien-va-dirigido 2 21363 0 0
+/master-revenue-management-comunicacion-turistica-practicas-en-empresas 4 44205 0 1
+/entidadescolaboradoras 8 86847 2 3
+/curso-gestion-operativa-interna-establecimiento-restauracion-metodologia 2 25499 0 0
+/programadireccionygestionwellnessyspa/ 7 92042 5 4
+/marketingyplanificacionestrategica-objetivos 1 11319 0 0
+/programadireccionygestionwellnessyspa 31 723829 13 11
+/blog/blog-anabelengutierrezalvarez 3 39008 0 0
+/bienestarpersonalactividadeswellnessyspa-objetivos 1 11297 0 0
+/blog/novedades-de-la-gestion-empresarial-y-gestion-del-tiempo 1 0 0 0
+/comunicaciononlineygestion20hotelera-objetivos 1 11296 0 0
+/curso-experto-en-gastronomia-a-quien-va-dirigido 1 10700 0 0
+/las-ultimas-novedades-de-quirogimnasia-la-gimnasia-de-las-manos 1 12230 1 1
+/blog/se-un-experto-en-distribucion-online-y-revenue-management 1 0 0 0
+/curso-experto-en-reposteria-profesional 4 43140 0 1
+/revenuemanagement-y-comunicacionhotelera20-admision 3 33818 0 0
+/gestionanalisisycontrolfinanciero-antiguos-alumnos 2 23049 0 0
+/plataformaelearning 2 22511 1 1
+/curso-experto-en-gastronomia-programa 4 46928 1 1
+/programa-direccion-y-desarrollo-recursos-humanos-practicasenempresas 1 10971 0 0
+/blog/aclarando-el-concepto-de-estrategia-empresarial 1 0 0 0
+/colaboracion-de-zenit-hoteles-y-cesae-businessatourism-school 1 49529 1 1
+/curso-bienestar-personal-actividades-wellness-y-spa-practicas-en-empresas 1 11129 0 0
+/programa-desarrollo-direccion-y-liderazgo-bolsadetrabajo 1 10974 0 0
+/blog/descubre-nuestro-ultimo-master-el-mdgh-master-en-direccion-de-empresas-hoteleras-full-time 1 0 0 0
+/curso-de-gestion-comercial-y-revenue-management-en-restauracion 23 316967 4 6
+/master-revenue-management-comunicacion-turistica-programa 22 295762 1 6
+/curso-experto-universitario-recepcion-hoteles 21 598247 10 8
+/marketingygestioncomercialcamposdegolf-metodologia 2 25480 0 0
+/excelenciagestionhotelera-objetivos 2 22188 0 0
+/programadesarrollodirectivo-antiguos-alumnos 1 11160 0 0
+/curso-excelencia-seguridad-alimentaria-restauracion-programa 4 44985 0 1
+/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener 3 138486 3 3
+/curso-i-d-i-nuevas-tendencias-restauracion-practicas-en-empresas 1 10917 0 0
+/executiveeducation 31 443179 0 3
+/blog/como-debe-ser-el-departamento-de-recepcion-frente-al-cliente 8 95072 8 1
+/curso-experto-revenue-management-comunicacion-hotelera-bolsadetrabajo 3 33150 0 0
+/curso-experto-en-maitre 4 42928 0 0
+/curso-especialistauniversitarioendirecciondehoteles 13 490496 1 0
+/master-revenue-management-comunicacion-turistica-metodologia 7 133727 0 1
+/direccionestrategicarecursoshumanos-objetivos 1 11249 0 0
+/blog/conoce-el-marketing-gastronomico 4 135072 3 3
+/master-direccion-gestion-hotelera/ 6 80449 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion-metodologia 6 191697 1 2
+/programadesarrollodireccionyliderazgo-programa 1 12696 0 0
+/programadireccionygestionwellnessyspa-programa 7 85977 3 3
+/blog/informe-sobre-la-planta-hotelera-espanola 1 0 0 0
+/curso-excelencia-en-la-gestion-hotelera-bolsadetrabajo 1 10934 0 0
+/revenueavanzadoupsellingycrossselling-objetivos 4 45212 1 2
+/curso-de-revenue-management-programa 17 224610 1 2
+/blog/guia-de-una-buena-estructura-contable 1 0 0 0
+/curso-aspectos-clave-gestion-y-organizacion-centro-wellness-y-spa-practicas-en-empresas 1 10946 0 0
+/blog/hoy-vamos-a-los-toros 1 0 0 0
+/blog/armas-de-doble-filo-el-ultimo-minuto 1 0 0 0
+/institucion 15 256799 1 5
+/plugins/system/cache/cache.xml 2 1180 2 2
+/blog/claves-del-turismo-de-salud 1 0 0 0
+/direccionestrategicarecursoshumanos-antiguos-alumnos 1 11187 0 0
+/agenciadeviajes-programa 1 11908 0 0
+/curso-experto-en-social-media-y-community-manager-en-turismo-bolsadetrabajo 1 11025 0 0
+/conoce-las-3-mejores-estrategias-competitivas-y-la-diferenciacion-en-la-hosteleria 4 49768 4 0
+/excelenciagestionhotelera-metodologia 2 25420 0 0
+/plataformaelearning/ 5 163906 1 2
+/blog/sensibilizacion-y-deteccion-de-necesidades-de-formacion 1 0 0 0
+/blog/como-entender-el-consumo-electrico-en-los-hoteles 12 133911 8 0
+/curso-experto-revenue-management-comunicacion-hotelera-objetivos 2 22348 0 0
+/cursos-pasteleria 9 130599 0 1
+/blog/las-5-claves-para-la-calidad-para-la-competencia-y-la-competitividad 1 0 0 0
+/gestionanalisisycontrolfinanciero 7 88776 4 3
+/que-son-las-bodas-de-destino 1 51156 1 1
+/curso-experto-personal-vino-para-bodega 4 42992 1 1
+/index.php/12-master-en-direccion-y-gestion-de-empresas/12-master-en-direccion-y-gestion-de-empresas-hoteleras-mdgh-/ 2 54813 2 2
+/curso-experto-universitario-recepcion-hoteles-objetivos 2 22776 0 0
+/curso-de-experto-en-revenue-management-hotelero-objetivos 2 22491 0 0
+/blog/por-que-incrementan-las-tarifas-en-lineas-aereas-y-bajan-en-hoteles 2 45401 1 1
+/curso-direccion-estrategica-recursos-humanos-practicas-en-empresas 1 10936 0 0
+/programa-direccion-y-gestion-financiera-metodologia 1 12747 0 0
+/programacontroldegestionempresarial 4 46788 2 2
+/blog/descubre-el-por-que-de-la-hosteleria-y-propiedad-compartida 1 0 0 0
+/programacontroldegestionempresarial-programa 2 22578 0 0
+/blog/no-os-perdais-madrid-fusion 3 117354 2 2
+/programa-desarrollo-direccion-y-liderazgo-profesorado 1 11021 0 0
+/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr 1 0 0 0
+/curso-experto-revenue-management-comunicacion-hotelera-practicas-empresas 2 22061 0 1
+/curso-experto-personal-vino-para-bodega-a-quien-va-dirigido 1 10369 0 0
+/marketingyplanificacionestrategica-metodologia 1 12729 0 0
+/master-cocina-profesional-programa 5 72030 0 1
+/master-pasteleria-profesional 7 78460 2 1
+/programa-superior-en-revenue-management-y-comunicacion-online-20-objetivos 1 11304 0 0
+/curso-de-experto-en-revenue-management-hotelero 21 275933 9 9
+/curso-de-community-manager-en-turismo-bolsa-de-trabajo 1 10885 0 0
+/direccionestrategicarecursoshumanos-metodologia 1 12747 0 0
+/rogramadesarrollodireccionyliderazgo-practicasenempresas 1 10955 0 0
+/blog/el-master-de-direccion-y-gestion-hotelera-de-cesae-ha-sido-clave-para-encontrar-empleo-en-la-consultoria-hotelera 2 11539 1 0
+/curso-excelencia-seguridad-alimentaria-restauracion-bolsa-de-trabajo 1 10921 0 0
+/blog/la-ventaja-de-la-tecnologia-en-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras 1 0 0 0
+/blog/que-necesita-un-buen-revenue-manager 5 45378 2 0
+/blog/claves-para-mejorar-la-gestion-de-los-salones-del-hotel 1 0 0 0
+/aspectosclavegestionyorganizacioncentrowellnessyspa-objetivos 1 11116 0 0
+/master-en-turismo-practicas-en-empresas 5 80993 1 2
+/programagestiondenegociosonline 2 23322 1 1
+/blog/alojamiento-colaborativo-un-nuevo-reto-para-el-revenue-management-hotelero 4 32869 3 1
+/optimizacioncomercialcentrowellnessyspafactoresdeexito 3 38023 1 1
+/programa-superior-en-revenue-management-y-comunicacion-online-20-bolsa-de-trabajo 1 11070 0 0
+/blog/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico 1 0 0 0
+/curso-experto-universitario-recepcion-hoteles-aquienvadirigido 1 10971 0 0
+/blog/10-consejos-para-triunfar-con-tu-curriculum-en-el-extranjero-parte-1 1 0 0 0
+/blog/cesae-os-desea-feliz-navidad-y-prospero-ano-2015 1 0 0 0
+/agenciadeviajes/ 1 12827 1 0
+/programadireccionygestionwellnessyspa-metodologia/ 1 52973 0 1
+/blog/el-sector-spa-en-la-actualidad-critica-y-oportunidad 2 27596 1 0
+/antiguosalumnos 16 481879 0 1
+/blog/el-precio-se-olvida-la-experiencia-se-recuerda 1 0 0 0
+/blog/guia-de-los-recursos-20-hoteleros-i-blogs 3 97557 2 1
+/master-direccion-gestion-hotelera-antiguosalumnos 9 229764 3 2
+/blog/la-satisfaccion-del-cliente-del-hotel 5 45848 4 1
+/curso-experto-en-social-media-y-community-manager-en-turismo-objetivos 2 22747 0 0
+/optimizacioncomercialcentrowellnessyspafactoresdeexito-objetivos 1 11080 0 0
+/blog/santi-santamaria-el-legado-de-uno-de-los-grandes 2 11539 1 0
+/curso-experto-en-social-media-y-community-manager-en-turismo-programa 7 81267 0 1
+/programadireccionygestionrestauracion-admision 4 44832 0 0
+/master-en-turismo 44 579314 14 11
+/curso-marketing-y-planificacion-estrategica-practicas-en-empresas 1 10926 0 0
+/cursos-sumilleria 13 241880 2 2
+/programa-direccion-y-gestion-financiera-bolsa-de-trabajo 2 22110 1 1
+/master-direccion-gestion-hotelera-programa 20 275671 3 5
+/cursosdehoteleria 36 426963 1 3
+/curso-revenue-avanzado-upselling-y-crosselling-antiguos-alumnos 3 32851 1 1
+/programadireccionygestionwellnessyspa-bolsa-de-trabajo 2 22156 0 1
+/curso-de-gestion-comercial-y-revenue-management-programa 4 46150 0 1
+/master-revenue-management-comunicacion-turistica-profesorado 17 363875 8 8
+/master-en-turismo-a-quien-va-dirigido 4 70195 0 0
+/blog/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez 4 187126 4 4
+/blog/5-claves-sobre-alergias-e-intolerencias-alimentarias 4 88039 3 1
+/blog/las-estrategias-de-internalizacion-de-la-industria-hotelera-espanola 3 73723 2 1
+/programa-desarrollo-direccion-y-liderazgo-metodologia 1 12762 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion-objetivos 1 11214 0 0
+/organizaciongestioninternaestablecimientowellnessyspa 2 25394 1 1
+/programasgestionempresarial 13 176274 0 4
+/blog/conoce-las-3-mejores-estrategias-competitivas-y-la-diferenciacion-en-la-hosteleria 63 810951 52 0
+/curso-de-community-manager-en-turismo 4 88945 0 0
+/programa-desarrollo-directivo-bolsadetrabajo 1 10948 0 0
+/master-cocina-profesional 10 112077 1 1
+/curso-optimizacion-comercial-centro-wellness-y-spa-factores-de-exito-antiguos-alumnos 1 11077 0 0
+/5-claves-sobre-alergias-e-intolerencias-alimentarias 1 58330 1 1
+/curso-aspectos-clave-gestion-y-organizacion-centro-wellness-y-spa-bolsa-de-trabajo 1 10968 0 0
+/blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadido 1 0 0 0
+/blog/ventajas-del-bufe-en-la-restauracion 1 0 0 0
+/programadireccionygestionwellnessyspa-a-quien-va-dirigido 9 97833 0 1
+/curso-de-experto-en-revenue-management-hotelero-aquienadirigido 2 21997 0 0
+/programadireccionydesarrollorecursoshumanos-antiguos-alumnos 1 11736 0 0
+/programa-superior-en-revenue-management-y-comunicacion-online-20-a-quien-va-dirigido 1 10817 0 0
+/curso-upselling-tecnicas-avanzadas-hoteleria-objetivos 2 21106 0 0
+/programa-superior-en-revenue-management-y-comunicacion-online-20-programa 8 94907 1 1
+/blog/maximizar-la-satisfaccion-del-cliente 7 82859 6 0
+/curso-experto-en-reposteria-profesionala-quien-va-dirigido 1 10726 0 0
+/instalaciones 11 203406 0 2
+/blog/las-ultimas-novedades-de-quirogimnasia-la-gimnasia-de-las-manos 8 97855 6 0
+/programa-superior-en-direccion-y-gestion-wellness-a-spa-antiguos-alumnos 5 86903 1 1
+/programadesarrollodireccionyliderazgo-objetivos 1 10917 0 0
+/blog/las-20-preguntas-que-siempre-te-haran-para-trabajar-como-revenue-manager 8 76481 4 1
+/blog/blog-ricardolucas 4 75490 1 1
+/curso-gestion-operativa-interna-establecimiento-restauracion-bolsa-de-trabajo 1 10952 0 0
+/blog/normas-para-la-prevencion-de-la-legionela-en-los-centros-wellness 1 0 0 0
+/blog/descubre-la-relacion-entre-turismo-rural-y-revenue-management 2 46908 1 1
+/programa-superior-en-direccion-y-gestion-wellness-y-spa-pdws-profesorado 3 75276 1 1
+/blog/otro-evento-gastronomico-forum-girona-2011 1 0 0 0
+/index.php 1 1954 1 1
+/master-en-turismo-programa 13 201225 1 1
+/programa-superior-en-revenue-management-y-comunicacion-online-20-metodologia 2 26648 0 0
+/blog/descubre-la-nueva-comunidad-dedicada-a-la-restauracion 1 0 0 0
+/blog/descubre-la-diferencia-entre-spa-balneario-y-tasaloterapia 15 192567 13 0
+/curso-revenue-avanzado-upselling-y-crosselling-bolsa-de-trabajo 1 11008 0 0
+/programa-superior-en-revenue-management-y-comunicacion-online-20-practicas-en-empresas 2 22066 1 0
+/master-en-turismo-antiguos-alumnos 6 126292 1 1
+/aspectosclavegestionyorganizacioncentrowellnessyspa 5 63419 2 1
+/programa-marketing-y-optimizacion-comercial-metodologia 1 12766 0 0
+/masters-turismo-hosteleria 75 1241571 5 13
+/master-en-turismo-a-quien-va-dirigido/ 1 47895 1 1
+/comunicaciononlineygestion20hotelera-antiguosalumnos 1 12985 0 0
+/curso-experto-en-social-media-y-community-manager-en-turismo-profesorado 2 22726 0 1
+/curso-upselling-tecnicas-avanzadas-hoteleria-metodologia 2 22126 0 0
+/curso-organizacion-gestion-interna-establecimiento-wellness-y-spa-bolsa-de-trabajo 1 10969 0 0
+/blog/quieres-saber-que-es-rural-musica 1 0 1 1
+/master-revenue-management-comunicacion-turistica-admision 9 138441 0 1
+/curso-de-posicionamiento-seo-y-sem-para-hoteles-objetivos 1 10876 0 0
+/organizaciongestioninternaestablecimientowellnessyspa-objetivos 1 11238 0 0
+/excelenciagestionhotelera 8 90269 3 2
+/experienciacesae/ 1 11378 1 0
+/curso-de-experto-en-revenue-management-hotelero-bolsadetrabajo 1 10959 0 0
+/direccionestrategicarecursoshumanos-programa 1 12026 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion-programa 3 34833 1 1
+/curso-gestion-operativa-interna-establecimiento-restauracion-antiguos-alumnos 1 11118 0 0
+/blog/se-esta-reactivando-el-turismo 1 0 0 0
+/curso-comunicacion-online-y-gestion-2-0-hotelera-bolsa-de-trabajo 1 10950 0 0
+/programadireccionygestionhotelera-metodologia 12 222196 1 0
+/curso-de-gestion-comercial-y-revenue-management-practicas-en-empresas 1 10889 0 0
+/curso-gestion-operativa-interna-establecimiento-restauracion-objetivos 2 22012 0 0
+/programadireccionygestionhotelera-admision 12 197708 0 0
+/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez 1 46835 1 1
+/blog/las-necesidades-del-cliente-eje-central-del-hotel 8 85029 7 0
+/blog/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa 1 0 0 0
+/master-en-turismo-metodologia 6 104694 0 2
+/programadireccionygestionfinanciera-programa 1 12778 0 0
+/curso-revenue-avanzado-upselling-y-crosselling-practicas-en-empresas 2 21967 0 0
+/optimizacioncomercialcentrowellnessyspafactoresdeexito-programa 1 11309 0 0
+/programadireccionygestionrestauracion 53 812308 25 22
+/blog/tiempo-compartido-la-estrategia-para-rentabilizar-los-resorts-y-hoteles 1 0 0 0
+/programadireccionygestionwellnessyspa-objetivos 4 45548 0 0
+/templates/beez_20/fonts/TitilliumMaps29L002.otf 1 30967 0 0
+/curso-bienestar-personal-actividades-wellness-y-spa-bolsa-de-trabajo 1 10926 0 0
+/curso-comunicacion-online-y-gestion-2-0-hotelera-practicas-en-empresas 1 10929 0 0
+/master-en-turismo-profesorado 6 87217 1 2
+/curso-excelencia-en-la-gestion-hotelera-practicasenempresas 1 10915 0 0
+/programadireccionygestionwellnessyspa-admision 5 56266 0 0
+/curso-experto-sumiller-programa 1 10911 0 0
+/programacontroldegestionempresarial-objetivos 1 10914 0 0
+/programamarketingyoptimizacioncomercial 3 35552 2 1
+/blog/recepcion-es-mucho-mas-que-recibir 1 48989 1 1
+/programadireccionygestionrestauracion-metodologia 5 63909 0 0
+/curso-de-revenue-management-bolsadetrabajo 3 32692 0 0
+/blog/sin-nuestros-empleados-no-somos-nada 1 47861 1 1
+/gestionoperativainternadelhotel 4 51028 1 1
+/programa-control-de-gestion-empresarial-practicasenempresas 1 10919 0 0
+/master-direccion-gestion-hotelera-bolsa-de-trabajo 8 114650 1 2
+/excelenciagestionhotelera-antiguos-alumnos 1 11039 0 0
+/programadireccionygestionhotelera-a-quien-va-dirigido 7 138586 1 0
+/curso-experto-universitario-recepcion-hoteles-metodologia 1 12814 0 0
+/curso-experto-revenue-management-comunicacion-hotelera-metodologia 5 187586 0 0
+/blog/y-por-supuesto-ni-suene-que-vuelva-a-su-hotel 1 0 0 0
+/programa-control-de-gestion-empresarial-metodologia 2 25439 0 0
+/tendenciasyevolucionfuturamercadowellnessyspa-programa 1 11969 0 0
+/curso-direccion-estrategica-recursos-humanos-bolsa-de-trabajo 1 10955 0 0
+/programa-superior-direccion-y-gestion-restauracion-pdgr-profesorado 4 50260 0 1
+/curso-de-gestion-comercial-y-revenue-management-objetivos 2 22069 0 1
+/programadireccionygestionwellnessyspa-metodologia 7 91135 1 1
+/curso-tendencias-y-evolucion-futura-mercado-wellness-y-spa-bolsa-de-trabajo 1 10957 0 0
+/comunicaciononlineygestion20hotelera-programa 10 179328 2 4
+/curso-de-experto-en-revenue-management-hotelero-practicasenempresas 2 21924 0 0
+/blog/5-puntos-clave-para-descubrir-un-hotel-con-depresion 1 0 0 0
+/blog/como-convertirse-en-un-experto-en-upselling-y-crosselling 4 40198 1 0
+/bienestarpersonalactividadeswellnessyspa-metodologia 1 12718 0 0
+/curso-especialistauniversitarioendirecciondehoteles-profesorado 1 12300 0 0
+/tendenciasyevolucionfuturamercadowellnessyspa-objetivos 1 11208 0 0
+/blog/la-importancia-del-guess-experience-en-un-hotel-urbano 3 25290 2 0
+/businesstourismschool 35 510380 2 4
+/curso-experto-sumiller 2 21594 0 0
+/blog/blog-restauracion 3 57454 0 0
+/programa-superior-en-direccion-y-gestion-wellness-a-spa-antiguos-alumnos/ 1 51033 0 0
+/master-pasteleria-profesional-programa 1 14301 0 0
+/derivalya-la-empresa-del-mes-en-la-anei 1 44556 1 1
+/master-en-turismo-objetivos 6 92836 1 1
+/blog/el-teletrabajo-una-herramienta-en-auge 1 11702 1 0
+/blog/nuevos-cursos-en-turismo-y-hoteleria-cesae-2013 1 0 0 0
+/aspectosclavegestionyorganizacioncentrowellnessyspa-metodologia 1 12763 0 0
+/curso-optimizacion-comercial-centro-wellness-y-spa-factores-de-exito-practicas-en-empresas 1 10979 0 0
+/curso-experto-en-social-media-y-community-manager-en-turismo-practicasenempresas 2 22009 0 0
+/marketingyplanificacionestrategica 10 127389 2 3
+/curso-experto-en-social-media-y-community-manager-en-turismo-a-quien-va-dirigido 3 32954 0 0
+/master-revenue-management-comunicacion-turistica-bolsa-de-trabajo 6 66153 0 1
+/master-direccion-gestion-hotelera-metodologia 7 90500 0 0
+/programadireccionygestionrestauracion-objetivos 2 22535 0 0
+/blog/7-errores-que-arruinarian-tu-carrera-como-revenue-manager 4 33022 3 1
+/curso-especialistauniversitarioendirecciondehoteles-objetivos 2 22927 0 0
+/blog/cesae-os-desea-feliz-navidad-y-prospero-ano-2013 1 0 0 0
+/programagestiondenegociosonline-practicasenempresas 1 10922 0 0
+/blog/se-un-experto-en-coaching-en-la-direccion-de-recursos-humanos 1 49767 1 0
+/curso-gestion-operativa-interna-del-hotel-bolsa-de-trabajo 3 32821 0 1
+/curso-experto-universitario-recepcion-hoteles-profesorado 2 23891 0 0
+/blog/las-bondades-del-agua 1 0 0 0
+/programadesarrollodirectivo 5 57947 3 3
+/blog/la-recepcion-como-corazon-del-hotel 45 495994 39 5
+/programadireccionygestionhotelera-objetivos 14 255207 4 4
+/relacionesinstitucionales 11 202865 0 1
+/curso-marketing-y-gestion-comercial-campos-de-golf-antiguos-alumnos 2 22113 0 0
+/master-pasteleria-profesional-a-quien-va-dirigido 2 21476 1 1
+/blog/quieres-saber-que-calidad-no-esta-de-moda 1 0 0 0
+/blog/blog-portada/ 17 105600 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion 12 147612 4 2
+/curso-experto-sumiller-a-quien-va-dirigido 1 10519 0 0
+/gestionanalisisycontrolfinanciero-objetivos 2 22414 0 0
+/programa-direccion-y-desarrollo-recursos-humanos-metodologia 1 12768 0 0
+/curso-experto-revenue-management-comunicacion-hotelera-profesorado 2 23124 0 0
+/blog/las-5-claves-de-los-puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento 21 208593 15 1
+/blog/blog-postalumnoscesae 3 136118 0 0
+/curso-especialistauniversitarioendirecciondehoteles-aquienvadirigido 1 10951 0 0
+/blog/el-revenue-management-y-el-mercado-turistico-hotelero 1 11699 0 0
+/programadireccionygestionfinanciera-objetivos 1 10878 0 0
+/master-en-turismo/ 1 13148 1 1
+/curso-gestion-analisis-y-control-financiero-practicas-en-empresas 2 21869 0 1
+/curso-de-community-manager-en-turismo-metodologia 1 12673 0 0
+/blog/ 5 229224 2 2
+/blog/blog-gestionempresarial 3 56646 0 0
+/blog/blog-spa 1 0 0 0
+/programadireccionygestionrestauracion-practicas-de-empresa 3 32980 0 1
+/curso-experto-en-maitre-programa 3 34262 0 0
+/blog/comtur-2013-y-cesae 2 49767 1 1
+/blog/descubre-las-novedades-de-bienestar-fitness-y-spa 1 0 0 0
+/blog/10-claves-para-triunfar-con-tu-cv-en-el-extranjero-parte-2 1 0 0 0
+/blog/el-analisis-de-toprural-y-rural-guest-de-chema-herrero 2 92866 2 2
+/revenueavanzadoupsellingycrossselling 10 134663 2 2
+/aspectosclavegestionyorganizacioncentrowellnessyspa-programa 1 11138 0 0
+/blog/se-un-experto-en-cocina-diferida-el-uso-del-a-tecnologia-para-facilitar-el-trabajo 7 145465 5 2
+/marketingyplanificacionestrategica-programa 4 54995 2 2
+/contacto 17 303932 2 5
+/curso-de-experto-en-revenue-management-hotelero-programa 5 71509 0 1
+/blog/la-importancia-de-integrar-la-comunicacion-20-con-la-comunicacion-tradicional 1 49599 0 1
+/blog/derivalya-la-empresa-del-mes-en-la-anei 2 20672 2 0
+/blog/la-importancia-de-la-estrategia-para-la-empresa-hotelera 29 328188 25 5
+/blog/bienvenido-al-blog-de-cesae 1 10919 1 0
+/cursoswellnesyspa 6 69110 1 1
+/curso-gestion-operativa-interna-establecimiento-restauracion-programa 8 92901 2 4
+/curso-experto-en-social-media-y-community-manager-en-turismo-admision 5 55991 0 2
+/profesorado 32 445794 2 6
+/blog/en-que-negocios-puedo-aplicar-estrategias-de-revenue-management 2 12178 1 1
+/blog/descubre-el-mejor-softwarte-hotelero-de-distribucion-de-inventario-y-tarifas 1 0 0 0
+/gestionanalisisycontrolfinanciero-metodologia 2 25490 0 0
+/master-direccion-gestion-hotelera-admision 14 157908 0 3
+/gestionanalisisycontrolfinanciero-programa 4 49844 2 2
+/programadireccionygestionhotelera-practicas-en-empresas 6 128779 0 0
+/revenueavanzadoupsellingycrossselling-metodologia 3 37926 0 0
+/programadesarrollodirectivo-objetivos 1 10901 0 0
+/programa-gestion-de-negocios-online-metodologia 1 12731 0 0
+/curso-experto-en-maitrea-quien-va-dirigido 1 10432 0 0
+/blog/la-importancia-de-la-paridad-de-tarifas-en-nuestro-sistema-turistico 1 12514 1 1
+/marketingygestioncomercialcamposdegolf-programa 4 47138 1 2
+/blog/ultima-novedad-en-apps-vinipad-aplicacion-para-el-servicio-de-vino 1 0 0 0
+/images/mail/20151030_RESTAURACION_ALUMNI.html 3 120402 2 1
+/master-direccion-gestion-hotelera-aquienvadirigido 7 77414 0 1
+/marketingygestioncomercialcamposdegolf-objetivos 4 44461 2 2
+/gestionoperativainternadelhotel-programa 6 69261 5 4
+/curso-excelencia-seguridad-alimentaria-restauracion-practicas-en-empresas 1 10905 0 0
+/curso-experto-en-reposteria-profesional-programa 2 22500 0 0
+/curso-experto-universitario-recepcion-hoteles-bolsadetrabajo 1 10996 0 0
+/blog/descubre-el-masaje-con-palos-de-bambu-para-un-cuerpo-10 6 95566 5 2
+/blog/aprendiendo-mas-sobre-rate-tiger 1 0 0 0
+/programa-superior-direccion-gestion-hotelera-pdgh-profesorado 7 163123 1 0
+/programadireccionygestionfinanciera-practicasenempresas 1 10939 0 0
+/curso-de-revenue-management-practicasenempresas 2 21754 0 0
+/programa-control-de-gestion-empresarial-bolsadetrabajo 1 10936 0 0
+/organizaciongestioninternaestablecimientowellnessyspa-programa 2 23209 1 1
+/programamarketingyoptimizacioncomercial-objetivos 1 10906 0 0
+/blog/claves-de-la-segmentacion-del-mercado-para-el-revenue-management 4 45874 4 0
+/gestionoperativainternadelhotel-objetivos 4 44752 2 2
+/blog/integracion-de-los-sistemas-de-gestion-en-hoteles 1 0 0 0
+/blog/alquila-tus-habitaciones-por-horas-aplica-el-revenue-managment-en-tu-hotel 2 11754 1 0
+/comunicaciononlineygestion20hotelera 25 329307 2 2
+/blog/blog-marialuisafanjul 3 43190 0 0
+/organizaciongestioninternaestablecimientowellnessyspa-metodologia 1 12760 0 0
+/curso-agencia-de-viajes-practicas-en-empresas 1 10850 0 0
+/tendenciasyevolucionfuturamercadowellnessyspa 2 25441 1 1
+/practicasenempresa 11 196692 0 3
+/blog/el-revenue-management-y-el-letargo-de-los-osos 2 11330 1 0
+/curso-excelencia-seguridad-alimentaria-restauracion 7 112072 3 1
+/curso-marketing-y-planificacion-estrategica-bolsa-de-trabajo 1 10944 0 0
+/master-cocina-profesional-a-quien-va-dirigido 3 32124 0 0
+/curso-especialistauniversitarioendirecciondehoteles-admision 2 22435 0 0
+/curso-de-community-manager-en-turismo-programa 1 12745 0 0
+/programa-marketing-y-optimizacion-comercial-profesorado 2 21982 0 1
+/blog/descubriendo-puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion 1 0 0 0
+/bolsatrabajo 13 180407 0 1
+/blog/sobre-la-cocina-sostenible 1 0 0 0
+/gestionoperativainternadelhotel-antiguos-alumnos 1 11161 0 0
+/programadireccionygestionwellnessyspa-objetivos/ 1 48699 1 0
+/marketingyplanificacionestrategica-antiguos-alumnos 1 11150 0 0
+/programamarketingyoptimizacioncomercial-programa 1 12643 0 0
+/se-un-experto-en-coaching-en-la-direccion-de-recursos-humanos 1 49645 1 1
+/blog/5-aspectos-clave-de-la-formacion-y-su-papel-en-la-mejora-continua 1 0 0 0
+/las-mejores-claves-para-el-editor-de-menus-para-restaurantes 2 88649 2 2
+/blog/descubre-las-profesiones-mas-demandas-del-sector-turismo 1 0 0 0
+/revenuemanagement-antiguos-alumnos 6 148153 1 1
+/blog/5-claves-para-entender-la-paridad-de-tarifas 3 38208 3 0
+/programa-desarrollo-directivo-profesorado 1 10977 0 0
+/curso-de-revenue-management-objetivos 11 152356 1 2
+/blog/conoce-los-sistemas-de-apoyo-y-control-de-gestion 1 0 0 0
+/programa-gestion-de-negocios-online-practicas-en-empresas 1 10938 0 0
+/curso-i-d-i-nuevas-tendencias-restauracion-programa 5 58969 0 0
+/programadireccionygestionhotelera/ 6 78379 0 0
+/programa-direccion-y-desarrollo-recursos-humanos-bolsadetrabajo 1 10985 0 0
+/master-en-direccion-y-gestion-hotelera-profesorado 12 252212 2 6
+/programadireccionygestionrestauracion-programa 12 141269 1 3
+/programadireccionydesarrollorecursoshumanos-programa 1 12707 0 0
+/curso-de-posicionamiento-seo-y-sem-para-hoteles-metodologia 1 11053 0 0
+/curso-de-experto-en-revenue-management-hotelero-metodologia 2 25823 0 0
+/blog/acuerdo-de-colaboracion-universidad-francisco-de-vitoria-cesae-businessatourism-school 1 0 0 0
+/master-revenue-management-comunicacion-turistica-a-quien-va-dirigido 11 121931 0 3
+/agenciadeviajes 3 38473 1 1
+/master-en-turismo-admision 5 81994 0 1
+/curso-marketing-y-gestion-comercial-campos-de-golf-bolsa-de-trabajo 2 21891 0 0
+/programadireccionygestionhotelera-programa 19 312001 4 8
+/curso-de-experto-en-revenue-management-hotelero-admision 3 33571 0 1
+/bienestarpersonalactividadeswellnessyspa 3 38297 0 2
+/programadesarrollodirectivo-programa 3 39358 1 1
+/master-en-turismo-practicas-en-empresas/ 1 47721 1 1
+/blog/blog-cesae 3 162965 0 0
+/programadireccionydesarrollorecursoshumanos-objetivos 1 10980 0 0
+/blog/erase-una-vez-un-hotel 2 11257 1 0
+/blog/las-claves-de-la-importancia-del-control-interno-en-la-empresa 2 10793 1 0
+/curso-experto-revenue-management-comunicacion-hotelera-antiguos-alumnos 3 71367 1 1
+/curso-de-gestion-comercial-y-revenue-management-bolsa-de-trabajo 1 10904 0 0
+/master-maitre-sumiller-profesional-a-quien-va-dirigido 1 10568 0 0
+/programa-control-de-gestion-empresarial-profesorado 4 82119 1 1
+/programadireccionygestionfinanciera 2 23178 1 1
+/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa 1 48543 1 1
+/curso-experto-en-social-media-y-community-manager-en-turismo 23 875158 10 9
+/blog/las-mejores-claves-para-el-editor-de-menus-para-restaurantes 3 88659 2 2
+/programa-superior-en-revenue-management-y-comunicacion-online-20 30 448058 1 9
+/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/link.htm 1 922 0 0
+/curso-organizacion-direccion-planificacion-establecimiento-restauracion-bolsa-de-trabajo 1 10943 0 0
+/marketingygestioncomercialcamposdegolf 7 90685 4 4
+/curso-excelencia-seguridad-alimentaria-restauracion-metodologia 1 12716 0 0
+/programa-direccion-y-gestion-financiera-practicas-en-empresas 1 10957 0 0
+/blog/descubriendo-el-marketing-20-como-parte-de-la-estrategia 1 0 0 0
+/blog/nuevos-cursos-en-recepcion-y-direccion-hotelera-con-titulacion-avalada-por-la-ucam 1 0 0 0
+/blog/guia-de-los-mejores-restaurantes-del-mundo 1 0 0 0
+/curso-gestion-operativa-interna-del-hotel-practicas-en-empresas 1 10928 0 0
+/curso-especialistauniversitarioendirecciondehoteles-metodologia 1 12491 0 0
+/cursos-cocina 17 459086 0 0
+/blog/blog-calendariodecursos 1 8390 0 0
+/blog/blog-cosasdecesae 3 107829 0 0
+/curso-excelencia-seguridad-alimentaria-restauracion-objetivos 1 10989 0 0
+/curso-experto-revenue-management-comunicacion-hotelera-aquienvadirigido 2 21946 0 0
+/programa-direccion-y-gestion-financiera-antiguos-alumnos 1 10985 0 0
+/master-maitre-sumiller-profesional-programa 1 12715 0 0
+/agenciadeviajes-metodologia 1 12657 0 0
+/blog/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir 1 0 0 0
+/curso-de-posicionamiento-seo-y-sem-para-hoteles-programa 1 11084 0 0
+/programadireccionygestionhotelera 34 471931 8 6
+/curso-de-community-manager-en-turismo-practicas-en-empresas 1 10870 0 0
+/curso-upselling-tecnicas-avanzadas-hoteleria-programa 3 33228 0 0
+/gestionoperativainternadelhotel-metodologia 1 12736 0 0
+/curso-especialistauniversitarioendirecciondehoteles-practicasenempresas 1 11045 0 0
+/programa-marketing-y-optimizacion-comercial-practicasenempresas 1 10960 0 0
+/programadireccionygestionrestauracion-bolsa-de-trabajo 3 33012 0 1
+/curso-gestion-operativa-interna-establecimiento-restauracion-practicas-en-empresas 1 10932 0 1
+/curso-i-d-i-nuevas-tendencias-restauracion-metodologia 1 12705 0 0
+/blog/que-es-el-revpahs-y-como-puede-ayudar-a-mi-restaurante 10 96309 8 1
+/blog/proxima-convocatoria-2013-programas-de-gestion-empresarial 1 0 0 0
+/cursos-hosteleria 23 281015 0 1
+/blog/revenue-management-evolucion-de-la-media-pension-al-all-inclusive-en-republica-dominicana 1 0 0 0
+/tendenciasyevolucionfuturamercadowellnessyspa-metodologia 1 12748 0 0
+/curso-de-posicionamiento-seo-y-sem-para-hoteles 17 566991 8 8
+/bienestarpersonalactividadeswellnessyspa-programa 1 12286 0 0
+/blog/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes 1 0 0 0
+/templates/beez_20/fonts/TitilliumMaps29L002.eot 1 20318 1 1
+/click.php 46 184 42 42
+/blog/por-que-no-llega-la-hosteleria-a-los-clubs-de-golf 2 11389 1 0
+/blog/7-claves-para-atrapar-a-los-nuevos-turistas-la-generacion-millenials 1 0 0 0
+/excelenciagestionhotelera-programa 5 55902 2 3
+/curso-de-revenue-management-metodologia 9 139753 2 2
+/blog/descubre-la-problematica-del-todo-incluido 4 32808 2 0
+/programa-superior-en-revenue-management-y-comunicacion-online-20-admision 1 11278 0 0
+/blog/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa 3 59803 2 1
+/curso-experto-en-gastronomia 3 32351 0 0
+/blog/claves-para-mejorar-la-carta-del-restaurante 2 11279 1 0
+/programas-expertos 66 984222 2 5
+END_SIDER

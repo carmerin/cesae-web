@@ -1,0 +1,44 @@
+/*
+ * @author ( Cesae )
+*/
+
+/* not ready */
+
+/* ##########################  general  ########################### */
+
+
+.cesaebody
+{
+	height:600px;
+	background-repeat: no-repeat;
+	/* default background colour, for all layout engines that don't implement gradients */
+	background: #ffffff;
+
+	/* gecko based browsers */
+	background: -moz-linear-gradient(top,  #dedede, #ffffff) no-repeat;
+
+	/* webkit based browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#dedede), to(#ffffff)) no-repeat;
+	
+	filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#DEDEDE', gradientType='0');
+	font-family: helvetica, arial, sans-serif;
+	
+}
+
+
+.cesaebodyexplorer
+{
+	background-repeat: no-repeat;
+	/* default background colour, for all layout engines that don't implement gradients */
+	background: #ffffff;
+
+	/* gecko based browsers */
+	background: -moz-linear-gradient(top,  #dedede, #ffffff) no-repeat;
+
+	/* webkit based browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#dedede), to(#ffffff)) no-repeat;
+	
+	filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#FFFFFF', startColorstr='#DEDEDE', gradientType='0');
+	font-family: helvetica, arial, sans-serif;
+	
+}

@@ -1,0 +1,54 @@
+img { max-width:100%; margin-left:0 !important; margin-top:10px !important; margin-bottom:20px !important;}
+.derecha {float: right; width: 50% !important; margin: 0 0 20px 20px !important;display: block;}
+.izquierda {float: left; width: 50% !important; margin: 0 0 20px 20px !important;display: block;}
+h1 {font-size:15px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; padding-bottom:19px; margin-bottom:15px; border-bottom:1px solid #9d9d9d; color:#302c21; font-weight:bold;}
+.h1azul {font-size:15px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; padding-bottom:19px; margin-bottom:15px; border-bottom:1px solid #9d9d9d; color:#055fb5; font-weight:bold;}
+h2 {font-size:12px !important; line-height:21px; font-family: Helvetica, Arial, sans-serif; margin-top:20px; color:#302c21; font-weight:bold;}
+.h2azul {font-size:12px !important; line-height:23px; font-family: Helvetica, Arial, sans-serif; margin:20px 0; color:#3892fd; font-weight:bold; text-align:center }
+p, .p { font-size:11px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; margin-bottom:5px; margin-top:0;  color:#302c21;}
+.pazul {font-size:11px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; margin-bottom:5px;  color:#055fb5; margin-top:0; }
+.negrita { font-size:11px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; margin-bottom:5px; color:#302c21; font-weight:bold; margin-top:0; }
+.negritaazul { font-size:11px !important; line-height:19px; font-family: Helvetica, Arial, sans-serif; margin-bottom:5px; color:#055fb5; font-weight:bold; color:#0068c3; margin-top:0; }
+.p span, p span { font-size:11px !important; line-height:19px !important; font-family: Helvetica, Arial, sans-serif; margin-top:0; }
+
+ul { list-style:none; padding-left:0 !important;}
+ul li { position:relative; padding-left:8px; }
+ul li:before { content:'-'; position:absolute; top:0; left:0; }
+
+
+h1.h1noborder{
+    border-bottom:0 !important;
+    line-height:18px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 0 !important;
+}
+
+h2.h2borderbottom{
+    line-height:15px !important;
+    border-bottom:1px solid #666;
+    margin-top: 5px !important;
+    padding-bottom:20px !important;
+    color:#006ac2 !important;
+    margin-bottom:20px !important;
+}
+
+h3.h3cursos{
+    line-height:15px !important;
+    color:#006ac2 !important;
+    font-size:12px;
+}
+
+ul.lista_cursos{
+    margin:20px 0 20px 0;
+}
+
+ul.lista_cursos li{
+    margin-left:20px;
+    line-height:20px;
+    font-size:12px;
+}
+
+
+
+
+

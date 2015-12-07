@@ -1,0 +1,1541 @@
+##
+# @version		$Id: htaccess.txt 21101 2011-04-07 15:47:33Z dextercowley $
+# @package		Joomla
+# @copyright	Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.
+# @license		GNU General Public License version 2 or later; see LICENSE.txt
+##
+
+## http://seo-website-designer.com/HtAccess-301-Redirect-Generator#heading-ToolResult
+
+##
+# READ THIS COMPLETELY IF YOU CHOOSE TO USE THIS FILE!
+#
+# The line just below this section: 'Options +FollowSymLinks' may cause problems
+# with some server configurations.  It is required for use of mod_rewrite, but may already
+# be set by your server administrator in a way that dissallows changing it in
+# your .htaccess file.  If using it causes your server to error out, comment it out (add # to
+# beginning of line), reload your site in your browser and test your sef url's.  If they work,
+# it has been set by your server administrator and you do not need it set here.
+##
+
+
+
+## Can be commented out if causes errors, see notes above.
+#Options +FollowSymLinks
+
+## Mod_rewrite in use.
+
+
+<ifmodule mod_expires.c>
+ ExpiresActive On
+ ExpiresDefault A3600
+ <filesmatch ".(jpg|JPG|gif|GIF|png|css|ico|js)$">
+  ExpiresDefault "access plus 31 day"
+ </filesmatch>
+</ifmodule>
+
+RewriteEngine On
+
+
+##RewriteRule ^http://blog.cesae.es/index.php/([a-z0-9_-]+)?$ http://blog.cesae.es/index.php/$1/ [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^cesae.es
+RewriteRule ^ http://www.cesae.es%{REQUEST_URI} [L,R=301]
+
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site block out the operations listed below
+# This attempts to block the most common type of exploit `attempts` to Joomla!
+#
+# Block out any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block out any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block out any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block out any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root homepage
+RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+## Begin - Custom redirects
+#
+# If you need to redirect some pages, or set a canonical non-www to
+# www redirect (or vice versa), place that code here. Ensure those
+# redirects use the correct RewriteRule syntax and the [R=301,L] flags.
+#
+## End - Custom redirects
+
+##
+# Uncomment following line if your webserver's URL
+# is not directly related to physical file paths.
+# Update Your Joomla! Directory (just / for root).
+##
+
+RewriteBase /
+
+## Begin - Joomla! core SEF Section.
+#
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+# If the requested path and file is not /index.php and the request
+# has not already been internally rewritten to the index.php script
+RewriteCond %{REQUEST_URI} !^/index\.php
+# and the request is for something within the component folder,
+# or for the site root, or for an extensionless URL, or the
+# requested URL ends with one of the listed extensions
+RewriteCond %{REQUEST_URI} /component/|(/[^.]*|\.(php|html?|feed|pdf|vcf|raw))$ [NC]
+# and the requested path and file doesn't directly match a physical file
+RewriteCond %{REQUEST_FILENAME} !-f
+# and the requested path and file doesn't directly match a physical folder
+RewriteCond %{REQUEST_FILENAME} !-d
+# internally rewrite the request to the index.php script
+
+
+Redirect 301 http://blog.cesae.es http://www.cesae.es/blog-portada
+Redirect 301 http://blog.cesae.es/ http://www.cesae.es/blog-portada
+Redirect 301 http://blog.cesae.es/index.php/ http://www.cesae.es/blog-portada
+
+
+RewriteRule .* index.php [L]
+
+
+
+RewriteCond %{QUERY_STRING} ^Id_Info=6$ [NC]
+RewriteRule ^(.*)\VerInfo.asp$   http://www.cesae.es/mision [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Info=7$ [NC]
+RewriteRule ^(.*)\VerInfo.asp$   http://www.cesae.es/instalaciones [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=112$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras [R=301,L]
+
+#RewriteCond %{QUERY_STRING} ^ID_sec=76$ [NC]
+#RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+
+#2014-02-03
+RewriteCond %{QUERY_STRING}  ^ID_sec=76$ [NC]
+RewriteRule ^$ http://www.cesae.es/? [R=301,NE,NC,L]
+
+RewriteCond %{QUERY_STRING}  ^ID_sec=84.$ [NC]
+RewriteRule ^$ http://www.cesae.es/? [R=301,NE,NC,L]
+
+RewriteCond %{QUERY_STRING}  ^ID_sec=84$ [NC]
+RewriteRule ^$ http://www.cesae.es/? [R=301,NE,NC,L]
+
+#fin
+RewriteCond %{QUERY_STRING} ^ID_sec=84$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=246$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras-objetivos [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=247$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras-aquienvadirigido [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=248$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=249$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=250$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/master-en-direccion-y-gestion-de-empresas-hoteleras-executive-profesorado [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=251$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=252$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=265$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/masterdireccionygestionempresashoteleras-partners [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=76$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadireccionygestionhotelera [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=138$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionhotelera-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=139$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionhotelera-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=140$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionhotelera-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=99$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadireccionygestionrestauracion [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=196$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionrestauracion-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=197$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionrestauracion-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=198$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionrestauracion-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=89$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadireccionygestionwellnessyspa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=169$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionwellnessyspa-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=170$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionwellnessyspa-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=171$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionwellnessyspa-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=110$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=236$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=237$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=238$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=88$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/gestionoperativainternadelhotel [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=162$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionoperativainternadelhotel-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=163$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionoperativainternadelhotel-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=164$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionoperativainternadelhotel-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=87$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/excelenciagestionhotelera [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=159$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/excelenciagestionhotelera-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=160$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/excelenciagestionhotelera-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=161$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/excelenciagestionhotelera-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=85$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/comunicaciononlineygestion20hotelera [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=156$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/comunicaciononlineygestion20hotelera-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=157$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/comunicaciononlineygestion20hotelera-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=158$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/comunicaciononlineygestion20hotelera-programa [R=301,L]
+
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=84$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/revenuemanagement [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=153$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/revenuemanagement-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=154$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/revenuemanagement-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=155$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/revenuemanagement-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=83$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/gestionanalisisycontrolfinanciero [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=150$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionanalisisycontrolfinanciero-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=151$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionanalisisycontrolfinanciero-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=152$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/gestionanalisisycontrolfinanciero-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=82$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/marketingyplanificacionestrategica [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=148$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/marketingyplanificacionestrategica-objetivos [R=301,L]
+
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=147$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/marketingyplanificacionestrategica-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=149$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/marketingyplanificacionestrategica-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=86$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/direccionestrategicarecursoshumanos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=165$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/direccionestrategicarecursoshumanos-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=166$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/direccionestrategicarecursoshumanos-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=167$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/direccionestrategicarecursoshumanos-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=100$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=202$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=203$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=204$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=101$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=205$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=206$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=207$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=102$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=208$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=209$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=210$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=103$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=211$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=212$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=213$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=104$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=214$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=215$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=216$ [NC]
+RewriteRule ^(.*)\index.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=90$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=175$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=174$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=176$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=91$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=178$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=177$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=179$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=93$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/bienestarpersonalactividadeswellnessyspa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=183$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=184$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=185$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=94$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=186$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=187$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-metodologia [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=188$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=92$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://cesae.es [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=180$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=181$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-metodologia [R=301,L]
+
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=182$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=105$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programamarketingyoptimizacioncomercial [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=220$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programamarketingyoptimizacioncomercial-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=219$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programamarketingyoptimizacioncomercial-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=106$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programacontroldegestionempresarial [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=221$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programacontroldegestionempresarial-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=222$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programacontroldegestionempresarial-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=107$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadesarrollodirectivo [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=227$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadesarrollodirectivo-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=228$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadesarrollodirectivo-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=108$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadesarrollodireccionyliderazgo [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=224$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadesarrollodireccionyliderazgo-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=223$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadesarrollodireccionyliderazgo-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=109$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadireccionygestionfinanciera [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=226$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionfinanciera-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=225$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionygestionfinanciera-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=111$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programadireccionydesarrollorecursoshumanos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=243$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionydesarrollorecursoshumanos-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=245$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programadireccionydesarrollorecursoshumanos-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^ID_sec=114$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/programagestiondenegociosonline [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=266$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programagestiondenegociosonline-objetivos [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=267$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/programagestiondenegociosonline-programa [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=264$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=144$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=172$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=199$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_Prod_Serv=244$ [NC]
+RewriteRule ^(.*)\index.asp$   http://www.cesae.es/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^Id_sec=78$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_sec=79$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^Id_sec=80$ [NC]
+RewriteRule ^(.*)\Sec_ProductoITEMS.asp$   http://www.cesae.es/ [R=301,L]
+
+
+
+
+RewriteRule ^(.*)\index.asp   http://www.cesae.es/ [R=301,L]
+
+
+RewriteRule ^(.*)\Sec_ProductoITEMS(.*)$   http://www.cesae.es/ [R=301,L]
+RewriteRule ^(.*)\cesae.es   http://www.cesae.es/blog/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas/ [R=301,L]
+#RewriteRule ^(.*)\15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws\14-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws\http:  http://www.cesae.es/programadireccionygestionwellnessyspa/ [R=301,L]
+
+
+
+
+
+
+Redirect 301 /index.php/2-cesae-institucion/1-art-cesae-institucion http://www.cesae.es/institucion
+Redirect 301 /index.php/2-cesae-institucion/2-art-cesae-business-tourist-school http://www.cesae.es/businesstourismschool
+Redirect 301 /index.php/2-cesae-institucion/3-art-cesae-mision http://www.cesae.es/mision
+Redirect 301 /index.php/2-cesae-institucion/4-relaciones-institucionales http://www.cesae.es/relacionesinstitucionales
+Redirect 301 /index.php/2-cesae-institucion/5-desarrollo-corporativo  http://www.cesae.es/desarrollocorporativo
+Redirect 301 /index.php/2-cesae-institucion/6-instalaciones  http://www.cesae.es/instalaciones
+Redirect 301 /index.php/2-cesae-institucion/7-antiguos-alumnos  http://www.cesae.es/antiguosalumnos
+Redirect 301 /index.php/2-cesae-institucion/8-bolsa-de-trabajo  http://www.cesae.es/bolsatrabajo
+Redirect 301 /index.php/2-cesae-institucion/9-entidades-colaboradoras  http://www.cesae.es/entidadescolaboradoras
+Redirect 301 /index.php/2-cesae-institucion/10-contacto  http://www.cesae.es/contacto
+Redirect 301 /index.php/7-masters-y-programas-superiores/11-masters-y-programas-superiores  http://www.cesae.es/mastersyprogramassuperiores
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/12-master-en-direccion-y-gestion-de-empresas-hoteleras-mdgh  http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/37-objetivos  http://www.cesae.es/masterdireccionygestionempresashoteleras-objetivos
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/38-a-quien-va-dirigido  http://www.cesae.es/masterdireccionygestionempresashoteleras-aquienvadirigido
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/40-metodo  http://www.cesae.es/masterdireccionygestionempresashoteleras-metodologia
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/41-componentes-online  http://cesae.es
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/42-profesorado http://www.cesae.es/masterdireccionygestionempresashoteleras-profesorado
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/43-programa http://www.cesae.es/masterdireccionygestionempresashoteleras-programa
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/44-networking http://cesae.es
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/45-partners http://www.cesae.es/masterdireccionygestionempresashoteleras-partners
+Redirect 301 /index.php/12-master-en-direccion-y-gestion-de-empresas/154-titulacion-obtenida http://cesae.es
+Redirect 301 /index.php/13-programa-superior-en-direccion-y-gestion-hotelera-pdgh/13-programa-superior-en-direccion-y-gestion-hotelera-pdgh http://www.cesae.es/programadireccionygestionhotelera
+Redirect 301 /index.php/13-programa-superior-en-direccion-y-gestion-hotelera-pdgh/53-objetivos http://www.cesae.es/programadireccionygestionhotelera-objetivos
+Redirect 301 /index.php/13-programa-superior-en-direccion-y-gestion-hotelera-pdgh/58-metodologia http://www.cesae.es/programadireccionygestionhotelera-metodologia
+Redirect 301 /index.php/13-programa-superior-en-direccion-y-gestion-hotelera-pdgh/59-programa http://www.cesae.es/programadireccionygestionhotelera-programa
+Redirect 301 /index.php/14-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/15-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr http://www.cesae.es/programadireccionygestionrestauracion
+Redirect 301 /index.php/14-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/60-objetivos http://www.cesae.es/programadireccionygestionrestauracion-objetivos
+Redirect 301 /index.php/14-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/61-metodologia http://www.cesae.es/programadireccionygestionrestauracion-metodologia
+Redirect 301 /index.php/14-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/62-programa http://www.cesae.es/programadireccionygestionrestauracion-programa
+Redirect 301 /index.php/15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/14-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/http: http://www.cesae.es/programadireccionygestionwellnessyspa
+Redirect 301 /index.php/15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/14-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws http://www.cesae.es/programadireccionygestionwellnessyspa
+Redirect 301 /index.php/15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/63-objetivos http://www.cesae.es/programadireccionygestionwellnessyspa-objetivos
+Redirect 301 /index.php/15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/65-metodologia http://www.cesae.es/programadireccionygestionwellnessyspa-metodologia
+Redirect 301 /index.php/15-programa-superior-en-direccion-y-gestion-wellness-a-spa-pdws/66-programa http://www.cesae.es/programadireccionygestionwellnessyspa-programa
+Redirect 301 /index.php/16-programa-superior-en-turismo-rural-pdtr/16-programa-superior-en-turismo-rural-pdtr http://www.cesae.es/
+Redirect 301 /index.php/16-programa-superior-en-turismo-rural-pdtr/67-objetivos http://www.cesae.es/
+Redirect 301 /index.php/16-programa-superior-en-turismo-rural-pdtr/68-metodologia http://www.cesae.es/
+Redirect 301 /index.php/16-programa-superior-en-turismo-rural-pdtr/70-programa http://www.cesae.es/
+Redirect 301 /index.php/8-executive-education/35-executive-education http://www.cesae.es/executiveeducation
+Redirect 301 /index.php/8-executive-education/17-tecnicas-para-maximizar-la-comunicacion-30-en-hoteles http://www.cesae.es/cursocomunicacion30enhoteles
+Redirect 301 /index.php/8-executive-education/18-practica-operativa-del-revenue-management http://www.cesae.es/practicaoperativarevenuemanagement
+Redirect 301 /index.php/8-executive-education/414-practica-operativa-del-revenue-management http://www.cesae.es/practicaoperativarevenuemanagementmallorca
+Redirect 301 /index.php/8-executive-education/19-marketing-hotelero-optimizando-social-media http://www.cesae.es/marketinghotelerosocialmedia
+Redirect 301 /index.php/9-cursos/34-cursos http://www.cesae.es/cursohotel
+Redirect 301 /index.php/17-area-tecnica-de-hoteleria/22-area-tecnica-de-hoteleria http://www.cesae.es/cursosdehoteleria
+Redirect 301 /index.php/21-gestion-operativa-interna-del-hotel/46-gestion-operativa-interna-del-hotel http://www.cesae.es/gestionoperativainternadelhotel
+Redirect 301 /index.php/21-gestion-operativa-interna-del-hotel/55-objetivos http://www.cesae.es/gestionoperativainternadelhotel-objetivos
+Redirect 301 /index.php/21-gestion-operativa-interna-del-hotel/56-metodologia http://www.cesae.es/gestionoperativainternadelhotel-metodologia
+Redirect 301 /index.php/21-gestion-operativa-interna-del-hotel/57-programa http://www.cesae.es/gestionoperativainternadelhotel-programa
+Redirect 301 /index.php/22-la-excelencia-en-la-gestion-hotelera/47-excelencia-en-la-gestion-hotelera http://www.cesae.es/excelenciagestionhotelera
+Redirect 301 /index.php/22-la-excelencia-en-la-gestion-hotelera/71-objetivos http://www.cesae.es/excelenciagestionhotelera-objetivos
+Redirect 301 /index.php/22-la-excelencia-en-la-gestion-hotelera/72-metodologia http://www.cesae.es/excelenciagestionhotelera-metodologia
+Redirect 301 /index.php/22-la-excelencia-en-la-gestion-hotelera/73-programa http://www.cesae.es/excelenciagestionhotelera-programa
+Redirect 301 /index.php/23-comunicacion-online-y-gestion-20-hotelera/48-comunicacion-online-y-gestion-20-hotelera http://www.cesae.es/comunicaciononlineygestion20hotelera
+Redirect 301 /index.php/23-comunicacion-online-y-gestion-20-hotelera/74-objetivos http://www.cesae.es/comunicaciononlineygestion20hotelera-objetivos
+Redirect 301 /index.php/23-comunicacion-online-y-gestion-20-hotelera/75-metodologia http://www.cesae.es/comunicaciononlineygestion20hotelera-metodologia
+Redirect 301 /index.php/23-comunicacion-online-y-gestion-20-hotelera/76-programa http://www.cesae.es/comunicaciononlineygestion20hotelera-programa
+Redirect 301 /index.php/24-revenue-management/49-revenue-management/, http://www.cesae.es/revenuemanagement
+Redirect 301 /index.php/24-revenue-management/49-revenue-management http://www.cesae.es/revenuemanagement
+Redirect 301 /index.php/24-revenue-management/77-objetivos http://www.cesae.es/revenuemanagement-objetivos
+Redirect 301 /index.php/24-revenue-management/79-metodologia http://www.cesae.es/revenuemanagement-metodologia
+Redirect 301 /index.php/24-revenue-management/80-programa http://www.cesae.es/revenuemanagement-programa
+Redirect 301 /index.php/25-gestion-analisis-y-control-financiero/50-gestion-analisis-y-control-financiero http://www.cesae.es/gestionanalisisycontrolfinanciero
+Redirect 301 /index.php/25-gestion-analisis-y-control-financiero/81-objetivos http://www.cesae.es/gestionanalisisycontrolfinanciero-objetivos
+Redirect 301 /index.php/25-gestion-analisis-y-control-financiero/82-metologia http://www.cesae.es/gestionanalisisycontrolfinanciero-metodologia
+Redirect 301 /index.php/25-gestion-analisis-y-control-financiero/83-programa http://www.cesae.es/gestionanalisisycontrolfinanciero-programa
+Redirect 301 /index.php/26-marketing-y-planificacion-estrategica/51-marketing-y-planificacion-estrategica http://www.cesae.es/marketingyplanificacionestrategica
+Redirect 301 /index.php/26-marketing-y-planificacion-estrategica/84-objetivos http://www.cesae.es/marketingyplanificacionestrategica-objetivos
+Redirect 301 /index.php/26-marketing-y-planificacion-estrategica/85-metodologia http://www.cesae.es/marketingyplanificacionestrategica-metodologia
+Redirect 301 /index.php/26-marketing-y-planificacion-estrategica/86-programa http://www.cesae.es/marketingyplanificacionestrategica-programa
+Redirect 301 /index.php/27-direccion-estrategica-de-los-recursos-humanos/52-direccion-estrategica-de-los-recursos-humanos http://www.cesae.es/direccionestrategicarecursoshumanos
+Redirect 301 /index.php/27-direccion-estrategica-de-los-recursos-humanos/87-objetivos http://www.cesae.es/direccionestrategicarecursoshumanos-objetivos
+Redirect 301 /index.php/27-direccion-estrategica-de-los-recursos-humanos/88-metodologia http://www.cesae.es/direccionestrategicarecursoshumanos-metodologia
+Redirect 301 /index.php/27-direccion-estrategica-de-los-recursos-humanos/89-programa http://www.cesae.es/direccionestrategicarecursoshumanos-programa
+Redirect 301 /index.php/18-area-tecnica-de-restauracion/23-area-tecnica-de-restauracion http://cesae.es
+Redirect 301 /index.php/28-gestion-comercial-y-revenue-management-en-restauracion/91-gestion-comercial-y-revenue-management-en-restauracion http://cesae.es
+Redirect 301 /index.php/28-gestion-comercial-y-revenue-management-en-restauracion/92-objetivos http://cesae.es
+Redirect 301 /index.php/28-gestion-comercial-y-revenue-management-en-restauracion/93-programa http://cesae.es
+Redirect 301 /index.php/28-gestion-comercial-y-revenue-management-en-restauracion/94-metodologia http://cesae.es
+Redirect 301 /index.php/29-excelencia-y-seguridad-alimentaria-en-restauracion/95-excelencia-y-seguridad-alimentaria-en-restauracion http://cesae.es
+Redirect 301 /index.php/29-excelencia-y-seguridad-alimentaria-en-restauracion/96-objetivos http://cesae.es
+Redirect 301 /index.php/29-excelencia-y-seguridad-alimentaria-en-restauracion/97-metodologia http://cesae.es
+Redirect 301 /index.php/29-excelencia-y-seguridad-alimentaria-en-restauracion/98-programa http://cesae.es
+Redirect 301 /index.php/30-organizacion-direccion-y-planificacion-del-establecimiento-de-restauracion/99-organizacion-direccion-y-planificacion-del-establecimiento-de-restauracion http://cesae.es
+Redirect 301 /index.php/30-organizacion-direccion-y-planificacion-del-establecimiento-de-restauracion/100-objetivos http://cesae.es
+Redirect 301 /index.php/30-organizacion-direccion-y-planificacion-del-establecimiento-de-restauracion/101-metodologia http://cesae.es
+Redirect 301 /index.php/30-organizacion-direccion-y-planificacion-del-establecimiento-de-restauracion/102-programa http://cesae.es
+Redirect 301 /index.php/31-idi-nuevas-tendencias-en-restauracion/103-idi-nuevas-tendencias-en-restauracion http://cesae.es
+Redirect 301 /index.php/31-idi-nuevas-tendencias-en-restauracion/104-objetivos http://cesae.es
+Redirect 301 /index.php/31-idi-nuevas-tendencias-en-restauracion/105-metodologia http://cesae.es
+Redirect 301 /index.php/31-idi-nuevas-tendencias-en-restauracion/106-programa http://cesae.es
+Redirect 301 /index.php/32-gestion-operativa-interna-del-establecimiento-de-restauracion/107-gestion-operativa-interna-del-establecimiento-de-restauracion http://cesae.es
+Redirect 301 /index.php/32-gestion-operativa-interna-del-establecimiento-de-restauracion/108-objetivos http://cesae.es
+Redirect 301 /index.php/32-gestion-operativa-interna-del-establecimiento-de-restauracion/109-metodologia http://cesae.es
+Redirect 301 /index.php/32-gestion-operativa-interna-del-establecimiento-de-restauracion/110-programa http://cesae.es
+Redirect 301 /index.php/19-area-tecnica-de-spa-a-wellness/24-area-tecnica-de-spa-a-wellness http://www.cesae.es/cursoswellnesyspa
+Redirect 301 /index.php/33-aspectos-clave-gestion-y-organizacion-centro-wellness-a-spa/111-aspectos-clave-gestion-y-organizacion-centro-wellness-a-spa http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa
+Redirect 301 /index.php/33-aspectos-clave-gestion-y-organizacion-centro-wellness-a-spa/112-objetivos http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-objetivos
+Redirect 301 /index.php/33-aspectos-clave-gestion-y-organizacion-centro-wellness-a-spa/113-metodologia http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-metodologia
+Redirect 301 /index.php/33-aspectos-clave-gestion-y-organizacion-centro-wellness-a-spa/114-programa http://www.cesae.es/aspectosclavegestionyorganizacioncentrowellnessyspa-programa
+Redirect 301 /index.php/34-organizacion-gestion-interna-de-un-establecimiento-de-wellness-a-spa/115-organizacion-gestion-interna-de-un-establecimiento-de-wellness-a-spa http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa
+Redirect 301 /index.php/34-organizacion-gestion-interna-de-un-establecimiento-de-wellness-a-spa/116-objetivos http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-objetivos
+Redirect 301 /index.php/34-organizacion-gestion-interna-de-un-establecimiento-de-wellness-a-spa/117-metodologia http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-metodologia
+Redirect 301 /index.php/34-organizacion-gestion-interna-de-un-establecimiento-de-wellness-a-spa/118-programa http://www.cesae.es/organizaciongestioninternaestablecimientowellnessyspa-programa
+Redirect 301 /index.php/36-bienestar-personal-actividades-de-wellness-a-spa/144-bienestar-personal-actividades-de-wellness-a-spa http://www.cesae.es/bienestarpersonalactividadeswellnessyspa
+Redirect 301 /index.php/36-bienestar-personal-actividades-de-wellness-a-spa/145-objetivos http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-objetivos
+Redirect 301 /index.php/36-bienestar-personal-actividades-de-wellness-a-spa/146-metodologia http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-metodologia
+Redirect 301 /index.php/36-bienestar-personal-actividades-de-wellness-a-spa/147-programa http://www.cesae.es/bienestarpersonalactividadeswellnessyspa-programa
+Redirect 301 /index.php/37-tendencias-y-evolucion-futura-del-mercado-wellness-a-spa/148-tendencias-y-evolucion-futura-del-mercado-wellness-a-spa http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa
+Redirect 301 /index.php/37-tendencias-y-evolucion-futura-del-mercado-wellness-a-spa/149-objetivos http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-objetivos
+Redirect 301 /index.php/37-tendencias-y-evolucion-futura-del-mercado-wellness-a-spa/150-metodologia http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-metodologia
+Redirect 301 /index.php/37-tendencias-y-evolucion-futura-del-mercado-wellness-a-spa/151-programa http://www.cesae.es/tendenciasyevolucionfuturamercadowellnessyspa-programa
+Redirect 301 /index.php/45-la-optimizacion-comercial-centro-wellness-a-spa/119-la-optimizacion-comercial-centro-wellness-a-spa-factores-de-exito http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresexito
+Redirect 301 /index.php/45-la-optimizacion-comercial-centro-wellness-a-spa/120-objetivos http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-objetivos
+Redirect 301 /index.php/45-la-optimizacion-comercial-centro-wellness-a-spa/121-metodologia http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-metodologia
+Redirect 301 /index.php/45-la-optimizacion-comercial-centro-wellness-a-spa/122-programa http://www.cesae.es/optimizacioncomercialcentrowellnessyspafactoresdeexito-programa
+Redirect 301 /index.php/20-programas-gestion-empresarial/25-programa-gestion-empresarial http://www.cesae.es/programasgestionempresarial
+Redirect 301 /index.php/38-programa-marketing-y-optimizacion-comercial-pmoc/123-programa-marketing-y-optimizacion-comercial-pmoc http://www.cesae.es/programamarketingyoptimizacioncomercial
+Redirect 301 /index.php/38-programa-marketing-y-optimizacion-comercial-pmoc/124-objetivos http://www.cesae.es/programamarketingyoptimizacioncomercial-objetivos
+Redirect 301 /index.php/38-programa-marketing-y-optimizacion-comercial-pmoc/125-programa http://www.cesae.es/programamarketingyoptimizacioncomercial-programa
+Redirect 301 /index.php/39-programa-de-control-de-gestion-empresarial-pcge/126-programa-de-control-de-gestion-empresarial-pcge http://www.cesae.es/programacontroldegestionempresarial
+Redirect 301 /index.php/39-programa-de-control-de-gestion-empresarial-pcge/127-objetivos http://www.cesae.es/programacontroldegestionempresarial-objetivos
+Redirect 301 /index.php/39-programa-de-control-de-gestion-empresarial-pcge/128-programa http://www.cesae.es/programacontroldegestionempresarial-programa
+Redirect 301 /index.php/40-programa-de-desarrollo-directivo-pdd/129-programa-de-desarrollo-directivo-pdd http://www.cesae.es/programadesarrollodirectivo
+Redirect 301 /index.php/40-programa-de-desarrollo-directivo-pdd/130-objetivos http://www.cesae.es/programadesarrollodirectivo-objetivos
+Redirect 301 /index.php/40-programa-de-desarrollo-directivo-pdd/131-programa http://www.cesae.es/programadesarrollodirectivo-programa
+Redirect 301 /index.php/41-programa-de-desarrollo-en-direccion-y-liderazgo-pddl/132-programa-de-desarrollo-en-direccion-y-liderazgo-pddl http://www.cesae.es/programadesarrollodireccionyliderazgo
+Redirect 301 /index.php/41-programa-de-desarrollo-en-direccion-y-liderazgo-pddl/133-objetivos http://www.cesae.es/programadesarrollodireccionyliderazgo-objetivos
+Redirect 301 /index.php/41-programa-de-desarrollo-en-direccion-y-liderazgo-pddl/134-programa http://www.cesae.es/programadesarrollodireccionyliderazgo-programa
+Redirect 301 /index.php/42-programa-de-direccion-y-gestion-financiera-pdgf/135-programa-de-direccion-y-gestion-financiera-pdgf http://www.cesae.es/programadireccionygestionfinanciera
+Redirect 301 /index.php/42-programa-de-direccion-y-gestion-financiera-pdgf/136-objetivos http://www.cesae.es/programadireccionygestionfinanciera-objetivos
+Redirect 301 /index.php/42-programa-de-direccion-y-gestion-financiera-pdgf/137-programa http://www.cesae.es/programadireccionygestionfinanciera-programa
+Redirect 301 /index.php/43-programa-en-direccion-y-desarrollo-de-recursos-humanos-pddrh/138-programa-en-direccion-y-desarrollo-de-recursos-humanos-pddrh http://www.cesae.es/programadireccionydesarrollorecursoshumanos
+Redirect 301 /index.php/43-programa-en-direccion-y-desarrollo-de-recursos-humanos-pddrh/139-objetivos http://www.cesae.es/programadireccionydesarrollorecursoshumanos-objetivos
+Redirect 301 /index.php/43-programa-en-direccion-y-desarrollo-de-recursos-humanos-pddrh/140-programa http://www.cesae.es/programadireccionydesarrollorecursoshumanos-programa
+Redirect 301 /index.php/44-programa-en-gestion-de-negocios-online-pgno/141-programa-en-gestion-de-negocios-online-pgno http://www.cesae.es/programagestiondenegociosonline
+Redirect 301 /index.php/44-programa-en-gestion-de-negocios-online-pgno/142-objetivos http://www.cesae.es/programagestiondenegociosonline-objetivos
+Redirect 301 /index.php/44-programa-en-gestion-de-negocios-online-pgno/143-programa http://www.cesae.es/programagestiondenegociosonline-programa
+Redirect 301 /index.php/10-media-campus/36-media-campus http://www.cesae.es/mediacampus
+Redirect 301 /index.php/10-media-campus/26-experiencia-cesae http://www.cesae.es/experienciacesae
+Redirect 301 /index.php/10-media-campus/27-plataforma-de-elearning http://www.cesae.es/plataformaelearning
+Redirect 301 /index.php/10-media-campus/28-audiovisual-cesae-tv http://www.cesae.es/audiovisual
+Redirect 301 /index.php/10-media-campus/30-redes-sociales http://www.cesae.es/redessociales
+Redirect 301 /index.php/10-media-campus/31-blog http://www.cesae.es/blog-portada
+Redirect 301 /index.php/2010/11/el-anali../ http://www.cesae.es/blog-portada
+
+
+
+# BLOG
+Redirect 301 /index.php/2012/11/seleccion-por-internet/	http://www.cesae.es/blog/la-clave-de-la-seleccion-por-internet
+Redirect 301 /index.php/2012/11/prevencion-de-la-legionella-en-los-centros-wellness/	http://www.cesae.es/blog/normas-para-la-prevencion-de-la-legionela-en-los-centros-wellness
+Redirect 301 /index.php/2012/11/la-importancia-de-la-derh-en-el-mundo-2-0/	http://www.cesae.es/blog/descubre-la-importancia-de-la-derh-en-el-mundo-20
+Redirect 301 /index.php/2012/10/%c2%bfla-seleccion-de-personal-idonea/	http://www.cesae.es/blog/como-conseguir-la-seleccion-de-personal-idonea
+Redirect 301 /index.php/2012/10/quirogimnasia-la-gimnasia-de-las-manos/	http://www.cesae.es/blog/las-ultimas-novedades-de-quirogimnasia-la-gimnasia-de-las-manos
+Redirect 301 /index.php/2012/10/el-centro-wellness/	http://www.cesae.es/blog/novedades-en-los-centros-wellness
+Redirect 301 /index.php/2012/09/coaching-en-la-direccion-de-recursos-humanos/	http://www.cesae.es/blog/se-un-experto-en-coaching-en-la-direccion-de-recursos-humanos
+Redirect 301 /index.php/2012/09/el-%e2%80%9csector-spa%e2%80%9d-en-la-actualidad-critica-y-oportunidad/	http://www.cesae.es/blog/el-sector-spa-en-la-actualidad-critica-y-oportunidad
+Redirect 301 /index.php/2012/09/maximizar-la-satisfaccion-del-cliente/	http://www.cesae.es/blog/maximizar-la-satisfaccion-del-cliente
+Redirect 301 /index.php/2012/09/hosteleria-y-propiedad-compartida/	http://www.cesae.es/blog/descubre-el-por-que-de-la-hosteleria-y-propiedad-compartida
+Redirect 301 /index.php/2012/09/integracion-de-los-sistemas-de-gestion-en-hoteles/	http://www.cesae.es/blog/integracion-de-los-sistemas-de-gestion-en-hoteles
+Redirect 301 /index.php/2012/09/recepcion-es-mucho-mas-que-recibir%e2%80%a6/	http://www.cesae.es/blog/recepcion-es-mucho-mas-que-recibir
+Redirect 301 /index.php/2012/08/menu-engineering/	http://www.cesae.es/blog/las-claves-de-menu-engineering
+Redirect 301 /index.php/2012/07/flotacion-en-agua/	http://www.cesae.es/blog/la-importancia-de-la-flotacion-en-el-agua
+Redirect 301 /index.php/2012/07/%c2%bfel-low-cost-en-hoteles-crea-adiccion-de-%e2%80%9cturistas-low-cost%e2%80%9d/	http://www.cesae.es/blog/el-low-cost-en-hoteles-crea-adicion-de-turistas-low-cost
+Redirect 301 /index.php/2012/06/el-teletrabajo-una-herramienta-en-auge/	http://www.cesae.es/blog/el-teletrabajo-una-herramienta-en-auge
+Redirect 301 /index.php/2012/06/temazcal-el-bano-de-vapor-sanador/	http://www.cesae.es/blog/porque-elegir-temazcal-el-bano-de-vapor-sanador
+Redirect 301 /index.php/2012/06/la-importancia-de-un-buen-sommelier/	http://www.cesae.es/blog/quieres-convertirte-en-un-buen-sommelier
+Redirect 301 /index.php/2012/05/el-departamento-de-recepcion-frente-al-cliente/	http://www.cesae.es/blog/como-debe-ser-el-departamento-de-recepcion-frente-al-cliente
+Redirect 301 /index.php/2012/05/las-estrategias-de-internacionalizacion-de-la-industria-hotelera-espanola/	http://www.cesae.es/blog/las-estrategias-de-internalizacion-de-la-industria-hotelera-espanola
+Redirect 301 /index.php/2012/05/la-planta-hotelera-espanola/	http://www.cesae.es/blog/informe-sobre-la-planta-hotelera-espanola
+Redirect 301 /index.php/2012/04/la-segmentacion/	http://www.cesae.es/blog/la-importancia-de-la-segmentacion
+Redirect 301 /index.php/2012/03/la-recepcion-como-corazon-del-hotel/	http://www.cesae.es/blog/la-recepcion-como-corazon-del-hotel
+Redirect 301 /index.php/2012/03/paridad-de-tarifas/	http://www.cesae.es/blog/5-claves-para-entender-la-paridad-de-tarifas
+Redirect 301 /index.php/2012/03/analisis-y-control-financiero-de-la-explotacion-hotelera/	http://www.cesae.es/blog/novedades-sobre-analisis-y-control-financiero-de-la-explotacion-hotelera
+Redirect 301 /index.php/2012/03/calidad-para-la-competencia-y-la-competitividad/	http://www.cesae.es/blog/las-5-claves-para-la-calidad-para-la-competencia-y-la-competitividad
+Redirect 301 /index.php/2012/03/la-situacion-actual-del-wellness-en-los-hoteles/	http://www.cesae.es/blog/la-situacion-actual-del-wellness-en-los-hoteles
+Redirect 301 /index.php/2012/03/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir/	http://www.cesae.es/blog/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir
+Redirect 301 /index.php/2012/03/sin-nuestros-empleados-no-somos-nada/	http://www.cesae.es/blog/sin-nuestros-empleados-no-somos-nada
+Redirect 301 /index.php/2012/02/%c2%bfcuanto-venden-las-sensaciones/	http://www.cesae.es/blog/cuanto-venden-las-sensaciones
+Redirect 301 /index.php/2012/01/los-hoteles-y-la-crisis/	http://www.cesae.es/blog/el-porque-de-los-hoteles-y-la-crisis
+Redirect 301 /index.php/2012/01/masaje-con-palos-de-bambu-para-un-cuerpo-10/	http://www.cesae.es/blog/descubre-el-masaje-con-palos-de-bambu-para-un-cuerpo-10
+Redirect 301 /index.php/2011/12/la-cocina-diferida-el-uso-de-la-tecnologia-para-facilitar-el-trabajo/	http://www.cesae.es/blog/se-un-experto-en-cocina-diferida-el-uso-del-a-tecnologia-para-facilitar-el-trabajo
+Redirect 301 /index.php/2011/12/aclarando-el-concepto-de-estrategia-empresarial/	http://www.cesae.es/blog/aclarando-el-concepto-de-estrategia-empresarial
+Redirect 301 /index.php/2011/12/%c2%bf%c2%bfspa-balneario-talasoterapia-porque-se-confunden/	http://www.cesae.es/blog/descubre-la-diferencia-entre-spa-balneario-y-tasaloterapia
+Redirect 301 /index.php/2011/11/el-feng-shui-en-nuestra-vida/	http://www.cesae.es/blog/ha-llegado-el-feng-shui-a-nuestra-vida
+Redirect 301 /index.php/2011/11/ventajas-del-bufe-en-la-restauracion/	http://www.cesae.es/blog/ventajas-del-bufe-en-la-restauracion
+Redirect 301 /index.php/2011/11/la-carta-del-restaurante/	http://www.cesae.es/blog/claves-para-mejorar-la-carta-del-restaurante
+Redirect 301 /index.php/2011/10/las-bondades-del-agua/	http://www.cesae.es/blog/las-bondades-del-agua
+Redirect 301 /index.php/2011/10/el-revenue-management-y-el-mercado-turistico-hotelero/	http://www.cesae.es/blog/el-revenue-management-y-el-mercado-turistico-hotelero
+Redirect 301 /index.php/2011/08/la-satisfaccion-del-cliente-del-hotel/	http://www.cesae.es/blog/la-satisfaccion-del-cliente-del-hotel
+Redirect 301 /index.php/2011/07/rentabilidad-en-la-industria-hotelera-andaluza/	http://www.cesae.es/blog/como-alcanzar-la-rentabilidad-en-la-industria-hotelera-andaluza
+Redirect 301 /index.php/2011/07/sensibilizacion-y-deteccion-de-necesidades-de-formacion/	http://www.cesae.es/blog/sensibilizacion-y-deteccion-de-necesidades-de-formacion
+Redirect 301 /index.php/2011/07/sistemas-de-apoyo-y-control-de-gestion/	http://www.cesae.es/blog/conoce-los-sistemas-de-apoyo-y-control-de-gestion
+Redirect 301 /index.php/2011/07/redes-sociales-vs-empleo/	http://www.cesae.es/blog/redes-sociales-vs-empleo
+Redirect 301 /index.php/2011/07/la-importancia-de-integrar-la-comunicacion-2-0-con-la-comunicacion-tradicional/	http://www.cesae.es/blog/la-importancia-de-integrar-la-comunicacion-20-con-la-comunicacion-tradicional
+Redirect 301 /index.php/2011/07/la-guia-repsol-se-renueva-3/	http://www.cesae.es/blog/la-guia-repsol-se-renueva
+Redirect 301 /index.php/2011/06/destino-espana-competitividad-de-nuestra-marca-ante-la-crisis-interna/	http://www.cesae.es/blog/destino-espana--competitividad-de-nuestra-marca-ante-la-crisis-interna
+Redirect 301 /index.php/2011/06/la-tecnologia-de-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras/	http://www.cesae.es/blog/la-ventaja-de-la-tecnologia-en-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras
+Redirect 301 /index.php/2011/06/los-mejores-restaurantes-del-mundo/	http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-del-mundo
+Redirect 301 /index.php/2011/06/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos/	http://www.cesae.es/blog/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos
+Redirect 301 /index.php/2011/05/453/	http://www.cesae.es/blog/descubre-en-que-punto-se-encuentra-la-figura-del-revenue-manager
+Redirect 301 /index.php/2011/05/la-formacion-en-la-empresa/	http://www.cesae.es/blog/5-aspectos-clave-de-la-formacion-y-su-papel-en-la-mejora-continua
+Redirect 301 /index.php/2011/05/todos-para-uno-y-uno-para-todos/	http://www.cesae.es/blog/todos-para-uno-y-uno-para-todos
+Redirect 301 /index.php/2011/05/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa/	http://www.cesae.es/blog/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa
+Redirect 301 /index.php/2011/04/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa/	http://www.cesae.es/blog/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa
+Redirect 301 /index.php/2011/04/santi-santamaria-el-legado-de-uno-de-los-grandes/	http://www.cesae.es/blog/santi-santamaria-el-legado-de-uno-de-los-grandes
+Redirect 301 /index.php/2011/04/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web/	http://www.cesae.es/blog/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web
+Redirect 301 /index.php/2011/03/software-hotelero-gestion-inventario-tarifas/	http://www.cesae.es/blog/descubre-el-mejor-softwarte-hotelero-de-distribucion-de-inventario-y-tarifas
+Redirect 301 /index.php/2011/03/escapada-rural-guia-de-twitter-para-alojamientos-rurales/	http://www.cesae.es/blog/nueva-aplicacion-escapada-rural-guia-de-twitter-para-alojamientos-rurales
+Redirect 301 /index.php/2011/03/se-esta-reactivando-el-turismo/	http://www.cesae.es/blog/se-esta-reactivando-el-turismo
+Redirect 301 /index.php/2011/03/animate-a-esta-iniciativa-para-mejorar-el-mundo/	http://www.cesae.es/blog/animate-a-esta-iniciativa-para-mejorar-el-mundo
+Redirect 301 /index.php/2011/02/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico/	http://www.cesae.es/blog/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico
+Redirect 301 /index.php/2011/02/no-solo-formacion-online-de-turismo/	http://www.cesae.es/blog/por-que-no-solo-formacion-online-de-turismo
+Redirect 301 /index.php/2011/02/otro-evento-gastronomico-forum-girona-2011/	http://www.cesae.es/blog/otro-evento-gastronomico-forum-girona-2011
+Redirect 301 /index.php/2011/02/nuevas-convocatorias-de-cursos-de-cesae/	http://www.cesae.es/blog/nuevas-convocatorias-de-cursos-de-cesae
+Redirect 301 /index.php/2011/02/post-alumnos-cesae-la-paridad-de-tarifas-podria-provocar-un-nuevo-modelo-de-negocio-en-nuestro-sistema-turistico/	http://www.cesae.es/blog/la-importancia-de-la-paridad-de-tarifas-en-nuestro-sistema-turistico
+Redirect 301 /index.php/2011/02/una-gran-comunidad-dedicada-a-la-restauracion/	http://www.cesae.es/blog/descubre-la-nueva-comunidad-dedicada-a-la-restauracion
+Redirect 301 /index.php/2011/02/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez/	http://www.cesae.es/blog/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez
+Redirect 301 /index.php/2011/02/recursos-2-0-para-hoteleros-ii-comunidades/	http://www.cesae.es/blog/novedades-de-los-recursos-20-hoteleros-ii-comunidades
+Redirect 301 /index.php/2011/02/recursos-2-0-para-hoteleros-i-blogs/	http://www.cesae.es/blog/guia-de-los-recursos-20-hoteleros-i-blogs
+Redirect 301 /index.php/2011/01/curso-comunicacion-online-y-gestion-2-0-hotelera/	http://www.cesae.es/blog/conoce-nuestro-curso-de-comunicacion-online-y-gestion-hotelera-20
+Redirect 301 /index.php/2011/01/sobre-la-cocina-sostenible/	http://www.cesae.es/blog/sobre-la-cocina-sostenible
+Redirect 301 /index.php/2011/01/cesae-en-fitur-by-turijobs/	http://www.cesae.es/blog/cesae-en-fitur-by-turijobs
+Redirect 301 /index.php/2011/01/no-os-perdais-madrid-fusion/	http://www.cesae.es/blog/no-os-perdais-madrid-fusion
+Redirect 301 /index.php/2011/01/sobre-fitur-fiturtech-workshopturijobs-eventoauditorium/	http://www.cesae.es/blog/sobre-lo-mejor-de-fitur
+Redirect 301 /index.php/2011/01/post-alumnos-cesae-mejora-el-impacto-de-tu-hotel-en-tripadvisor/	http://www.cesae.es/blog/mejora-el-impacto-de-tu-hotel-en-tripadvisor
+Redirect 301 /index.php/2011/01/matarromera-marcando-la-diferencia-en-el-mundo-del-vino/	http://www.cesae.es/blog/matarromera-marcando-la-diferencia-en-el-mundo-del-vino
+Redirect 301 /index.php/2011/01/post-alumnos-cesae-los-restaurantes-de-hoteles-urbanos/	http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-de-hoteles-urbanos
+Redirect 301 /index.php/2011/01/los-periodicos-de-cesae/	http://www.cesae.es/blog/descubre-los-periodicos-de-cesae
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-ser-malo-con-tus-clientes-es-malo-para-tus-negocios/	http://www.cesae.es/blog/ser-malo-con-tus-clientes-es-malo-para-tus-negocios
+Redirect 301 /index.php/2010/12/enlaces-interesantes-para-profesionales-del-turismo-i/	http://www.cesae.es/blog/enlaces-interesantes-para-sectores-del-turismo
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-multiplica-tus-ingresos-marketing-y-revenue/	http://www.cesae.es/blog/multiplica-tus-ingresos-marketing-y-revenue
+Redirect 301 /index.php/2010/12/que-es-el-revpash-y-como-puede-ayudar-a-mi-restaurante/	http://www.cesae.es/blog/que-es-el-revpahs-y-como-puede-ayudar-a-mi-restaurante
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-la-segmentacion-de-mercado-para-el-revenue-management/	http://www.cesae.es/blog/claves-de-la-segmentacion-del-mercado-para-el-revenue-management
+Redirect 301 /index.php/2010/12/cesae-os-desea-feliz-navidad/	http://www.cesae.es/blog/cesae-os-desea-feliz-navidad
+Redirect 301 /index.php/2010/12/perspectivas-del-sector-turistico-para-2011-el-ano-del-valor-anadido/	http://www.cesae.es/blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadido
+Redirect 301 /index.php/2010/12/extremadura-21-un-evento-de-hosteltur-que-ha-marcado-la-diferencia/	http://www.cesae.es/blog/extremadura-2011-un-evento-de-hosteltur-que-ha-marcado-la-diferencia
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-nuevas-formas-para-entender-e-influenciar-al-consumidor/	http://www.cesae.es/blog/nuevas-formas-para-entender-e-influenciar-al-consumidor
+Redirect 301 /index.php/2010/12/editor-de-menus-para-restaurantes/	http://www.cesae.es/blog/las-mejores-claves-para-el-editor-de-menus-para-restaurantes
+Redirect 301 /index.php/2010/12/nuestros-alumnos-participan/	http://www.cesae.es/blog/nuestros-alumnos-participan
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-revenue-management-y-marketing/	http://www.cesae.es/blog/analizamos-las-claves-del-revenue-management-y-marketing
+Redirect 301 /index.php/2010/12/page/3/	http://www.cesae.es/blog/lo-mejor-de-facebook-place-para-hoteles
+Redirect 301 /index.php/2010/12/post-alumnos-cesae-deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantes/	http://www.cesae.es/blog/deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantes
+Redirect 301 /index.php/2010/12/turismo-rural-y-revenue-management/	http://www.cesae.es/blog/descubre-la-relacion-entre-turismo-rural-y-revenue-management
+Redirect 301 /index.php/2010/12/vino-y-turismo-enoturismo/	http://www.cesae.es/blog/las-claves-del-vino-y-turismo-enoturismo
+Redirect 301 /index.php/2010/12/novedades-cesae-la-mejor-manera-para-seguir-creciendo-es-la-mejora-continua/	http://www.cesae.es/blog/novedades-cesae-la-mejor-manera-para-seguir-creciendo-es-la-mejora-continua
+Redirect 301 /index.php/2010/11/hoteles-saludables-comenzando-por-la-habitacion/	http://www.cesae.es/blog/como-convertir-los-hoteles-en-saludables-comenzando-por-la-habitacion
+Redirect 301 /index.php/2010/11/una-nueva-herramienta-de-gestion-de-la-reputacion-online-para-hoteles/	http://www.cesae.es/blog/se-un-experto-en-la-nueva-herramienta-de-gestion-de-la-reputacion-online-para-hoteles
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-vi-y-ultima/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-vi-y-ultima
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-v/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-v
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-iv/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iv
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-iii/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iii
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-ii/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-ii
+Redirect 301 /index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-i/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-i
+Redirect 301 /index.php/2010/11/el-analisis-de-toprural-y-ruralgest-de-chema-herrero/	http://www.cesae.es/blog/el-analisis-de-toprural-y-rural-guest-de-chema-herrero
+Redirect 301 /index.php/2010/11/un-hotel-con-depresion/	http://www.cesae.es/blog/5-puntos-clave-para-descubrir-un-hotel-con-depresion
+Redirect 301 /index.php/2010/10/sobre-nuestro-programa-superior-en-turismo-rural-pdtr/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-turismo-rural-pdtr
+Redirect 301 /index.php/2010/10/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr
+Redirect 301 /index.php/2010/10/gestion-wellness-spa/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-wellnessaspa-pdws
+Redirect 301 /index.php/2010/10/sobre-nuestro-programa-en-direccion-y-gestion-hotelera-pdgh/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-de-empresas-hoteleras-pdgh
+Redirect 301 /index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-iii/	http://www.cesae.es/blog/recomienda-tus-articulos-en-nuestro-facebook
+Redirect 301 /index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-ii/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-iii
+Redirect 301 /index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-i/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-ii
+Redirect 301 /index.php/2010/10/recomienda-tus-articulos-en-nuestro-facebook/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-i
+Redirect 301 /index.php/2010/10/mas-sobre-rate-tiger/	http://www.cesae.es/blog/aprendiendo-mas-sobre-rate-tiger
+Redirect 301 /index.php/2010/09/ruralkear-turismo-rural/	http://www.cesae.es/blog/ultimas-novedades-en-ruralkea
+Redirect 301 /index.php/2010/09/revenue-management-y-e-commerce-en-linkedin/	http://www.cesae.es/blog/descubre-las-novedades-del-revenue-manager-y-ecommerce-en-linkeding
+Redirect 301 /index.php/2010/09/cesae-alumnos-y-clientes/	http://www.cesae.es/blog/cesae-alumnos-y-clientes
+Redirect 301 /index.php/2010/09/una-buena-estructura-contable/	http://www.cesae.es/blog/guia-de-una-buena-estructura-contable
+Redirect 301 /index.php/2010/09/puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion/	http://www.cesae.es/blog/descubriendo-puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion
+Redirect 301 /index.php/2010/09/derivalya-empresa-del-mes-en-la-anei/	http://www.cesae.es/blog/derivalya-la-empresa-del-mes-en-la-anei
+Redirect 301 /index.php/2010/09/definiciones-de-turismo-hacer-turismo-implica-viajar/	http://www.cesae.es/blog/definiciones-de-turismo-hacer-turismo-implica-viajar
+Redirect 301 /index.php/2010/09/puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento/	http://www.cesae.es/blog/las-5-claves-de-los-puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento
+Redirect 301 /index.php/2010/09/una-red-social-de-turismo-rural/	http://www.cesae.es/blog/descubre-la-nueva-red-social-de-turismo-rural
+Redirect 301 /index.php/2010/08/nuestros-amigos-bloggers/	http://www.cesae.es/blog/nuestros-amigos-los-bloggers
+Redirect 301 /index.php/2010/08/formacion-bonificada-gratuita/	http://www.cesae.es/blog/atencion-empleados-y-empresarios-conoceis-la-formacion-bonificada
+Redirect 301 /index.php/2010/08/la-importancia-del-control-interno-en-la-empresa/	http://www.cesae.es/blog/las-claves-de-la-importancia-del-control-interno-en-la-empresa
+Redirect 301 /index.php/2010/08/tarifas-en-lineas-aereas-y-hoteles/	http://www.cesae.es/blog/por-que-incrementan-las-tarifas-en-lineas-aereas-y-bajan-en-hoteles
+Redirect 301 /index.php/2010/08/la-problematica-del-todo-incluido/	http://www.cesae.es/blog/descubre-la-problematica-del-todo-incluido
+Redirect 301 /index.php/2010/08/conocenos-un-poco-mejor/	http://www.cesae.es/blog/conocenos-un-poco-mejor
+Redirect 301 /index.php/2010/08/turismo-rural-rural-musical-se-diferencia-de-la-competencia/	http://www.cesae.es/blog/quieres-saber-que-es-rural-musica
+Redirect 301 /index.php/2010/08/gestion-empresarial-y-gestion-del-tiempo/	http://www.cesae.es/blog/novedades-de-la-gestion-empresarial-y-gestion-del-tiempo
+Redirect 301 /index.php/2010/07/sobre-nuestros-cursos/	http://www.cesae.es/blog/informate-de-las-ultimas-novedades-sobre-nuestros-cursos
+Redirect 301 /index.php/2010/07/marketing-hotelero-espana-vs-usa-el-freno-de-la-propiedad/	http://www.cesae.es/blog/guia-sobre-marketing-hotelero-espana-vs-usa
+Redirect 301 /index.php/2010/07/presentacion-proyectos-cesae-2010/	http://www.cesae.es/blog/ultima-presentacion-de-proyectos-de-cesae-2010
+Redirect 301 /index.php/2010/07/que-es-el-turismo-rural/	http://www.cesae.es/blog/que-es-el-turismo-rural
+Redirect 301 /index.php/2010/07/marketing-gastronomico/	http://www.cesae.es/blog/conoce-el-marketing-gastronomico
+Redirect 301 /index.php/2010/07/cesae-descubriendo-facebook-fbml/	http://www.cesae.es/blog/cesae-20-descubriendo-facebook-y-el-fbml
+Redirect 301 /index.php/2010/07/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes/	http://www.cesae.es/blog/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes
+Redirect 301 /index.php/2010/07/hoy-vamos-a-los-toros/	http://www.cesae.es/blog/hoy-vamos-a-los-toros
+Redirect 301 /index.php/2010/07/rentabilizar-un-spa-de-la-base-a-la-gestion-comercial/	http://www.cesae.es/blog/pautas-para-rentabilizar-un-spa-de-la-base-a-la-gestion-comercial
+Redirect 301 /index.php/2010/07/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico/	http://www.cesae.es/blog/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico
+Redirect 301 /index.php/2010/07/y-por-supuesto-ni-suene-con-que-vuelva-a-su-hotel/	http://www.cesae.es/blog/y-por-supuesto-ni-suene-que-vuelva-a-su-hotel
+Redirect 301 /index.php/2010/07/un-channel-manager-en-tu-movil/	http://www.cesae.es/blog/las-ventajas-del-channel-manager-en-tu-movil
+Redirect 301 /index.php/2010/06/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener/	http://www.cesae.es/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener
+Redirect 301 /index.php/2010/06/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas/	http://www.cesae.es/blog/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas
+Redirect 301 /index.php/2010/06/revenue-management-en-la-superbowl-minimum-length-of-stay/	http://www.cesae.es/blog/las-claves-del-revenue-manager-en-la-superbowl
+Redirect 301 /index.php/2010/06/erase-una-vez/	http://www.cesae.es/blog/erase-una-vez-un-hotel
+Redirect 301 /index.php/2010/06/foro-hosteltur-del-que-al-como/	http://www.cesae.es/blog/descubre-el-foro-hosteltur-del-que-al-como
+Redirect 301 /index.php/2010/06/la-importancia-de-la-estrategia-para-la-empresa-hotelera/	http://www.cesae.es/blog/la-importancia-de-la-estrategia-para-la-empresa-hotelera
+Redirect 301 /index.php/2010/06/la-distribucion-hotelera/	http://www.cesae.es/blog/la-mejor-guia-sobre-distribucion-hotelera
+Redirect 301 /index.php/2010/06/un-acercamiento-a-la-gestion-de-los-salones-del-hotel/	http://www.cesae.es/blog/claves-para-mejorar-la-gestion-de-los-salones-del-hotel
+Redirect 301 /index.php/2010/06/mencion-al-blog-de-cesae/	http://www.cesae.es/blog/mencion-al-blog-de-cesae
+Redirect 301 /index.php/2010/06/google-maps-apuesta-por-el-e-commerce-hotelero/	http://www.cesae.es/blog/google-maps-apuesta-por-el-ecommerce-hotelero
+Redirect 301 /index.php/2010/06/la-calidad-que-no-esta-de-moda/	http://www.cesae.es/blog/quieres-saber-que-calidad-no-esta-de-moda
+Redirect 301 /index.php/2010/06/el-revenue-management-una-parte-muy-importante-de-la-imagen-de-tu-empresa/	http://www.cesae.es/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresa
+Redirect 301 /index.php/2010/05/bienvenido-al-blog-de-cesae/	http://www.cesae.es/blog/bienvenido-al-blog-de-cesae
+
+
+Redirect 301 /bienestar-fitness-spa http://www.cesae.es/blog/descubre-las-novedades-de-bienestar-fitness-y-spa
+Redirect 301 /descubre-las-novedades-de-bienestar-fitness-y-spa http://www.cesae.es/blog/descubre-las-novedades-de-bienestar-fitness-y-spa
+Redirect 301 /formacionrestaurantes http://www.cesae.es/blog/5-claves-sobre-alergias-e-intolerencias-alimentarias
+Redirect 301 /tecnicasderevenuemanagement http://www.cesae.es/blog/revenue-management-evolucion-de-la-media-pension-al-all-inclusive-en-republica-dominicana
+Redirect 301 /estrategiamarketing http://www.cesae.es/blog/descubriendo-el-marketing-20-como-parte-de-la-estrategia
+Redirect 301 /marketinghotelero http://www.cesae.es/blog/el-precio-se-olvida-la-experiencia-se-recuerda
+Redirect 301 /lasnecesidadesdelclienteejecentraldelhotel http://www.cesae.es/blog/las-necesidades-del-cliente-eje-central-del-hotel
+Redirect 301 /armasdedoblefiloelultimominuto http://www.cesae.es/blog/armas-de-doble-filo-el-ultimo-minuto
+Redirect 301 /revenuemanagementyelletargodelososos http://www.cesae.es/blog/el-revenue-management-y-el-letargo-de-los-osos
+Redirect 301 /zenithotelesycesae http://www.cesae.es/blog/colaboracion-de-zenit-hoteles-y-cesae-businessatourism-school
+Redirect 301 /elconsumoelectricoenloshoteles http://www.cesae.es/blog/como-entender-el-consumo-electrico-en-los-hoteles
+Redirect 301 /comunicaciononlinegestion20hotelera http://www.cesae.es/blog/descubre-nuestro-curso-de-comunicacion-online-y-gestion-hotelera-20
+Redirect 301 /guessexperienceenhotelurbano http://www.cesae.es/blog/la-importancia-del-guess-experience-en-un-hotel-urbano
+Redirect 301 /distribuciononlineyrevenuemanagement http://www.cesae.es/blog/se-un-experto-en-distribucion-online-y-revenue-management
+Redirect 301 /formaciondelostrabajadores http://www.cesae.es/blog/5-claves-en-la-formacion-de-los-trabajadores
+Redirect 301 /hoteleriaeinternet http://www.cesae.es/blog/hoteleria-e-internet-una-historia-de-amor-odio
+Redirect 301 /rrhhlagestionconlaspersonaslacomunicacion http://www.cesae.es/blog/novedades-sobre-rrhh-la-gestion-con-las-personas-la-comunicacion
+Redirect 301 /vinipadaplicacionparaelserviciodevinos http://www.cesae.es/blog/ultima-novedad-en-apps-vinipad-aplicacion-para-el-servicio-de-vino
+Redirect 301 /cesaefelicesfiestas http://www.cesae.es/blog/cesae-os-desea-feliz-navidad-y-prospero-ano-2013
+Redirect 301 /universidadfranciscodevitoria-cesae http://www.cesae.es/blog/acuerdo-de-colaboracion-universidad-francisco-de-vitoria-cesae-businessatourism-school
+Redirect 301 /masterdireccionygestionempresashotelerasfulltime http://www.cesae.es/blog/acuerdo-de-colaboracion-universidad-francisco-de-vitoria-cesae-businessatourism-school
+Redirect 301 /seleccionporinternet http://www.cesae.es/blog/la-clave-de-la-seleccion-por-internet
+Redirect 301 /prevenciondelalegionellaenloscentroswellness http://www.cesae.es/blog/normas-para-la-prevencion-de-la-legionela-en-los-centros-wellness
+Redirect 301 /laimportanciadeladerhenelmundo20 http://www.cesae.es/blog/descubre-la-importancia-de-la-derh-en-el-mundo-20
+Redirect 301 /laselecciondepersonalidonea http://www.cesae.es/blog/como-conseguir-la-seleccion-de-personal-idonea
+Redirect 301 /quirogimnasialagimnasiadelasmanos http://www.cesae.es/blog/las-ultimas-novedades-de-quirogimnasia-la-gimnasia-de-las-manos
+Redirect 301 /elcentrowellness http://www.cesae.es/blog/novedades-en-los-centros-wellness
+Redirect 301 /coachingenladireccionderecursoshumanos http://www.cesae.es/blog/se-un-experto-en-coaching-en-la-direccion-de-recursos-humanos
+Redirect 301 /elsectorspaenlaactualidadcriticayoportunidad http://www.cesae.es/blog/el-sector-spa-en-la-actualidad-critica-y-oportunidad
+Redirect 301 /maximizarlasatisfacciondelcliente http://www.cesae.es/blog/maximizar-la-satisfaccion-del-cliente
+Redirect 301 /hosteleriaypropiedadcompartida http://www.cesae.es/blog/descubre-el-por-que-de-la-hosteleria-y-propiedad-compartida
+Redirect 301 /integraciondelossistemasdegestionenhoteles http://www.cesae.es/blog/integracion-de-los-sistemas-de-gestion-en-hoteles
+Redirect 301 /recepcionesmuchomasquerecibir http://www.cesae.es/blog/recepcion-es-mucho-mas-que-recibir
+Redirect 301 /menuengineering http://www.cesae.es/blog/las-claves-de-menu-engineering
+Redirect 301 /flotacionenagua http://www.cesae.es/blog/la-importancia-de-la-flotacion-en-el-agua
+Redirect 301 /ellowcostenhotelescreaadicciondeturistaslowcost http://www.cesae.es/blog/el-low-cost-en-hoteles-crea-adicion-de-turistas-low-cost
+Redirect 301 /elteletrabajounaherramientaenauge http://www.cesae.es/blog/el-teletrabajo-una-herramienta-en-auge
+Redirect 301 /temazcalelbanodevaporsanado http://www.cesae.es/blog/porque-elegir-temazcal-el-bano-de-vapor-sanador
+Redirect 301 /laimportanciadeunbuensommelier http://www.cesae.es/blog/quieres-convertirte-en-un-buen-sommelier
+Redirect 301 /eldepartamentoderecepcionfrentealcliente http://www.cesae.es/blog/como-debe-ser-el-departamento-de-recepcion-frente-al-cliente
+Redirect 301 /lasestrategiasdeinternacionalizaciondelaindustriahoteleraespanola http://www.cesae.es/blog/las-estrategias-de-internalizacion-de-la-industria-hotelera-espanola
+Redirect 301 /laplantahoteleraespanola http://www.cesae.es/blog/informe-sobre-la-planta-hotelera-espanola
+Redirect 301 /lasegmentacion http://www.cesae.es/blog/la-importancia-de-la-segmentacion
+Redirect 301 /larecepcioncomocorazondelhotel http://www.cesae.es/blog/la-recepcion-como-corazon-del-hotel
+Redirect 301 /paridaddetarifas http://www.cesae.es/blog/5-claves-para-entender-la-paridad-de-tarifas
+Redirect 301 /analisisycontrolfinancierodelaexplotacionhotelera http://www.cesae.es/blog/novedades-sobre-analisis-y-control-financiero-de-la-explotacion-hotelera
+Redirect 301 /calidadparalacompetenciaylacompetitividad http://www.cesae.es/blog/las-5-claves-para-la-calidad-para-la-competencia-y-la-competitividad
+Redirect 301 /lasituacionactualdelwellnessenloshoteles http://www.cesae.es/blog/la-situacion-actual-del-wellness-en-los-hoteles
+Redirect 301 /distintasformasdeverlacalidadquedebendecoincidir http://www.cesae.es/blog/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir
+Redirect 301 /sinnuestrosempleadosnosomosnada http://www.cesae.es/blog/sin-nuestros-empleados-no-somos-nada
+Redirect 301 /cuantovendenlassensaciones http://www.cesae.es/blog/cuanto-venden-las-sensaciones
+Redirect 301 /loshotelesylacrisis http://www.cesae.es/blog/el-porque-de-los-hoteles-y-la-crisis
+Redirect 301 /masajeconpalosdebambuparauncuerpo10 http://www.cesae.es/blog/descubre-el-masaje-con-palos-de-bambu-para-un-cuerpo-10
+Redirect 301 /lacocinadiferidaelusodelatecnologiaparafacilitareltrabajo http://www.cesae.es/blog/se-un-experto-en-cocina-diferida-el-uso-del-a-tecnologia-para-facilitar-el-trabajo
+Redirect 301 /aclarandoelconceptodeestrategiaempresarial http://www.cesae.es/blog/aclarando-el-concepto-de-estrategia-empresarial
+Redirect 301 /spabalneariotalasoterapia,orqueseconfunden http://www.cesae.es/blog/descubre-la-diferencia-entre-spa-balneario-y-tasaloterapia
+Redirect 301 /elfengshuiennuestravida http://www.cesae.es/blog/ha-llegado-el-feng-shui-a-nuestra-vida
+Redirect 301 /ventajasdelbufeenlarestauracion http://www.cesae.es/blog/ventajas-del-bufe-en-la-restauracion
+Redirect 301 /lacartadelrestaurante http://www.cesae.es/blog/claves-para-mejorar-la-carta-del-restaurante
+Redirect 301 /lasbondadesdelagua http://www.cesae.es/blog/las-bondades-del-agua
+Redirect 301 /elrevenuemanagementyelmercadoturisticohotelero http://www.cesae.es/blog/el-revenue-management-y-el-mercado-turistico-hotelero
+Redirect 301 /lasatisfacciondelclientedelhotel http://www.cesae.es/blog/la-satisfaccion-del-cliente-del-hotel
+Redirect 301 /rentabilidadenlaindustriahoteleraandaluza http://www.cesae.es/blog/como-alcanzar-la-rentabilidad-en-la-industria-hotelera-andaluza
+Redirect 301 /sensibilizacionydetecciondenecesidadesdeformacion http://www.cesae.es/blog/sensibilizacion-y-deteccion-de-necesidades-de-formacion
+Redirect 301 /sistemasdeapoyoycontroldegestion http://www.cesae.es/blog/conoce-los-sistemas-de-apoyo-y-control-de-gestion
+Redirect 301 /redessocialesvsempleo http://www.cesae.es/blog/redes-sociales-vs-empleo
+Redirect 301 /laimportanciadeintegrarlacomunicacion20conlacomunicaciontradicional http://www.cesae.es/blog/la-importancia-de-integrar-la-comunicacion-20-con-la-comunicacion-tradicional
+Redirect 301 /laguiarepsolserenueva http://www.cesae.es/blog/la-guia-repsol-se-renueva
+Redirect 301 /destinoespanacompetitividaddenuestramarcaantelacrisisinterna http://www.cesae.es/blog/destino-espana--competitividad-de-nuestra-marca-ante-la-crisis-interna
+Redirect 301 /latecnologiadereunionesvirtualesysupotencialparalasempresashoteleras http://www.cesae.es/blog/la-ventaja-de-la-tecnologia-en-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras
+Redirect 301 /losmejoresrestaurantesdelmundo http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-del-mundo
+Redirect 301 /elpoderdelaenocosmeticaunplacerparalossentidos http://www.cesae.es/blog/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos
+Redirect 301 /enquepuntoseencuentralafiguradelrevenuemanager http://www.cesae.es/blog/descubre-en-que-punto-se-encuentra-la-figura-del-revenue-manager
+Redirect 301 /laformacionenlaempresa http://www.cesae.es/blog/5-aspectos-clave-de-la-formacion-y-su-papel-en-la-mejora-continua
+Redirect 301 /todosparaunoyunoparatodos http://www.cesae.es/blog/todos-para-uno-y-uno-para-todos
+Redirect 301 /laimportanciadelainformacionylacomunicacioninternasenlaempresa http://www.cesae.es/blog/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa
+Redirect 301 /loquecadacualquieresaberdentrodelaempresa http://www.cesae.es/blog/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa
+Redirect 301 /santisantamariaellegadodeunodelosgrandes http://www.cesae.es/blog/santi-santamaria-el-legado-de-uno-de-los-grandes
+Redirect 301 /objetivosdelplandemarketingdigitalparanuestrapaginaweb http://www.cesae.es/blog/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web
+Redirect 301 /softwarehotelerogestioninventariotarifas http://www.cesae.es/blog/descubre-el-mejor-softwarte-hotelero-de-distribucion-de-inventario-y-tarifas
+Redirect 301 /escapadaruralguiadetwitterparaalojamientosrurales http://www.cesae.es/blog/nueva-aplicacion-escapada-rural-guia-de-twitter-para-alojamientos-rurales
+Redirect 301 /seestareactivandoelturismo http://www.cesae.es/blog/se-esta-reactivando-el-turismo
+Redirect 301 /animateaestainiciativaparamejorarelmundo http://www.cesae.es/blog/animate-a-esta-iniciativa-para-mejorar-el-mundo
+Redirect 301 /noshacemosecoencuestaonlinesobreinnovacionenelsectorturistico http://www.cesae.es/blog/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico
+Redirect 301 /nosoloformaciononlinedeturismo http://www.cesae.es/blog/por-que-no-solo-formacion-online-de-turismo
+Redirect 301 /otroeventogastronomicoforumgirona2011 http://www.cesae.es/blog/otro-evento-gastronomico-forum-girona-2011
+Redirect 301 /nuevasconvocatoriasdecursosdecesae http://www.cesae.es/blog/nuevas-convocatorias-de-cursos-de-cesae
+Redirect 301 /laparidaddetarifaspodriaprovocarunnuevomodelodenegocioennuestrosistematuristico http://www.cesae.es/blog/la-importancia-de-la-paridad-de-tarifas-en-nuestro-sistema-turistico
+Redirect 301 /unagrancomunidaddedicadaalarestauracion http://www.cesae.es/blog/descubre-la-nueva-comunidad-dedicada-a-la-restauracion
+Redirect 301 /tupresenciaonlineen11semanasymediabyalejandrogomez http://www.cesae.es/blog/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez
+Redirect 301 /recursos20parahoteleroscomunidades http://www.cesae.es/blog/novedades-de-los-recursos-20-hoteleros-ii-comunidades
+Redirect 301 /recursos20parahotelerosblog http://www.cesae.es/blog/guia-de-los-recursos-20-hoteleros-i-blogs
+Redirect 301 /cursocomunicaciononlineygestion20hotelera http://www.cesae.es/blog/conoce-nuestro-curso-de-comunicacion-online-y-gestion-hotelera-20
+Redirect 301 /sobrelacocinasostenible http://www.cesae.es/blog/sobre-la-cocina-sostenible
+Redirect 301 /cesaeenfiturbyturijobs http://www.cesae.es/blog/cesae-en-fitur-by-turijobs
+Redirect 301 /noosperdaismadridfusion http://www.cesae.es/blog/no-os-perdais-madrid-fusion
+Redirect 301 /sobrefiturfiturtechworkshopturijobseventoauditorium http://www.cesae.es/blog/sobre-lo-mejor-de-fitur
+Redirect 301 /mejoraelimpactodetuhotelentripadvisor http://www.cesae.es/blog/mejora-el-impacto-de-tu-hotel-en-tripadvisor
+Redirect 301 /matarromeramarcandoladiferenciaenelmundodelvino http://www.cesae.es/blog/matarromera-marcando-la-diferencia-en-el-mundo-del-vino
+Redirect 301 /losrestaurantesdehotelesurbanos http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-de-hoteles-urbanos
+Redirect 301 /losperiodicosdecesae http://www.cesae.es/blog/descubre-los-periodicos-de-cesae
+Redirect 301 /sermalocontusclientesesmaloparatusnegocios http://www.cesae.es/blog/ser-malo-con-tus-clientes-es-malo-para-tus-negocios
+Redirect 301 /enlacesinteresantesparaprofesionalesdelturismo http://www.cesae.es/blog/enlaces-interesantes-para-sectores-del-turismo
+Redirect 301 /multiplicatusingresosmarketingyrevenue http://www.cesae.es/blog/multiplica-tus-ingresos-marketing-y-revenue
+Redirect 301 /queeselrevpashycomopuedeayudaramirestaurante http://www.cesae.es/blog/que-es-el-revpahs-y-como-puede-ayudar-a-mi-restaurante
+Redirect 301 /lasegmentaciondemercadoparaelrevenuemanagement http://www.cesae.es/blog/claves-de-la-segmentacion-del-mercado-para-el-revenue-management
+Redirect 301 /cesaeosdeseafeliznavidad http://www.cesae.es/blog/cesae-os-desea-feliz-navidad
+Redirect 301 /perspectivasdelsectorturisticopara2011elanodelvaloranadido http://www.cesae.es/blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadido
+Redirect 301 /extremadura2011uneventodehostelturquehamarcadoladiferencia http://www.cesae.es/blog/extremadura-2011-un-evento-de-hosteltur-que-ha-marcado-la-diferencia
+Redirect 301 /nuevasformasparaentendereinfluenciaralconsumidor http://www.cesae.es/blog/nuevas-formas-para-entender-e-influenciar-al-consumidor
+
+
+Redirect 301 /editordemenuspararestaurantes http://www.cesae.es/blog/las-mejores-claves-para-el-editor-de-menus-para-restaurantes
+Redirect 301 /nuestrosalumnosparticipan http://www.cesae.es/blog/nuestros-alumnos-participan
+Redirect 301 /revenuemanagementymarketing http://www.cesae.es/blog/analizamos-las-claves-del-revenue-management-y-marketing
+Redirect 301 /lomejordefacebookplaceparahoteles http://www.cesae.es/blog/lo-mejor-de-facebook-place-para-hoteles
+Redirect 301 /deberesparadiciembrehaciaunbuenrevenuederestaurantes http://www.cesae.es/blog/deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantes
+Redirect 301 /turismoruralyrevenuemanagement http://www.cesae.es/blog/descubre-la-relacion-entre-turismo-rural-y-revenue-management
+Redirect 301 /vinoyturismoenoturismo http://www.cesae.es/blog/las-claves-del-vino-y-turismo-enoturismo
+Redirect 301 /novedadescesaelamejormaneraparaseguircreciendoeslamejoracontinua http://www.cesae.es/blog/novedades-cesae-la-mejor-manera-para-seguir-creciendo-es-la-mejora-continua
+Redirect 301 /hotelessaludablescomenzandoporlahabitacion http://www.cesae.es/blog/como-convertir-los-hoteles-en-saludables-comenzando-por-la-habitacion
+Redirect 301 /unanuevaherramientadegestiondelareputaciononlineparahoteles http://www.cesae.es/blog/se-un-experto-en-la-nueva-herramienta-de-gestion-de-la-reputacion-online-para-hoteles
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes6yultima http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-vi-y-ultima
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes5 http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-v
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes4 http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iv
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes3 http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iii
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes2 http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-ii
+Redirect 301 /elfuturodelrevenuemanagementporsherylekimes1 http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-i
+Redirect 301 /elanalisisdetopruralyruralgestdechemaherrero http://www.cesae.es/blog/el-analisis-de-toprural-y-rural-guest-de-chema-herrero
+Redirect 301 /unhotelcondepresion http://www.cesae.es/blog/5-puntos-clave-para-descubrir-un-hotel-con-depresion
+Redirect 301 /sobrenuestroprogramasuperiorenturismorural http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-turismo-rural-pdtr
+Redirect 301 /sobrenuestroprogramasuperiorendireccionygestionenrestauracion http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr
+Redirect 301 /gestionwellnesyspa http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-wellnessaspa-pdws
+Redirect 301 /sobrenuestroprogramaendireccionygestionhotelera http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-de-empresas-hoteleras-pdgh
+Redirect 301 /recomiendatusarticulosennuestrofacebook http://www.cesae.es/blog/recomienda-tus-articulos-en-nuestro-facebook
+Redirect 301 /checklistrevenuemanagementenespaciosfuncionales3 http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-iii
+Redirect 301 /checklistrevenuemanagementenespaciosfuncionales2 http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-ii
+Redirect 301 /checklistrevenuemanagementenespaciosfuncionales1 http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-i
+Redirect 301 /massobreratetiger http://www.cesae.es/blog/aprendiendo-mas-sobre-rate-tiger
+Redirect 301 /ruralkearturismorural http://www.cesae.es/blog/ultimas-novedades-en-ruralkea
+Redirect 301 /revenuemanagementecommerceenlinkedin http://www.cesae.es/blog/descubre-las-novedades-del-revenue-manager-y-ecommerce-en-linkeding
+Redirect 301 /cesaealumnosyclientes http://www.cesae.es/blog/cesae-alumnos-y-clientes
+Redirect 301 /unabuenaestructuracontable http://www.cesae.es/blog/guia-de-una-buena-estructura-contable
+Redirect 301 /puestosdetrabajoenhoteleseljefederecepcion http://www.cesae.es/blog/descubriendo-puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion
+Redirect 301 /derivalyaempresadelmesenlaanei http://www.cesae.es/blog/derivalya-la-empresa-del-mes-en-la-anei
+Redirect 301 /definicionesdeturismohacerturismoimplicaviajar http://www.cesae.es/blog/definiciones-de-turismo-hacer-turismo-implica-viajar
+Redirect 301 /puestosdetrabajoenhoteleseljefedealojamiento http://www.cesae.es/blog/las-5-claves-de-los-puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento
+Redirect 301 /nuestrosamigosbloggers http://www.cesae.es/blog/nuestros-amigos-los-bloggers
+Redirect 301 /formacionbonificadagratuita http://www.cesae.es/blog/atencion-empleados-y-empresarios-conoceis-la-formacion-bonificada
+Redirect 301 /laimportanciadelcontrolinternoenlaempresa http://www.cesae.es/blog/las-claves-de-la-importancia-del-control-interno-en-la-empresa
+Redirect 301 /tarifasenlineasaereasyhoteles http://www.cesae.es/blog/por-que-incrementan-las-tarifas-en-lineas-aereas-y-bajan-en-hoteles
+Redirect 301 /laproblematicadeltodoincluido http://www.cesae.es/blog/descubre-la-problematica-del-todo-incluido
+Redirect 301 /conocenosunpocomejor http://www.cesae.es/blog/conocenos-un-poco-mejor
+Redirect 301 /turismoruralruralmusicalsediferenciadelacompetencia/ http://www.cesae.es/blog/quieres-saber-que-es-rural-musica
+Redirect 301 /gestionempresarialygestiondeltiempo http://www.cesae.es/blog/novedades-de-la-gestion-empresarial-y-gestion-del-tiempo
+Redirect 301 /sobrenuestroscursos http://www.cesae.es/blog/informate-de-las-ultimas-novedades-sobre-nuestros-cursos
+Redirect 301 /marketinghoteleroespanavsusaelfrenodelapropiedad http://www.cesae.es/blog/guia-sobre-marketing-hotelero-espana-vs-usa
+Redirect 301 /presentacionproyectoscesae2010 http://www.cesae.es/blog/ultima-presentacion-de-proyectos-de-cesae-2010
+Redirect 301 /queeselturismorural http://www.cesae.es/blog/que-es-el-turismo-rural
+Redirect 301 /marketinggastronomico http://www.cesae.es/blog/conoce-el-marketing-gastronomico
+Redirect 301 /cesaedescubriendofacebookfbml http://www.cesae.es/blog/cesae-20-descubriendo-facebook-y-el-fbml
+Redirect 301 /unnuevoapoyoparalagestionempresarialdeautonomosymicropymes http://www.cesae.es/blog/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes
+Redirect 301 /hoyvamosalostoros http://www.cesae.es/blog/hoy-vamos-a-los-toros
+Redirect 301 /aureliomartinezunalumnoquetodaescueladenegociosquerriatener http://www.cesae.es/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener
+Redirect 301 /mencionalblogdecesae http://www.cesae.es/blog/mencion-al-blog-de-cesae
+Redirect 301 /bienvenidoalblogdecesae http://www.cesae.es/blog/bienvenido-al-blog-de-cesae
+
+Redirect 301 /terminaralacrisisen2010quepasaraenelsectorturistico http://www.cesae.es/blog/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico
+Redirect 301 /yporsupuestonisueñeconquevuelvaasuhotel http://www.cesae.es/blog/y-por-supuesto-ni-suene-que-vuelva-a-su-hotel
+Redirect 301 /unchannelmanagerentumovil http://www.cesae.es/blog/las-ventajas-del-channel-manager-en-tu-movil
+Redirect 301 /aureliomartinezunalumnoquetodaescueladenegociosquerriatener http://www.cesae.es/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener
+Redirect 301 /analizandoimpresionesdel5forohostelturyalgunasanecdotas http://www.cesae.es/blog/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas
+Redirect 301 /revenuemanagementenlasuperbowlminimumlengthofstay http://www.cesae.es/blog/las-claves-del-revenue-manager-en-la-superbowl
+Redirect 301 /eraseunavez http://www.cesae.es/blog/erase-una-vez-un-hotel
+Redirect 301 /forohostelturdelquealcomo http://www.cesae.es/blog/descubre-el-foro-hosteltur-del-que-al-como
+Redirect 301 /laimportanciadelaestrategiaparalaempresahotelera http://www.cesae.es/blog/la-importancia-de-la-estrategia-para-la-empresa-hotelera
+Redirect 301 /ladistribucionhotelera http://www.cesae.es/blog/la-mejor-guia-sobre-distribucion-hotelera
+Redirect 301 /unacercamientoalagestiondelossalonesdelhotel http://www.cesae.es/blog/claves-para-mejorar-la-gestion-de-los-salones-del-hotel
+Redirect 301 /mencionalblogdecesae http://www.cesae.es/blog/mencion-al-blog-de-cesae
+Redirect 301 /googlemapsapuestaporelecommercehotelero http://www.cesae.es/blog/google-maps-apuesta-por-el-ecommerce-hotelero
+Redirect 301 /lacalidadquenoestademoda http://www.cesae.es/blog/quieres-saber-que-calidad-no-esta-de-moda
+Redirect 301 /elrevenuemanagementunapartemuyimportantedelaimagendetuempresa http://www.cesae.es/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresa
+Redirect 301 /rentabilizarunspadelabasealagestioncomercial  http://www.cesae.es/blog/pautas-para-rentabilizar-un-spa-de-la-base-a-la-gestion-comercial
+Redirect 301 /unaredsocialdeturismorural http://www.cesae.es/blog/descubre-la-nueva-red-social-de-turismo-rural
+
+
+Redirect 301 http://blog.cesae.es/index.php/2012/11/seleccion-por-internet/	http://www.cesae.es/blog/la-clave-de-la-seleccion-por-internet
+Redirect 301 http://blog.cesae.es/index.php/2012/11/prevencion-de-la-legionella-en-los-centros-wellness/	http://www.cesae.es/blog/normas-para-la-prevencion-de-la-legionela-en-los-centros-wellness
+Redirect 301 http://blog.cesae.es/index.php/2012/11/la-importancia-de-la-derh-en-el-mundo-2-0/	http://www.cesae.es/blog/descubre-la-importancia-de-la-derh-en-el-mundo-20
+Redirect 301 http://blog.cesae.es/index.php/2012/10/%c2%bfla-seleccion-de-personal-idonea/	http://www.cesae.es/blog/como-conseguir-la-seleccion-de-personal-idonea
+Redirect 301 http://blog.cesae.es/index.php/2012/10/quirogimnasia-la-gimnasia-de-las-manos/	http://www.cesae.es/blog/las-ultimas-novedades-de-quirogimnasia-la-gimnasia-de-las-manos
+Redirect 301 http://blog.cesae.es/index.php/2012/10/el-centro-wellness/	http://www.cesae.es/blog/novedades-en-los-centros-wellness
+Redirect 301 http://blog.cesae.es/index.php/2012/09/coaching-en-la-direccion-de-recursos-humanos/	http://www.cesae.es/blog/se-un-experto-en-coaching-en-la-direccion-de-recursos-humanos
+Redirect 301 http://blog.cesae.es/index.php/2012/09/el-%e2%80%9csector-spa%e2%80%9d-en-la-actualidad-critica-y-oportunidad/	http://www.cesae.es/blog/el-sector-spa-en-la-actualidad-critica-y-oportunidad
+Redirect 301 http://blog.cesae.es/index.php/2012/09/maximizar-la-satisfaccion-del-cliente/	http://www.cesae.es/blog/maximizar-la-satisfaccion-del-cliente
+Redirect 301 http://blog.cesae.es/index.php/2012/09/hosteleria-y-propiedad-compartida/	http://www.cesae.es/blog/descubre-el-por-que-de-la-hosteleria-y-propiedad-compartida
+Redirect 301 http://blog.cesae.es/index.php/2012/09/integracion-de-los-sistemas-de-gestion-en-hoteles/	http://www.cesae.es/blog/integracion-de-los-sistemas-de-gestion-en-hoteles
+Redirect 301 http://blog.cesae.es/index.php/2012/09/recepcion-es-mucho-mas-que-recibir%e2%80%a6/	http://www.cesae.es/blog/recepcion-es-mucho-mas-que-recibir
+Redirect 301 http://blog.cesae.es/index.php/2012/08/menu-engineering/	http://www.cesae.es/blog/las-claves-de-menu-engineering
+Redirect 301 http://blog.cesae.es/index.php/2012/07/flotacion-en-agua/	http://www.cesae.es/blog/la-importancia-de-la-flotacion-en-el-agua
+Redirect 301 http://blog.cesae.es/index.php/2012/07/%c2%bfel-low-cost-en-hoteles-crea-adiccion-de-%e2%80%9cturistas-low-cost%e2%80%9d/	http://www.cesae.es/blog/el-low-cost-en-hoteles-crea-adicion-de-turistas-low-cost
+Redirect 301 http://blog.cesae.es/index.php/2012/06/el-teletrabajo-una-herramienta-en-auge/	http://www.cesae.es/blog/el-teletrabajo-una-herramienta-en-auge
+Redirect 301 http://blog.cesae.es/index.php/2012/06/temazcal-el-bano-de-vapor-sanador/	http://www.cesae.es/blog/porque-elegir-temazcal-el-bano-de-vapor-sanador
+Redirect 301 http://blog.cesae.es/index.php/2012/06/la-importancia-de-un-buen-sommelier/	http://www.cesae.es/blog/quieres-convertirte-en-un-buen-sommelier
+Redirect 301 http://blog.cesae.es/index.php/2012/05/el-departamento-de-recepcion-frente-al-cliente/	http://www.cesae.es/blog/como-debe-ser-el-departamento-de-recepcion-frente-al-cliente
+Redirect 301 http://blog.cesae.es/index.php/2012/05/las-estrategias-de-internacionalizacion-de-la-industria-hotelera-espanola/	http://www.cesae.es/blog/las-estrategias-de-internalizacion-de-la-industria-hotelera-espanola
+Redirect 301 http://blog.cesae.es/index.php/2012/05/la-planta-hotelera-espanola/	http://www.cesae.es/blog/informe-sobre-la-planta-hotelera-espanola
+Redirect 301 http://blog.cesae.es/index.php/2012/04/la-segmentacion/	http://www.cesae.es/blog/la-importancia-de-la-segmentacion
+Redirect 301 http://blog.cesae.es/index.php/2012/03/la-recepcion-como-corazon-del-hotel/	http://www.cesae.es/blog/la-recepcion-como-corazon-del-hotel
+Redirect 301 http://blog.cesae.es/index.php/2012/03/paridad-de-tarifas/	http://www.cesae.es/blog/5-claves-para-entender-la-paridad-de-tarifas
+Redirect 301 http://blog.cesae.es/index.php/2012/03/analisis-y-control-financiero-de-la-explotacion-hotelera/	http://www.cesae.es/blog/novedades-sobre-analisis-y-control-financiero-de-la-explotacion-hotelera
+Redirect 301 http://blog.cesae.es/index.php/2012/03/calidad-para-la-competencia-y-la-competitividad/	http://www.cesae.es/blog/las-5-claves-para-la-calidad-para-la-competencia-y-la-competitividad
+Redirect 301 http://blog.cesae.es/index.php/2012/03/la-situacion-actual-del-wellness-en-los-hoteles/	http://www.cesae.es/blog/la-situacion-actual-del-wellness-en-los-hoteles
+Redirect 301 http://blog.cesae.es/index.php/2012/03/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir/	http://www.cesae.es/blog/distintas-formas-de-ver-la-calidad-que-deben-de-coincidir
+Redirect 301 http://blog.cesae.es/index.php/2012/03/sin-nuestros-empleados-no-somos-nada/	http://www.cesae.es/blog/sin-nuestros-empleados-no-somos-nada
+Redirect 301 http://blog.cesae.es/index.php/2012/02/%c2%bfcuanto-venden-las-sensaciones/	http://www.cesae.es/blog/cuanto-venden-las-sensaciones
+Redirect 301 http://blog.cesae.es/index.php/2012/01/los-hoteles-y-la-crisis/	http://www.cesae.es/blog/el-porque-de-los-hoteles-y-la-crisis
+Redirect 301 http://blog.cesae.es/index.php/2012/01/masaje-con-palos-de-bambu-para-un-cuerpo-10/	http://www.cesae.es/blog/descubre-el-masaje-con-palos-de-bambu-para-un-cuerpo-10
+Redirect 301 http://blog.cesae.es/index.php/2011/12/la-cocina-diferida-el-uso-de-la-tecnologia-para-facilitar-el-trabajo/	http://www.cesae.es/blog/se-un-experto-en-cocina-diferida-el-uso-del-a-tecnologia-para-facilitar-el-trabajo
+Redirect 301 http://blog.cesae.es/index.php/2011/12/aclarando-el-concepto-de-estrategia-empresarial/	http://www.cesae.es/blog/aclarando-el-concepto-de-estrategia-empresarial
+Redirect 301 http://blog.cesae.es/index.php/2011/12/%c2%bf%c2%bfspa-balneario-talasoterapia-porque-se-confunden/	http://www.cesae.es/blog/descubre-la-diferencia-entre-spa-balneario-y-tasaloterapia
+Redirect 301 http://blog.cesae.es/index.php/2011/11/el-feng-shui-en-nuestra-vida/	http://www.cesae.es/blog/ha-llegado-el-feng-shui-a-nuestra-vida
+Redirect 301 http://blog.cesae.es/index.php/2011/11/ventajas-del-bufe-en-la-restauracion/	http://www.cesae.es/blog/ventajas-del-bufe-en-la-restauracion
+Redirect 301 http://blog.cesae.es/index.php/2011/11/la-carta-del-restaurante/	http://www.cesae.es/blog/claves-para-mejorar-la-carta-del-restaurante
+Redirect 301 http://blog.cesae.es/index.php/2011/10/las-bondades-del-agua/	http://www.cesae.es/blog/las-bondades-del-agua
+Redirect 301 http://blog.cesae.es/index.php/2011/10/el-revenue-management-y-el-mercado-turistico-hotelero/	http://www.cesae.es/blog/el-revenue-management-y-el-mercado-turistico-hotelero
+Redirect 301 http://blog.cesae.es/index.php/2011/08/la-satisfaccion-del-cliente-del-hotel/	http://www.cesae.es/blog/la-satisfaccion-del-cliente-del-hotel
+Redirect 301 http://blog.cesae.es/index.php/2011/07/rentabilidad-en-la-industria-hotelera-andaluza/	http://www.cesae.es/blog/como-alcanzar-la-rentabilidad-en-la-industria-hotelera-andaluza
+Redirect 301 http://blog.cesae.es/index.php/2011/07/sensibilizacion-y-deteccion-de-necesidades-de-formacion/	http://www.cesae.es/blog/sensibilizacion-y-deteccion-de-necesidades-de-formacion
+Redirect 301 http://blog.cesae.es/index.php/2011/07/sistemas-de-apoyo-y-control-de-gestion/	http://www.cesae.es/blog/conoce-los-sistemas-de-apoyo-y-control-de-gestion
+Redirect 301 http://blog.cesae.es/index.php/2011/07/redes-sociales-vs-empleo/	http://www.cesae.es/blog/redes-sociales-vs-empleo
+Redirect 301 http://blog.cesae.es/index.php/2011/07/la-importancia-de-integrar-la-comunicacion-2-0-con-la-comunicacion-tradicional/	http://www.cesae.es/blog/la-importancia-de-integrar-la-comunicacion-20-con-la-comunicacion-tradicional
+Redirect 301 http://blog.cesae.es/index.php/2011/07/la-guia-repsol-se-renueva-3/	http://www.cesae.es/blog/la-guia-repsol-se-renueva
+Redirect 301 http://blog.cesae.es/index.php/2011/06/destino-espana-competitividad-de-nuestra-marca-ante-la-crisis-interna/	http://www.cesae.es/blog/destino-espana--competitividad-de-nuestra-marca-ante-la-crisis-interna
+Redirect 301 http://blog.cesae.es/index.php/2011/06/la-tecnologia-de-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras/	http://www.cesae.es/blog/la-ventaja-de-la-tecnologia-en-reuniones-virtuales-y-su-potencial-para-las-empresas-hoteleras
+Redirect 301 http://blog.cesae.es/index.php/2011/06/los-mejores-restaurantes-del-mundo/	http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-del-mundo
+Redirect 301 http://blog.cesae.es/index.php/2011/06/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos/	http://www.cesae.es/blog/el-poder-de-la-enocosmetica-un-placer-para-los-sentidos
+Redirect 301 http://blog.cesae.es/index.php/2011/05/453/	http://www.cesae.es/blog/descubre-en-que-punto-se-encuentra-la-figura-del-revenue-manager
+Redirect 301 http://blog.cesae.es/index.php/2011/05/la-formacion-en-la-empresa/	http://www.cesae.es/blog/5-aspectos-clave-de-la-formacion-y-su-papel-en-la-mejora-continua
+Redirect 301 http://blog.cesae.es/index.php/2011/05/todos-para-uno-y-uno-para-todos/	http://www.cesae.es/blog/todos-para-uno-y-uno-para-todos
+Redirect 301 http://blog.cesae.es/index.php/2011/05/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa/	http://www.cesae.es/blog/la-importancia-de-la-informacion-y-la-comunicacion-internas-en-la-empresa
+Redirect 301 http://blog.cesae.es/index.php/2011/04/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa/	http://www.cesae.es/blog/lo-que-cada-cual-quiere-saber-dentro-de-la-empresa
+Redirect 301 http://blog.cesae.es/index.php/2011/04/santi-santamaria-el-legado-de-uno-de-los-grandes/	http://www.cesae.es/blog/santi-santamaria-el-legado-de-uno-de-los-grandes
+Redirect 301 http://blog.cesae.es/index.php/2011/04/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web/	http://www.cesae.es/blog/objetivos-del-plan-de-marketing-digital-para-nuestra-pagina-web
+Redirect 301 http://blog.cesae.es/index.php/2011/03/software-hotelero-gestion-inventario-tarifas/	http://www.cesae.es/blog/descubre-el-mejor-softwarte-hotelero-de-distribucion-de-inventario-y-tarifas
+Redirect 301 http://blog.cesae.es/index.php/2011/03/escapada-rural-guia-de-twitter-para-alojamientos-rurales/	http://www.cesae.es/blog/nueva-aplicacion-escapada-rural-guia-de-twitter-para-alojamientos-rurales
+Redirect 301 http://blog.cesae.es/index.php/2011/03/se-esta-reactivando-el-turismo/	http://www.cesae.es/blog/se-esta-reactivando-el-turismo
+Redirect 301 http://blog.cesae.es/index.php/2011/03/animate-a-esta-iniciativa-para-mejorar-el-mundo/	http://www.cesae.es/blog/animate-a-esta-iniciativa-para-mejorar-el-mundo
+Redirect 301 http://blog.cesae.es/index.php/2011/02/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico/	http://www.cesae.es/blog/nos-hacemos-eco-encuesta-online-sobre-innovacion-en-el-sector-turistico
+Redirect 301 http://blog.cesae.es/index.php/2011/02/no-solo-formacion-online-de-turismo/	http://www.cesae.es/blog/por-que-no-solo-formacion-online-de-turismo
+Redirect 301 http://blog.cesae.es/index.php/2011/02/otro-evento-gastronomico-forum-girona-2011/	http://www.cesae.es/blog/otro-evento-gastronomico-forum-girona-2011
+Redirect 301 http://blog.cesae.es/index.php/2011/02/nuevas-convocatorias-de-cursos-de-cesae/	http://www.cesae.es/blog/nuevas-convocatorias-de-cursos-de-cesae
+Redirect 301 http://blog.cesae.es/index.php/2011/02/post-alumnos-cesae-la-paridad-de-tarifas-podria-provocar-un-nuevo-modelo-de-negocio-en-nuestro-sistema-turistico/	http://www.cesae.es/blog/la-importancia-de-la-paridad-de-tarifas-en-nuestro-sistema-turistico
+Redirect 301 http://blog.cesae.es/index.php/2011/02/una-gran-comunidad-dedicada-a-la-restauracion/	http://www.cesae.es/blog/descubre-la-nueva-comunidad-dedicada-a-la-restauracion
+Redirect 301 http://blog.cesae.es/index.php/2011/02/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez/	http://www.cesae.es/blog/tu-presencia-online-en-11-semanas-y-media-by-alejandro-gomez
+Redirect 301 http://blog.cesae.es/index.php/2011/02/recursos-2-0-para-hoteleros-ii-comunidades/	http://www.cesae.es/blog/novedades-de-los-recursos-20-hoteleros-ii-comunidades
+Redirect 301 http://blog.cesae.es/index.php/2011/02/recursos-2-0-para-hoteleros-i-blogs/	http://www.cesae.es/blog/guia-de-los-recursos-20-hoteleros-i-blogs
+Redirect 301 http://blog.cesae.es/index.php/2011/01/curso-comunicacion-online-y-gestion-2-0-hotelera/	http://www.cesae.es/blog/conoce-nuestro-curso-de-comunicacion-online-y-gestion-hotelera-20
+Redirect 301 http://blog.cesae.es/index.php/2011/01/sobre-la-cocina-sostenible/	http://www.cesae.es/blog/sobre-la-cocina-sostenible
+Redirect 301 http://blog.cesae.es/index.php/2011/01/cesae-en-fitur-by-turijobs/	http://www.cesae.es/blog/cesae-en-fitur-by-turijobs
+Redirect 301 http://blog.cesae.es/index.php/2011/01/no-os-perdais-madrid-fusion/	http://www.cesae.es/blog/no-os-perdais-madrid-fusion
+Redirect 301 http://blog.cesae.es/index.php/2011/01/sobre-fitur-fiturtech-workshopturijobs-eventoauditorium/	http://www.cesae.es/blog/sobre-lo-mejor-de-fitur
+Redirect 301 http://blog.cesae.es/index.php/2011/01/post-alumnos-cesae-mejora-el-impacto-de-tu-hotel-en-tripadvisor/	http://www.cesae.es/blog/mejora-el-impacto-de-tu-hotel-en-tripadvisor
+Redirect 301 http://blog.cesae.es/index.php/2011/01/matarromera-marcando-la-diferencia-en-el-mundo-del-vino/	http://www.cesae.es/blog/matarromera-marcando-la-diferencia-en-el-mundo-del-vino
+Redirect 301 http://blog.cesae.es/index.php/2011/01/post-alumnos-cesae-los-restaurantes-de-hoteles-urbanos/	http://www.cesae.es/blog/guia-de-los-mejores-restaurantes-de-hoteles-urbanos
+Redirect 301 http://blog.cesae.es/index.php/2011/01/los-periodicos-de-cesae/	http://www.cesae.es/blog/descubre-los-periodicos-de-cesae
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-ser-malo-con-tus-clientes-es-malo-para-tus-negocios/	http://www.cesae.es/blog/ser-malo-con-tus-clientes-es-malo-para-tus-negocios
+Redirect 301 http://blog.cesae.es/index.php/2010/12/enlaces-interesantes-para-profesionales-del-turismo-i/	http://www.cesae.es/blog/enlaces-interesantes-para-sectores-del-turismo
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-multiplica-tus-ingresos-marketing-y-revenue/	http://www.cesae.es/blog/multiplica-tus-ingresos-marketing-y-revenue
+Redirect 301 http://blog.cesae.es/index.php/2010/12/que-es-el-revpash-y-como-puede-ayudar-a-mi-restaurante/	http://www.cesae.es/blog/que-es-el-revpahs-y-como-puede-ayudar-a-mi-restaurante
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-la-segmentacion-de-mercado-para-el-revenue-management/	http://www.cesae.es/blog/claves-de-la-segmentacion-del-mercado-para-el-revenue-management
+Redirect 301 http://blog.cesae.es/index.php/2010/12/cesae-os-desea-feliz-navidad/	http://www.cesae.es/blog/cesae-os-desea-feliz-navidad
+Redirect 301 http://blog.cesae.es/index.php/2010/12/perspectivas-del-sector-turistico-para-2011-el-ano-del-valor-anadido/	http://www.cesae.es/blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadido
+Redirect 301 http://blog.cesae.es/index.php/2010/12/extremadura-21-un-evento-de-hosteltur-que-ha-marcado-la-diferencia/	http://www.cesae.es/blog/extremadura-2011-un-evento-de-hosteltur-que-ha-marcado-la-diferencia
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-nuevas-formas-para-entender-e-influenciar-al-consumidor/	http://www.cesae.es/blog/nuevas-formas-para-entender-e-influenciar-al-consumidor
+Redirect 301 http://blog.cesae.es/index.php/2010/12/editor-de-menus-para-restaurantes/	http://www.cesae.es/blog/las-mejores-claves-para-el-editor-de-menus-para-restaurantes
+Redirect 301 http://blog.cesae.es/index.php/2010/12/nuestros-alumnos-participan/	http://www.cesae.es/blog/nuestros-alumnos-participan
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-revenue-management-y-marketing/	http://www.cesae.es/blog/analizamos-las-claves-del-revenue-management-y-marketing
+Redirect 301 http://blog.cesae.es/index.php/2010/12/page/3/	http://www.cesae.es/blog/lo-mejor-de-facebook-place-para-hoteles
+Redirect 301 http://blog.cesae.es/index.php/2010/12/post-alumnos-cesae-deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantes/	http://www.cesae.es/blog/deberes-para-diciembre-hacia-un-buen-revenue-de-restaurantes
+Redirect 301 http://blog.cesae.es/index.php/2010/12/turismo-rural-y-revenue-management/	http://www.cesae.es/blog/descubre-la-relacion-entre-turismo-rural-y-revenue-management
+Redirect 301 http://blog.cesae.es/index.php/2010/12/vino-y-turismo-enoturismo/	http://www.cesae.es/blog/las-claves-del-vino-y-turismo-enoturismo
+Redirect 301 http://blog.cesae.es/index.php/2010/12/novedades-cesae-la-mejor-manera-para-seguir-creciendo-es-la-mejora-continua/	http://www.cesae.es/blog/novedades-cesae-la-mejor-manera-para-seguir-creciendo-es-la-mejora-continua
+Redirect 301 http://blog.cesae.es/index.php/2010/11/hoteles-saludables-comenzando-por-la-habitacion/	http://www.cesae.es/blog/como-convertir-los-hoteles-en-saludables-comenzando-por-la-habitacion
+Redirect 301 http://blog.cesae.es/index.php/2010/11/una-nueva-herramienta-de-gestion-de-la-reputacion-online-para-hoteles/	http://www.cesae.es/blog/se-un-experto-en-la-nueva-herramienta-de-gestion-de-la-reputacion-online-para-hoteles
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-vi-y-ultima/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-vi-y-ultima
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-v/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-v
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-iv/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iv
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-iii/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-iii
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-ii/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-ii
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-futuro-del-revenue-management-por-sheryl-e-kimes-i/	http://www.cesae.es/blog/el-futuro-del-revenue-management-por-sheryl-ekimes-i
+Redirect 301 http://blog.cesae.es/index.php/2010/11/el-analisis-de-toprural-y-ruralgest-de-chema-herrero/	http://www.cesae.es/blog/el-analisis-de-toprural-y-rural-guest-de-chema-herrero
+Redirect 301 http://blog.cesae.es/index.php/2010/11/un-hotel-con-depresion/	http://www.cesae.es/blog/5-puntos-clave-para-descubrir-un-hotel-con-depresion
+Redirect 301 http://blog.cesae.es/index.php/2010/10/sobre-nuestro-programa-superior-en-turismo-rural-pdtr/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-turismo-rural-pdtr
+Redirect 301 http://blog.cesae.es/index.php/2010/10/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-en-restauracion-pdgr
+Redirect 301 http://blog.cesae.es/index.php/2010/10/gestion-wellness-spa/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-wellnessaspa-pdws
+Redirect 301 http://blog.cesae.es/index.php/2010/10/sobre-nuestro-programa-en-direccion-y-gestion-hotelera-pdgh/	http://www.cesae.es/blog/sobre-nuestro-programa-superior-en-direccion-y-gestion-de-empresas-hoteleras-pdgh
+Redirect 301 http://blog.cesae.es/index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-iii/	http://www.cesae.es/blog/recomienda-tus-articulos-en-nuestro-facebook
+Redirect 301 http://blog.cesae.es/index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-ii/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-iii
+Redirect 301 http://blog.cesae.es/index.php/2010/10/checklist-revenue-management-en-espacios-funcionales-i/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-ii
+Redirect 301 http://blog.cesae.es/index.php/2010/10/recomienda-tus-articulos-en-nuestro-facebook/	http://www.cesae.es/blog/que-es-checklist-revenue-management-en-espacios-funcionales-i
+Redirect 301 http://blog.cesae.es/index.php/2010/10/mas-sobre-rate-tiger/	http://www.cesae.es/blog/aprendiendo-mas-sobre-rate-tiger
+Redirect 301 http://blog.cesae.es/index.php/2010/09/ruralkear-turismo-rural/	http://www.cesae.es/blog/ultimas-novedades-en-ruralkea
+Redirect 301 http://blog.cesae.es/index.php/2010/09/revenue-management-y-e-commerce-en-linkedin/	http://www.cesae.es/blog/descubre-las-novedades-del-revenue-manager-y-ecommerce-en-linkeding
+Redirect 301 http://blog.cesae.es/index.php/2010/09/cesae-alumnos-y-clientes/	http://www.cesae.es/blog/cesae-alumnos-y-clientes
+Redirect 301 http://blog.cesae.es/index.php/2010/09/una-buena-estructura-contable/	http://www.cesae.es/blog/guia-de-una-buena-estructura-contable
+Redirect 301 http://blog.cesae.es/index.php/2010/09/puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion/	http://www.cesae.es/blog/descubriendo-puestos-de-trabajo-en-hoteles-el-jefe-de-recepcion
+Redirect 301 http://blog.cesae.es/index.php/2010/09/derivalya-empresa-del-mes-en-la-anei/	http://www.cesae.es/blog/derivalya-la-empresa-del-mes-en-la-anei
+Redirect 301 http://blog.cesae.es/index.php/2010/09/definiciones-de-turismo-hacer-turismo-implica-viajar/	http://www.cesae.es/blog/definiciones-de-turismo-hacer-turismo-implica-viajar
+Redirect 301 http://blog.cesae.es/index.php/2010/09/puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento/	http://www.cesae.es/blog/las-5-claves-de-los-puestos-de-trabajo-en-hoteles-el-jefe-de-alojamiento
+Redirect 301 http://blog.cesae.es/index.php/2010/09/una-red-social-de-turismo-rural/	http://www.cesae.es/blog/descubre-la-nueva-red-social-de-turismo-rural
+Redirect 301 http://blog.cesae.es/index.php/2010/08/nuestros-amigos-bloggers/	http://www.cesae.es/blog/nuestros-amigos-los-bloggers
+Redirect 301 http://blog.cesae.es/index.php/2010/08/formacion-bonificada-gratuita/	http://www.cesae.es/blog/atencion-empleados-y-empresarios-conoceis-la-formacion-bonificada
+Redirect 301 http://blog.cesae.es/index.php/2010/08/la-importancia-del-control-interno-en-la-empresa/	http://www.cesae.es/blog/las-claves-de-la-importancia-del-control-interno-en-la-empresa
+Redirect 301 http://blog.cesae.es/index.php/2010/08/tarifas-en-lineas-aereas-y-hoteles/	http://www.cesae.es/blog/por-que-incrementan-las-tarifas-en-lineas-aereas-y-bajan-en-hoteles
+Redirect 301 http://blog.cesae.es/index.php/2010/08/la-problematica-del-todo-incluido/	http://www.cesae.es/blog/descubre-la-problematica-del-todo-incluido
+Redirect 301 http://blog.cesae.es/index.php/2010/08/conocenos-un-poco-mejor/	http://www.cesae.es/blog/conocenos-un-poco-mejor
+Redirect 301 http://blog.cesae.es/index.php/2010/08/turismo-rural-rural-musical-se-diferencia-de-la-competencia/	http://www.cesae.es/blog/quieres-saber-que-es-rural-musica
+Redirect 301 http://blog.cesae.es/index.php/2010/08/gestion-empresarial-y-gestion-del-tiempo/	http://www.cesae.es/blog/novedades-de-la-gestion-empresarial-y-gestion-del-tiempo
+Redirect 301 http://blog.cesae.es/index.php/2010/07/sobre-nuestros-cursos/	http://www.cesae.es/blog/informate-de-las-ultimas-novedades-sobre-nuestros-cursos
+Redirect 301 http://blog.cesae.es/index.php/2010/07/marketing-hotelero-espana-vs-usa-el-freno-de-la-propiedad/	http://www.cesae.es/blog/guia-sobre-marketing-hotelero-espana-vs-usa
+Redirect 301 http://blog.cesae.es/index.php/2010/07/presentacion-proyectos-cesae-2010/	http://www.cesae.es/blog/ultima-presentacion-de-proyectos-de-cesae-2010
+Redirect 301 http://blog.cesae.es/index.php/2010/07/que-es-el-turismo-rural/	http://www.cesae.es/blog/que-es-el-turismo-rural
+Redirect 301 http://blog.cesae.es/index.php/2010/07/marketing-gastronomico/	http://www.cesae.es/blog/conoce-el-marketing-gastronomico
+Redirect 301 http://blog.cesae.es/index.php/2010/07/cesae-descubriendo-facebook-fbml/	http://www.cesae.es/blog/cesae-20-descubriendo-facebook-y-el-fbml
+Redirect 301 http://blog.cesae.es/index.php/2010/07/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes/	http://www.cesae.es/blog/un-nuevo-apoyo-para-la-gestion-empresarial-de-autonomos-y-micropymes
+Redirect 301 http://blog.cesae.es/index.php/2010/07/hoy-vamos-a-los-toros/	http://www.cesae.es/blog/hoy-vamos-a-los-toros
+Redirect 301 http://blog.cesae.es/index.php/2010/07/rentabilizar-un-spa-de-la-base-a-la-gestion-comercial/	http://www.cesae.es/blog/pautas-para-rentabilizar-un-spa-de-la-base-a-la-gestion-comercial
+Redirect 301 http://blog.cesae.es/index.php/2010/07/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico/	http://www.cesae.es/blog/terminara-la-crisis-en-2010-que-pasara-en-el-sector-turistico
+Redirect 301 http://blog.cesae.es/index.php/2010/07/y-por-supuesto-ni-suene-con-que-vuelva-a-su-hotel/	http://www.cesae.es/blog/y-por-supuesto-ni-suene-que-vuelva-a-su-hotel
+Redirect 301 http://blog.cesae.es/index.php/2010/07/un-channel-manager-en-tu-movil/	http://www.cesae.es/blog/las-ventajas-del-channel-manager-en-tu-movil
+Redirect 301 http://blog.cesae.es/index.php/2010/06/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener/	http://www.cesae.es/blog/aurelio-martinez-un-alumno-que-toda-escuela-de-negocios-querria-tener
+Redirect 301 http://blog.cesae.es/index.php/2010/06/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas/	http://www.cesae.es/blog/analizando-impresiones-del-v-foro-hosteltur-y-algunas-anecdotas
+Redirect 301 http://blog.cesae.es/index.php/2010/06/revenue-management-en-la-superbowl-minimum-length-of-stay/	http://www.cesae.es/blog/las-claves-del-revenue-manager-en-la-superbowl
+Redirect 301 http://blog.cesae.es/index.php/2010/06/erase-una-vez/	http://www.cesae.es/blog/erase-una-vez-un-hotel
+Redirect 301 http://blog.cesae.es/index.php/2010/06/foro-hosteltur-del-que-al-como/	http://www.cesae.es/blog/descubre-el-foro-hosteltur-del-que-al-como
+Redirect 301 http://blog.cesae.es/index.php/2010/06/la-importancia-de-la-estrategia-para-la-empresa-hotelera/	http://www.cesae.es/blog/la-importancia-de-la-estrategia-para-la-empresa-hotelera
+Redirect 301 http://blog.cesae.es/index.php/2010/06/la-distribucion-hotelera/	http://www.cesae.es/blog/la-mejor-guia-sobre-distribucion-hotelera
+Redirect 301 http://blog.cesae.es/index.php/2010/06/un-acercamiento-a-la-gestion-de-los-salones-del-hotel/	http://www.cesae.es/blog/claves-para-mejorar-la-gestion-de-los-salones-del-hotel
+Redirect 301 http://blog.cesae.es/index.php/2010/06/mencion-al-blog-de-cesae/	http://www.cesae.es/blog/mencion-al-blog-de-cesae
+Redirect 301 http://blog.cesae.es/index.php/2010/06/google-maps-apuesta-por-el-e-commerce-hotelero/	http://www.cesae.es/blog/google-maps-apuesta-por-el-ecommerce-hotelero
+Redirect 301 http://blog.cesae.es/index.php/2010/06/la-calidad-que-no-esta-de-moda/	http://www.cesae.es/blog/quieres-saber-que-calidad-no-esta-de-moda
+Redirect 301 http://blog.cesae.es/index.php/2010/06/el-revenue-management-una-parte-muy-importante-de-la-imagen-de-tu-empresa/	http://www.cesae.es/blog/como-mejorar-el-revenue-management-una-parte-importante-de-la-imagen-de-tu-empresa
+Redirect 301 http://blog.cesae.es/index.php/2010/05/bienvenido-al-blog-de-cesae/	http://www.cesae.es/blog/bienvenido-al-blog-de-cesae
+
+
+
+
+
+
+Redirect 301 /index.php/tag/formacion-spa/        http://www.cesae.es/blog-portada/?search=categoria&query1=56
+Redirect 301 http://blog.cesae.es/index.php/tag/formacion-spa/ http://www.cesae.es/blog-portada/?search=categoria&query1=56
+
+# DIC 2013
+Redirect 301 http://blog.cesae.es/index.php/calendario-de-cursos http://www.cesae.es/blog/blog-calendariodecursos
+Redirect 301 http://blog.cesae.es/index.php/tag/restauracion/ http://www.cesae.es/programadireccionygestionrestauracion
+Redirect 301 http://blog.cesae.es/index.php/tag/enoturismo/ http://www.cesae.es/blog/las-claves-del-vino-y-turismo-enoturismo
+Redirect 301 http://blog.cesae.es/index.php/tag/late-check-out/ http://www.cesae.es/blog/descubre-la-relacion-entre-turismo-rural-y-revenue-management
+Redirect 301 http://blog.cesae.es/index.php/tag/valor-anadido-turismo/ http://www.cesae.es/desarrollocorporativo
+Redirect 301 http://blog.cesae.es/index.php/tag/hoteles-rentables/ http://www.cesae.es/revenueavanzadoupsellingycrossselling-programa
+Redirect 301 /blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadidocomment-page-1 http://www.cesae.es/blog/perspectivas-del-sector-turistico-para-el-ano-2011-el-ano-del-valor-anadido
+
+
+Redirect 301  /cursosrestauracion http://www.cesae.es/
+Redirect 301  /cursorevenuemanagementrestauracion http://www.cesae.es/
+Redirect 301  /cursorevenuemanagementrestauracion-objetivos http://www.cesae.es/
+Redirect 301  /cursorevenuemanagementrestauracion-metodologia http://www.cesae.es/
+Redirect 301  /cursorevenuemanagementrestauracion-programa http://www.cesae.es/
+Redirect 301  /excelenciaseguridadalimentariarestauracion http://www.cesae.es/
+Redirect 301  /excelenciaseguridadalimentariarestauracion-objetivos http://www.cesae.es/
+Redirect 301  /excelenciaseguridadalimentariarestauracion-metodologia http://www.cesae.es/
+Redirect 301  /excelenciaseguridadalimentariarestauracion-programa http://www.cesae.es/
+Redirect 301  /organizaciondireccionyplanificacionestablecimientoderestauracion http://www.cesae.es/
+Redirect 301  /organizaciondireccionyplanificacionestablecimientoderestauracion-objetivos http://www.cesae.es/
+Redirect 301  /organizaciondireccionyplanificacionestablecimientoderestauracion-metodologia http://www.cesae.es/
+Redirect 301  /organizaciondireccionyplanificacionestablecimientoderestauracion-programa http://www.cesae.es/
+Redirect 301  /idinuevastendenciasenrestauracion http://www.cesae.es/
+Redirect 301  /idinuevastendenciasenrestauracion-objetivos http://www.cesae.es/
+Redirect 301  /idinuevastendenciasenrestauracion-metodologia http://www.cesae.es/
+Redirect 301  /idinuevastendenciasenrestauracion-programa http://www.cesae.es/
+Redirect 301  /gestionoperativainternaestablecimientorestauracion http://www.cesae.es/
+Redirect 301  /gestionoperativainternaestablecimientorestauracion-objetivos http://www.cesae.es/
+Redirect 301  /gestionoperativainternaestablecimientorestauracion-metodologia http://www.cesae.es/
+Redirect 301  /gestionoperativainternaestablecimientorestauracion-programa http://www.cesae.es/
+Redirect 301  /masterdireccionygestionempresashoteleras-componentesonline http://www.cesae.es/
+Redirect 301  /masterdireccionygestionempresashoteleras-networking http://www.cesae.es/
+Redirect 301  /masterdireccionygestionempresashoteleras-titulacion http://www.cesae.es/
+
+
+Redirect 301  /masterdireccionygestionempresashoteleras) http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301  /masterrevenuemanagementmarketingycomunicacionturistica) http://www.cesae.es/masterrevenuemanagementmarketingycomunicacionturistica
+Redirect 301 /revenuemanagementycomunicacionhotelera20) http://www.cesae.es/revenuemanagementycomunicacionhotelera20
+#Redirect 301 /blog http://www.cesae.es/blog-portada
+Redirect 301 /blog-portada/* http://www.cesae.es/blog/*
+
+
+
+Redirect 301 /masterdireccionygestionempresashoteleras-metodo http://www.cesae.es/masterdireccionygestionempresashoteleras-metodologia
+Redirect 301 /businesstouristschool http://www.cesae.es/businesstourismschool
+
+#2014-02-03
+Redirect 301 /mastergestionhotelera http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-objetivos http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-aquienvadirigido http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-metodologia http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-profesorado http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-programa http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /mastergestionhotelera-partners http://www.cesae.es/masterdireccionygestionempresashoteleras
+Redirect 301 /master-en-direccion-y-gestion-de-empresas-hoteleras-fulltime-antiguos-alumnos http://www.cesae.es/masterdireccionygestionempresashoteleras
+
+
+
+
+
+#
+Redirect 301 /portada-blog-cesae http://www.cesae.es/blog/blog-portada
+Redirect 301 /blog-ano2010 http://www.cesae.es/blog/blog-portada
+Redirect 301 /cesae.es http://cesae.es
+Redirect 301 /blog-cesae http://www.cesae.es/blog/blog-portada
+Redirect 301 /undefined http://cesae.es
+
+#Redirect 301 /blog-portada http://www.cesae.es/blog/blog-portada
+
+
+#Redirect 301 /blog-portada http://www.cesae.es/blog/blog-portada
+Redirect 301 /blog-calendariodecursos http://www.cesae.es/blog/blog-calendariodecursos
+
+Redirect 301 /blog-portada/?search=categoria&query1=51	http://www.cesae.es/blog/blog-cosasdecesae
+Redirect 301 /blog-portada/?search=categoria&query1=52	http://www.cesae.es/blog/blog-gestionempresarial
+Redirect 301 /blog-portada/?search=categoria&query1=54	http://www.cesae.es/blog/blog-hoteleria
+Redirect 301 /blog-portada/?search=categoria&query1=53	http://www.cesae.es/blog/blog-postalumnoscesae
+Redirect 301 /blog-portada/?search=categoria&query1=55	http://www.cesae.es/blog/blog-restauracion
+Redirect 301 /blog-portada/?search=categoria&query1=56	http://www.cesae.es/blog/blog-spa
+Redirect 301 /blog-portada/?search=categoria&query1=57	http://www.cesae.es/blog/blog-turismorural
+	
+Redirect 301 /blog-portada/?search=autores&query1=44	http://www.cesae.es/blog/blog-anabelengutierrezalvarez
+Redirect 301 /blog-portada/?search=autores&query1=43	http://www.cesae.es/blog/blog-cesae
+Redirect 301 /blog-portada/?search=autores&query1=45	http://www.cesae.es/blog/blog-jaimelopezchicheri
+Redirect 301 /blog-portada/?search=autores&query1=49	http://www.cesae.es/blog/blog-juanluisgarciacarmona
+Redirect 301 /blog-portada/?search=autores&query1=47	http://www.cesae.es/blog/blog-marialuisafanjul
+Redirect 301 /blog-portada/?search=autores&query1=46	http://www.cesae.es/blog/blog-ramonadillon
+Redirect 301 /blog-portada/?search=autores&query1=48	http://www.cesae.es/blog/blog-ricardolucas
+	
+Redirect 301 /blog-portada/?search=mes&query1=November&query2=2012	http://www.cesae.es/blog/blog-noviembre2012
+Redirect 301 /blog-portada/?search=mes&query1=October&query2=2012	http://www.cesae.es/blog/blog-octubre2012
+Redirect 301 /blog-portada/?search=mes&query1=September&query2=2012	http://www.cesae.es/blog/blog-septiembre2012
+Redirect 301 /blog-portada/?search=mes&query1=August&query2=2012	http://www.cesae.es/blog/blog-agosto2012
+Redirect 301 /blog-portada/?search=mes&query1=July&query2=2012	http://www.cesae.es/blog/blog-julio2012
+Redirect 301 /blog-portada/?search=mes&query1=June&query2=2012	http://www.cesae.es/blog/blog-junio2012
+Redirect 301 /blog-portada/?search=mes&query1=May&query2=2012	http://www.cesae.es/blog/blog-mayo2012
+Redirect 301 /blog-portada/?search=mes&query1=April&query2=2012	http://www.cesae.es/blog/blog-abril2012
+Redirect 301 /blog-portada/?search=mes&query1=March&query2=2012	http://www.cesae.es/blog/blog-marzo2012
+Redirect 301 /blog-portada/?search=mes&query1=February&query2=2012	http://www.cesae.es/blog/blog-febrero2012
+Redirect 301 /blog-portada/?search=mes&query1=January&query2=2012	http://www.cesae.es/blog/blog-enero2012
+Redirect 301 /blog-portada/?search=ano&query1=2011	http://www.cesae.es/blog/blog-año2011
+Redirect 301 /blog-portada/?search=ano&query1=2010	http://www.cesae.es/blog/blog-año2010
+Redirect 301 /blog-portada/?search=categoria&query1=56	http://www.cesae.es/blog/blog-spa
+
+Redirect 301 /blog/blog-jaimelopezchicheri  http://www.cesae.es/revenuemanagement
+
+
+
+
+Redirect 301 /index.php/tag/bloggers-de-cesae/	http://www.cesae.es/nuestrosamigosbloggers
+Redirect 301 /index.php/tag/cursos-de-turismo/	http://www.cesae.es/enlacesinteresantesparaprofesionalesdelturismo
+Redirect 301 /index.php/tag/marketing-turismo-rural/	http://www.cesae.es/blog-turismorural
+Redirect 301 /index.php/2012/09/recepcion-es-mucho-mas-que-recibir%E2%80%A6/	http://www.cesae.es/recepcionesmuchomasquerecibir
+Redirect 301 /index.php/tag/gobernanta/	http://www.cesae.es/puestosdetrabajoenhoteleseljefedealojamiento
+Redirect 301 /index.php/tag/cursos-de-cesae-escuela-de-negocios/	http://www.cesae.es/blog/blog-calendariodecursos
+Redirect 301 /index.php/tag/cursos-hoteles/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/tag/formacion-revenue/	http://www.cesae.es/elrevenuemanagementyelmercadoturisticohotelero
+Redirect 301 /index.php/tag/cursos-para-hotelesd/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/2012/09/el-%E2%80%9Csector-spa%E2%80%9D-en-la-actualidad-critica-y-oportunidad/	http://www.cesae.es/elsectorspaenlaactualidadcriticayoportunidad
+Redirect 301 /index.php/calendario-de-cursos/	http://www.cesae.es/blog/blog-calendariodecursos
+Redirect 301 /index.php/cesae-escuela-de-negocios	http://www.cesae.es/blog-cesaeescueladenegocios
+Redirect 301 /index.php/2012/02/%C2%BFcuanto-venden-las-sensaciones/	http://www.cesae.es/cuantovendenlassensaciones
+Redirect 301 /index.php/tag/blog-de-cesae/	http://www.cesae.es/blog-portada
+Redirect 301 /index.php/tag/curso-spa/	http://www.cesae.es/blog-spa
+Redirect 301 /index.php/tag/cursos-restauracion/	http://www.cesae.es/blog-restauracion
+Redirect 301 /index.php/tag/revenue-management-hotelero/	http://www.cesae.es/elrevenuemanagementyelmercadoturisticohotelero
+Redirect 301 /index.php/tag/direccion-hotelera/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/tag/curso-hoteleria/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/2012/10/%C2%BFla-seleccion-de-personal-idonea/	http://www.cesae.es/laselecciondepersonalidonea
+Redirect 301 /index.php/tag/curso-para-spa/	http://www.cesae.es/blog-spa
+Redirect 301 /index.php/tag/curso-para-hoteles/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/tag/formacion-restauracion/	http://www.cesae.es/blog-restauracion
+Redirect 301 /index.php/tag/curso-de-formacion-hotelera/	http://www.cesae.es/blog-hoteleria
+Redirect 301 /index.php/tag/alumnos-de-cesae/	http://www.cesae.es/blog-postalumnoscesae
+Redirect 301 /index.php/tag/distribucion-hotelera/	http://www.cesae.es/ladistribucionhotelera
+Redirect 301 /index.php/tag/marketing-hotelero/	http://www.cesae.es/marketinghoteleroespanavsusaelfrenodelapropiedad
+Redirect 301 /index.php/tag/turijobs/	http://www.cesae.es/cesaeenfiturbyturijobs
+Redirect 301 /index.php/tag/e-commerce/	http://www.cesae.es/revenuemanagementecommerceenlinkedin
+Redirect 301 /index.php/tag/establecimientos-de-restauracion/	http://www.cesae.es/blog-restauracion
+Redirect 301 /index.php/tag/restaurantes/	http://www.cesae.es/blog-restauracion
+Redirect 301 /index.php/tag/maria-luisa-fanjul/	http://www.cesae.es/blog-marialuisafanjul
+Redirect 301 /index.php/tag/espacios-funcionales/	http://www.cesae.es/checklistrevenuemanagementenespaciosfuncionales1
+Redirect 301 /index.php/tag/cursos/	http://www.cesae.es/blog/blog-calendariodecursos
+
+
+##Redirect 301 /programadireccionygestionwellnessyspa/http: http://www.cesae.es/programadireccionygestionwellnessyspa/
+
+
+########### 20141212 Jesus Starts
+
+# MASTERS
+
+Redirect 301 /mastersyprogramassuperiores/ http://www.cesae.es/masters-turismo-hosteleria
+Redirect 301 /masterdirecciongestionempresasturisticas-bolsa-de-trabajo http://www.cesae.es/master-en-turismo-bolsa-de-trabajo
+Redirect 301 /masterdirecciongestionempresasturisticas-practicas-en-empresas http://www.cesae.es/master-en-turismo-practicas-en-empresas
+Redirect 301 /masterdireccionygestionempresasturisticas http://www.cesae.es/master-en-turismo
+Redirect 301 /masterdireccionygestionempresasturisticas-admision http://www.cesae.es/master-en-turismo-admision
+Redirect 301 /masterdireccionygestionempresasturisticas-aquienvadirigido http://www.cesae.es/master-en-turismo-a-quien-va-dirigido
+Redirect 301 /masterdireccionygestionempresasturisticas-metodologia http://www.cesae.es/master-en-turismo-metodologia
+Redirect 301 /antiguosalumnos-masterdirecciongestionempresasturisticas-exalumnos http://www.cesae.es/master-en-turismo-antiguos-alumnos
+Redirect 301 /masterdireccionygestionempresasturisticas-objetivos http://www.cesae.es/master-en-turismo-objetivos
+Redirect 301 /masterdireccionygestionempresasturisticas-profesorado http://www.cesae.es/master-en-turismo-profesorado
+Redirect 301 /masterdireccionygestionempresasturisticas-programa http://www.cesae.es/master-en-turismo-programa
+Redirect 301 /masterdireccionygestionempresashoteleras http://www.cesae.es/master-direccion-gestion-hotelera
+Redirect 301 /antiguosalumnos-master-direccion-gestion-hotelera http://www.cesae.es/master-direccion-gestion-hotelera-antiguosalumnos
+Redirect 301 /master-direccion-gestion-hotelera-bolsa-de-trabajo http://www.cesae.es/master-direccion-gestion-hotelera-bolsa-de-trabajo
+Redirect 301 /master-direccion-gestion-hotelera-practicas-en-empresas http://www.cesae.es/master-direccion-gestion-hotelera-practicas-en-empresas
+Redirect 301 /masterdireccionygestionempresashoteleras-admision http://www.cesae.es/master-direccion-gestion-hotelera-admision
+Redirect 301 /masterdireccionygestionempresashoteleras-aquienvadirigido http://www.cesae.es/master-direccion-gestion-hotelera-aquienvadirigido
+Redirect 301 /masterdireccionygestionempresashoteleras-metodologia http://www.cesae.es/master-direccion-gestion-hotelera-metodologia
+Redirect 301 /masterdireccionygestionempresashoteleras-objetivos http://www.cesae.es/master-direccion-gestion-hotelera-objetivos
+Redirect 301 /masterdireccionygestionempresashoteleras-programa http://www.cesae.es/master-direccion-gestion-hotelera-programa
+Redirect 301 /master-en-direccion-y-gestion-de-empresas-hoteleras-executive-profesorado http://www.cesae.es/master-en-direccion-y-gestion-hotelera-profesorado
+
+# PROGRAMAS Y EXPERTOS
+
+Redirect 301 /especialistauniversitarioenrecepciondehoteles http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-aquienvadirigido http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-aquienvadirigido
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-admision http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-admision
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-objetivos http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-objetivos
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-metodologia http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-metodologia
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-programa http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-programa
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-profesorado http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-profesorado
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-bolsadetrabajo http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-bolsadetrabajo
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-practicasenempresas http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-practicasenempresas
+Redirect 301 /especialistauniversitarioenrecepciondehoteles-antiguosalumnos http://www.cesae.es/curso-especialistauniversitarioendirecciondehoteles-antiguosalumnos
+Redirect 301 /expertouniversitarioenrecepciondehoteles http://www.cesae.es/curso-experto-universitario-recepcion-hoteles
+Redirect 301 /expertouniversitarioenrecepciondehoteles-admision http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-admision
+Redirect 301 /expertouniversitarioenrecepciondehoteles-antiguosalumnos http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-antiguosalumnos
+Redirect 301 /expertouniversitarioenrecepciondehoteles-aquienvadirigido http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-aquienvadirigido
+Redirect 301 /expertouniversitarioenrecepciondehoteles-bolsadetrabajo http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-bolsadetrabajo
+Redirect 301 /expertouniversitarioenrecepciondehoteles-metodologia http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-metodologia
+Redirect 301 /expertouniversitarioenrecepciondehoteles-objetivos http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-objetivos
+Redirect 301 /expertouniversitarioenrecepciondehoteles-practicasenempresas http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-practicasenempresas
+Redirect 301 /expertouniversitarioenrecepciondehoteles-profesorado http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-profesorado
+Redirect 301 /expertouniversitarioenrecepciondehoteles-programa http://www.cesae.es/curso-experto-universitario-recepcion-hoteles-programa
+Redirect 301 /revenuemanagementycomunicacionhotelera20 http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera
+Redirect 301 /revenuemanagement-y-comunicacionhotelera20-admision http://www.cesae.es/revenuemanagement-y-comunicacionhotelera20-admision
+Redirect 301 /revenuemanagementycomunicacionhotelera20-aquienvadirigido http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-aquienvadirigido
+Redirect 301 /revenuemanagementycomunicacionhotelera20-bolsadetrabajo http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-bolsadetrabajo
+Redirect 301 /revenuemanagementycomunicacionhotelera20-metodologia http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-metodologia
+Redirect 301 /revenuemanagementycomunicacionhotelera20-objetivos http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-objetivos
+Redirect 301 /revenuemanagementycomunicacionhotelera20-practicasenempresas http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-practicas-empresas
+Redirect 301 /revenuemanagementycomunicacionhotelera20-profesorado http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-profesorado
+Redirect 301 /revenuemanagementycomunicacionhotelera20-programa http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-programa
+Redirect 301 /curso-experto-revenue-management-comunicacion-hotelera-20-antiguos-alumnos http://www.cesae.es/curso-experto-revenue-management-comunicacion-hotelera-antiguos-alumnos
+
+# CURSOS PROFESIONALES
+
+Redirect 301 /cursohotel http://www.cesae.es/cursos-profesionales
+Redirect 301 /cursorevenuemanagement http://www.cesae.es/curso-de-revenue-management
+Redirect 301 /revenuemanagement-objetivos http://www.cesae.es/curso-de-revenue-management-objetivos
+Redirect 301 /revenuemanagement-metodologia http://www.cesae.es/curso-de-revenue-management-metodologia
+Redirect 301 /revenuemanagement-programa http://www.cesae.es/curso-de-revenue-management-programa
+Redirect 301 /revenue-management-antiguos-alumnos http://www.cesae.es/curso-de-revenue-management-antiguos-alumnos
+Redirect 301 /direccionestrategicarecursoshumanos-bolsadetrabajo http://www.cesae.es/curso-direccion-estrategica-recursos-humanos-bolsa-de-trabajo
+Redirect 301 /direccionestrategicarecursoshumanos-practicasenempresas http://www.cesae.es/curso-direccion-estrategica-recursos-humanos-practicas-en-empresas
+Redirect 301 /excelenciagestionhotelera-bolsadetrabajo http://www.cesae.es/curso-excelencia-en-la-gestion-hotelera-bolsadetrabajo
+Redirect 301 /excelenciagestionhotelera-practicasenempresas http://www.cesae.es/curso-excelencia-en-la-gestion-hotelera-practicasenempresas
+
+
+########### 20141212 Jesus Ends
+
+
+#
+## End - Joomla! core SEF Section.
+
+
+
+# para comprimir textos, html, javascript, css,y archivos xml:
+ AddOutputFilterByType DEFLATE text/plain
+ AddOutputFilterByType DEFLATE text/html
+ AddOutputFilterByType DEFLATE text/xml
+ AddOutputFilterByType DEFLATE text/css
+ AddOutputFilterByType DEFLATE application/xml
+ AddOutputFilterByType DEFLATE application/xhtml+xml
+ AddOutputFilterByType DEFLATE application/rss+xml
+ AddOutputFilterByType DEFLATE application/javascript
+ AddOutputFilterByType DEFLATE application/x-javascript
+ 
+ 
+# O bien comprime los archivos según su extensión:
+ 
+SetOutputFilter DEFLATE
+
+ 
+
+ExpiresDefault "access plus 1 week"

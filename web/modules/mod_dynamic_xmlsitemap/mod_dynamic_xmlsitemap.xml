@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Dynamic XML Sitemap</name>
+	<author>Diana Scherff</author>
+	<creationDate>September 2009</creationDate>
+	<copyright>Copyright (C) 2009-2010 Diana Scherff. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>diana@dianascherff.com</authorEmail>
+	<authorUrl>www.dianascherff.com</authorUrl>
+	<version>2.3.4</version>
+	<description>DYNAMIC XML SITEMAP DESC</description>
+	<files>
+		<filename module="mod_dynamic_xmlsitemap">mod_dynamic_xmlsitemap.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">helper.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">index.html</filename>
+		<filename module="mod_dynamic_xmlsitemap">tmpl/default.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">tmpl/index.html</filename>
+		<filename module="mod_dynamic_xmlsitemap">views/index.html</filename>
+		<filename module="mod_dynamic_xmlsitemap">views/plain.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">views/sef.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">views/preg/_offset.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">queries/sef.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">queries/components.php</filename>
+		<filename module="mod_dynamic_xmlsitemap">queries/advanced.php</filename>
+	</files>
+	<administration>
+		<languages folder="lang">
+			<language tag="en-GB">en-GB.mod_dynamic_xmlsitemap.ini</language>
+		</languages>
+	</administration>
+	<params>
+		<param type="spacer" default="&lt;b&gt;General Setup&lt;/b&gt;" />
+		<param name="access" type="list" default="" label="Restricted Content" description="Do you want links to restricted content included in the sitemap?">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="catsec" type="list" default="" label="Category &amp; Section Links" description="Do you want category and section links included in the sitemap?">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="lastmod" type="list" default="" label="Last Modified Date" description="Do you want the &lt;lastmod&gt; tags on the sitemap?  Turn this off if you have problems with Google not liking your dates.">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="livesite" type="text" default="" label="Live Site" description="If your Sitemap starting with only /index.php?... then enter your Joomla! location here (e.g. http://www.mysite.com).  Do not include a trailing foward slash." />
+<!--	<param type="spacer" />
+		<param type="spacer" default="&lt;b&gt;SEF&lt;/b&gt;" />
+		<param name="sef" type="list" default="0" label="Use SEF URLs" description="Show SEF URLs or regular URLs?">
+			<option value="0">Global</option>
+			<option value="0">Yes</option>
+			<option value="0">No</option>
+		</param> -->
+		<param type="spacer" />
+		<param type="spacer" default="&lt;b&gt;Components&lt;/b&gt;" />
+		<param name="virtuemart" type="list" default="" label="VirtueMart Products" description="If installed, do you want VirtueMart product &amp; category links included?">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="vmnames" type="list" default="" label="Append Product &amp; Category Name to URL" description="For SEO, do you want to append name=$product_name and category=$category_name values to the URL?">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="kunena" type="list" default="" label="Kunena Forum Threads" description="If installed, do you want Kunena Forum thread links included?  If you unpublish the top or &quot;main&quot; category, you must manually change this setting to NO!  It only checks if child categories are published.">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+	</params>
+	<params group="advanced">
+		<param name="manual" type="textarea" cols="50" rows="20" default="" label="Additional URLs" description="Enter additional URLs that you want added to the sitemap.  Separate each by a space.  (Example: http://www.domain.com/page%20name.php http://www.domain.com/page1.php http://www.domain.com/page2.php)" />
+	</params>
+</install>

@@ -1,0 +1,83 @@
+
+#TablaIzq1 {
+	border-bottom: 1px solid #808080;
+	border-top: 0px solid #FFFFFF;
+	padding-left: 10px;
+	background-color: lightcyan; /* #EEF0F3; */
+	margin-top: 1px;
+	}
+#TablaIzq2 {
+	border-bottom: 1px solid #808080;
+	border-top: 0px solid #FFFFFF;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #808080;
+	margin-left: 1.2em;
+/*	background-color: #FFFFFF; */
+}
+#indent {
+	margin-left: 1.2em;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#TablaIzq1 a:link {color: #323638; text-decoration: none;}
+#TablaIzq1 a:visited {color: #323638; text-decoration: none;}
+#TablaIzq2 a:link {color: #323638; text-decoration: none;}
+#TablaIzq2 a:visited {color: #323638; text-decoration: none;}
+#texto {
+/*  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+*/
+	font: normal 1.1em "Verdana", serif;
+	    line-height: 17px;  
+		color: #323638;
+			 padding:0px;
+			 margin-left: 2px; margin-right: 6px;
+		 	text-align: left;
+			float:none;
+}
+#TablaInterior {
+	font: normal 90%/1.4em "Verdana", serif;
+	color: #111111;
+	background-color: #FFF;
+	float:none;
+	text-align: left;
+}
+
+#texto a:link {color: #222222; text-decoration: none;}
+#texto a:visited {color: #222222; text-decoration: none;}
+.enlace {color: blue; text-decoration:inherit;}
+.textoMenor {
+	font-family: 'Trebuchet MS';
+	color: #323638;
+	float:none;
+}
+a.textoMenor:link {color: #323638; text-decoration: none;}
+a.textoMenor:hover {color: #323638; text-decoration: none;}
+a.textoMenor:visited {color: #323638; text-decoration: none;}
+
+/*
+ h2 {font-size: 1.0em; border-bottom: 1px solid gray;}
+h1 {font-size: 1.0em;}
+*/
+#Resumen h1{font-size: 1.0em; margin-left: 1.2em; color: #888888; border-bottom: 1px solid #888888;}	
+	
+.FilaPrincipal {
+	background-color : #EEF0F3;
+	font-size: 0.9em;
+	font: normal 69%/1.6em "Verdana", serif;
+	color: #222222;
+}
+.csTexto10 {
+	font-size: 0.9em;
+	color: #323638;
+}
+.csTexto11 {
+	font-size: 1.0em;
+	color: #222222;
+}
+.csTexto12 {
+	font-size: 1.0em;
+	color: #222222;
+	font-weight:bold;
+}
