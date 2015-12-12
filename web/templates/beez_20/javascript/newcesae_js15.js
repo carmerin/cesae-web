@@ -71,8 +71,13 @@ jQuery.fn.simpleSlide = function(a){
 			
 			var $active = jQuery("img.slide-active",jQuery(c));
 
-			if($active.length == 0)
-				document.getElementById('texto_banner').style.display='none';
+			if($active.length == 0) {
+				
+				// 20151211 CMM. Protección ante null del elemento.
+				
+				if(document.getElementById('texto_banner') != null)
+					document.getElementById('texto_banner').style.display='none';
+			}
 			else
 			{
 				if ($active[0].src!='http://www.cesae.es/images/BANNER_Cursos.jpg')
