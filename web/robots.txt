@@ -8,11 +8,8 @@ Disallow: /administrator2012
 Disallow: /aspnet_client
 Disallow: /cache
 Disallow: /components
-Disallow: /css
 Disallow: /fckeditor
 Disallow: /imagenes_Editor
-Disallow: /includes
-Disallow: /js
 Disallow: /language
 Disallow: /libraries
 Disallow: /logs
