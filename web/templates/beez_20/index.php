@@ -374,7 +374,11 @@ if ($category_id=="2"  ):
 		</div>
 	-->
         <div id="pestanas-1-texto">
-            <h2  class="menuenlaceh2"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/images/icon-top-menu.png" width="9" height="9" style="margin-right:5px;">CESAE <span class="nobold">INSTITUCI&Oacute;N</span></h2>
+            <?php $id = $_GET['id']; if ($id=="" || $id=="0"  ): ?>
+				<h2  class="menuenlaceh2"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/images/icon-top-menu.png" width="9" height="9" style="margin-right:5px;">CESAE <span class="nobold">INSTITUCI&Oacute;N</span></h2>
+			<?php else: ?>
+				<div class="menuenlaceh2"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/images/icon-top-menu.png" width="9" height="9" style="margin-right:5px;">CESAE <span class="nobold">INSTITUCI&Oacute;N</span></div>
+			<?php endif; ?>
         </div>
     </a>
 </div>
@@ -390,14 +394,11 @@ if ($category_id=="7"  ):
     <?php endif;?>
     <a href="/masters-turismo-hosteleria" title="M&aacute;ster en turismo, direcci&oacute;n hotelera y revenue management "  >
         <div id="pestanas-2-texto">
-            <?php $id = $_GET['id'];
-            if ($id=="" || $id=="0"  ):
-                ?>
-                <h2 class="h2home">M&Aacute;STERS</h2>
-            <?php else: ?>
-                <h2 class="menuenlaceh2">M&Aacute;STERS</h2>
-            <?php endif;?>
-
+        	<?php $id = $_GET['id']; if ($id=="" || $id=="0"  ): ?>
+				<h2 class="menuenlaceh2">M&Aacute;STERS</h2>
+			<?php else: ?>
+				<div class="menuenlaceh2">M&Aacute;STERS</div>
+			<?php endif; ?>
         </div>
     </a>
 </div>
@@ -413,7 +414,11 @@ if ($category_id=="73"  ):
     <?php endif;?>
     <a href="/programas-expertos" title="Programas y expertos en turismo, revenue management, hoteleria y hosteler&iacute;­a " >
         <div id="pestanas-3-texto">
-            <h2 class="menuenlaceh2">PROGRAMAS Y EXPERTOS</h2>
+        	<?php $id = $_GET['id']; if ($id=="" || $id=="0"  ): ?>
+				<h2 class="menuenlaceh2">PROGRAMAS Y EXPERTOS</h2>
+			<?php else: ?>
+				<div class="menuenlaceh2">PROGRAMAS Y EXPERTOS</div>
+			<?php endif; ?>
         </div>
     </a>
 </div>
@@ -429,7 +434,11 @@ if ($category_id=="8"  ):
     <?php endif;?>
     <a href="/executiveeducation" title="Executive education en marketing hotelero y revenue management " >
         <div id="pestanas-4-texto">
-            <h2 class="menuenlaceh2">EXECUTIVE EDUCATION</h2>
+        	<?php $id = $_GET['id']; if ($id=="" || $id=="0"  ): ?>
+				<h2 class="menuenlaceh2">EXECUTIVE EDUCATION</h2>
+			<?php else: ?>
+				<div class="menuenlaceh2">EXECUTIVE EDUCATION</div>
+			<?php endif; ?>
         </div>
     </a>
 </div>
@@ -445,13 +454,11 @@ if ($category_id=="9"  ):
     <?php endif;?>
     <a href="/cursohotel" title="Cursos profesionales de turismo, hosteler&iacute;­a, hotelerÃ&iacute;a, gastronomÃ&iacute;a y restauraci&oacute;n" >
         <div id="pestanas-5-texto">
-            <?php $id = $_GET['id'];
-            if ($id=="" || $id=="0"  ):
-                ?>
-                <h2 class="h2home">CURSOS PROFESIONALES</h2>
-            <?php else: ?>
-                <h2 class="menuenlaceh2">CURSOS PROFESIONALES</h2>
-            <?php endif;?>
+            <?php $id = $_GET['id']; if ($id=="" || $id=="0"  ): ?>
+				<h2 class="menuenlaceh2">CURSOS PROFESIONALES</h2>
+			<?php else: ?>
+				<div class="menuenlaceh2">CURSOS PROFESIONALES</div>
+			<?php endif; ?>
         </div>
     </a>
 
@@ -548,18 +555,26 @@ if ($id=="" || $id=="0"  ):
 
 
         <?php
-        if ($category_id=="12" ):
-            ?>
+        	if ($category_id=="12" ):
+        ?>
             <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/MDGH_EX.jpg" title="MDGH M&aacute;ster en Direcci&oacute;n y Gesti&oacute;n de Empresas Hoteleras Executive" alt="MDGH M&aacute;ster en Direcci&oacute;n y Gesti&oacute;n de Empresas Hoteleras Executive" width="980px" height="250px"  />
-            <?php
+        <?php
             elseif ($category_id=="58" ):
-            ?>
+        ?>
             <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/BANNER_PRMC.jpg"  title="PRMC Programa Superior en Revenue Management y Comunicaci&oacute;n Online 2.0" alt="PRMC Programa Superior en Revenue Management y Comunicaci&oacute;n Online 2.0" width="980px" height="250px"  />
             <?php
             elseif ($category_id=="69" ):
             ?>
             <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/BANNER_PRMC.jpg"  title="PRMC Programa Superior en Revenue Management y Comunicaci&oacute;n Online 2.0" alt="PRMC Programa Superior en Revenue Management y Comunicaci&oacute;n Online 2.0" width="980px" height="250px"  />
-            <?php
+        <?php
+            elseif ($category_id=="101"   ):
+        ?>
+            <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/Banner_Accede_2014.jpg"  title="M&aacute;ster Internacional en Direcci&oacute;n Comercial y Administraci&oacute;n de Empresas Tur&iacute;sticas (MICET)" alt="M&aacute;ster Internacional en Direcci&oacute;n Comercial y Administraci&oacute;n de Empresas Tur&iacute;sticas (MICET)" width="980px" height="250px"  />
+        <?php
+            elseif ($category_id=="102"   ):
+        ?>
+            <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/Banner_Accede_2014.jpg"  title="M&aacute;ster en Turismo Internacional, Protocolo y Relaciones P&uacute;blicas (MTIP)" alt="M&aacute;ster en Turismo Internacional, Protocolo y Relaciones P&uacute;blicas (MTIP)" width="980px" height="250px"  />
+        <?php
             elseif ($category_id=="92" ):
             ?>
             <img id="imagentop1" src="<?php echo $this->baseurl ?>/images/Banner-Sumiller.jpg"  title="Cursos y m&aacute;steres de sumiller&iacute;a y catas de vinos" alt="Cursos y m&aacute;steres de sumiller&iacute;a y catas de vinos" width="980px" height="250px"  />

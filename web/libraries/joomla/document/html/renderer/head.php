@@ -60,6 +60,7 @@ class JDocumentRendererHead extends JDocumentRenderer
 		$tab	= $document->_getTab();
 		$tagEnd	= ' />';
 		$buffer	= '';
+		$has_title = '0';
 
 		// Generate base tag (need to happen first)
 		$base = $document->getBase();
@@ -154,19 +155,31 @@ class JDocumentRendererHead extends JDocumentRenderer
 //                    die();
 
                     if($id){
-                        $buffer .= $tab.'<title>'.$cont_title.' - CESAE</title>'.$lnEnd;
-                    }else{
+                    	
+                    	$buffer .= $tab.'<title>'.$cont_title.' - CESAE</title>'.$lnEnd;
+                        
+                        $has_title = '1';
+                    }
+                    else{
+                        
                         $buffer .= $tab.'<title>Blog de turismo, gesti&oacute;n y direcci&oacute;n hotelera</title>'.$lnEnd;
+                        
+                        $has_title = '1';
                     }
 
                 }
 
-
-                if($parent_id=="1" && $category_id=="50"){
-                    $buffer .= $tab.'<title>Blog de turismo, gesti&oacute;n y direcci&oacute;n hotelera</title>'.$lnEnd;
-                }else{
-                    $buffer .= utf8_encode($tab.'<title>Escuela de turismo, dirección y gestión hotelera - CESAE</title>'.$lnEnd);
-                }
+				if($has_title == '0') {
+                
+	                if($parent_id=="1" && $category_id=="50"){
+	                    
+	                    $buffer .= $tab.'<title>Blog de turismo, gesti&oacute;n y direcci&oacute;n hotelera</title>'.$lnEnd;
+	                }
+	                else{
+	                    
+	                    $buffer .= utf8_encode($tab.'<title>Escuela de turismo, dirección y gestión hotelera - CESAE</title>'.$lnEnd);
+	                }
+	            }
             }
 
         }else{
