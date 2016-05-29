@@ -875,7 +875,7 @@ if ($id=="" || $id=="0"  ):
     <?php	$db = &JFactory::getDBO();
 
     /* Trying to get CATEGORY title from DB */
-    $db->setQuery('SELECT con.title, CAST(con.catid AS CHAR) as catid , CAST(con.id AS CHAR) as id , con.alias, cat.alias aliascat FROM #__content con left join #__categories cat on con.catid=cat.id WHERE cat.parent_id =7 and con.ordering=1 and con.state=1  and not con.id in (534)  order by cat.lft');    //EXCLUYO MDGH FULLTIME
+    $db->setQuery('SELECT con.title, CAST(con.catid AS CHAR) as catid , CAST(con.id AS CHAR) as id , con.alias, cat.alias aliascat FROM #__content con left join #__categories cat on con.catid=cat.id WHERE cat.parent_id =7 and con.ordering=1 and con.state=1  and not con.id in (534)  order by cat.lft LIMIT 5');    //EXCLUYO MDGH FULLTIME
     $rows = $db->loadObjectList();
     //print_r($rows);
     $num_rows = count($rows);
@@ -929,7 +929,7 @@ if ($id=="" || $id=="0"  ):
 
     /* Trying to get CATEGORY title from DB */
     //$db->setQuery('SELECT con.title, CAST(con.catid AS CHAR) as catid , CAST(con.id AS CHAR) as id , con.alias, cat.alias aliascat FROM #__content con left join #__categories cat on con.catid=cat.id WHERE con.catid =73 and con.ordering=1 and con.state=1  order by cat.lft');
-    $db->setQuery('SELECT con.title, CAST(con.catid AS CHAR) as catid , CAST(con.id AS CHAR) as id , con.alias, cat.alias aliascat FROM #__content con left join #__categories cat on con.catid=cat.id WHERE cat.parent_id =73 and con.ordering=1 and con.state=1 order by cat.lft LIMIT 6');    //EXCLUYO MDGH FULLTIME
+    $db->setQuery('SELECT con.title, CAST(con.catid AS CHAR) as catid , CAST(con.id AS CHAR) as id , con.alias, cat.alias aliascat FROM #__content con left join #__categories cat on con.catid=cat.id WHERE cat.parent_id =73 and con.ordering=1 and con.state=1 order by cat.lft LIMIT 8');    //EXCLUYO MDGH FULLTIME
     $rows = $db->loadObjectList();
     //print_r($rows);
     $num_rows = count($rows);
@@ -2991,6 +2991,7 @@ print_r('</ul>');
 <input type="hidden" name="cursos" value="<?php print_r($nombrepagina) ?>" />
 <input type="hidden" name="cmbprogramas" value="<?php print_r($nombrepagina) ?>" />
 <input type="hidden" name="formacion" value="Formaci&oacute;n" />
+<input type="hidden" name="isMobile" value="" />
 
 
 <div class="secciontituloformulario"><br/></div>
